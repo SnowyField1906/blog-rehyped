@@ -1,0 +1,78 @@
+{
+    "title": "SnowyField",
+    "headerTitle": "Arism Musings",
+    "description": "A creative space for everyone",
+    "language": "en-us",
+    "locale": "en-US",
+    "theme": "system",
+    "siteUrl": "https://snowyfield.me",
+    "siteRepo": "https://github.com/SnowyField1906/rehyped-blog",
+    "siteLogo": "/static/logo.png",
+    "siteBanner": "/static/banner.png",
+    "avatar": "/static/avatar.png",
+    "internalLinks": [
+        {
+            "title": "Home",
+            "path": "/",
+            "description": "My personal blog where I share my knowledge, experiences, thoughts and everything."
+        },
+        {
+            "title": "Posts",
+            "path": "/posts",
+            "description": "I post about my knowledge and experiences here, I hope you find something useful."
+        },
+        {
+            "title": "Note",
+            "path": "/note",
+            "description": "I save my important notes and reusable code snippets here, they might be not much useful for you."
+        },
+        {
+            "title": "Stats",
+            "path": "/stats",
+            "description": "I use this dashboard to track various metrics across platforms like Spotify, GitHub, and more."
+        },
+        {
+            "title": "About",
+            "path": "/about",
+            "description": "I put technical details about me and this blog here."
+        },
+        {
+            "title": "Checkin",
+            "path": "/checkin",
+            "description": "An artifact of the 90's webs. Leave a comment below for my future visitors. Feel free to write anything!"
+        },
+        {
+            "title": "Contact",
+            "path": "/contact",
+            "description": "All my contacts"
+        },
+        {
+            "title": "Journey",
+            "path": "/journey",
+            "description": "My journey in the tech world"
+        },
+        {
+            "title": "Now",
+            "path": "/now",
+            "description": "Where am I and what am I doing?"
+        }
+    ],
+    "analytics": {
+        "umamiWebsiteId": "8cdb28da-322d-4adf-b081-27e579f84252",
+        "googleAnalyticsId": "G-KYY35T59NC"
+    },
+    "reaction": {
+        "repo": "SnowyField1906/blog",
+        "repositoryId": "R_kgDOJ45Gtg",
+        "category": "General",
+        "categoryId": "DIC_kwDOJ45Gts4CXxcP",
+        "mapping": "pathname",
+        "reactions": "1",
+        "metadata": "0",
+        "theme": "light",
+        "inputPosition": "bottom",
+        "lang": "en",
+        "darkTheme": "dark",
+        "themeURL": ""
+    }
+}
