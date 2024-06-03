@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { Session } from 'next-auth'
 import React from 'react'
 
-import Heading from '@components/Common/Heading'
+import Title from '@components/Common/Title'
 import CheckInMessage from '@components/Utils/CheckInMessage'
 import MessageInput from '@components/Utils/MessageInput'
 import siteMetadata from '@data/siteMetadata.json'
@@ -24,13 +24,13 @@ export const generateMetadata = (): Metadata => {
 	}
 }
 
-const About = async () => {
+const CheckIn = async () => {
 	const session: Session | null = await auth()
 	const checkIns: CheckIn[] = await findAll()
 
 	return (
-		<main className="m-auto flex h-full w-11/12 flex-col place-items-center items-center gap-10 py-16 lg:w-3/4">
-			<Heading heading={metadata!.description} />
+		<main className="m-auto flex h-full w-11/12 flex-col place-items-center items-center gap-10 lg:w-3/4">
+			<Title primary={metadata!.title} secondary={metadata!.description} />
 			<MessageInput session={session} />
 			<div className="flex flex-col justify-center gap-10 text-center">
 				{checkIns.map((checkIn, index) => (
@@ -55,4 +55,4 @@ const About = async () => {
 	)
 }
 
-export default About
+export default CheckIn

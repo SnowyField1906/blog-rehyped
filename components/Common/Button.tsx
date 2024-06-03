@@ -11,7 +11,7 @@ const variantStyles = {
 	secondary:
 		'rounded-full py-2 px-6 text-black bg-zinc-200/70 hover:bg-zinc-300/70 hover:ring-1 ring-inset ring-zinc-500 hover:ring-zinc-500',
 	filled: 'rounded-full py-2 px-6 text-white bg-zinc-900 hover:bg-zinc-700',
-	text: 'text-primary-500 hover:text-primary-900',
+	text: 'text-zinc-500 hover:text-zinc-900',
 }
 
 const Button = ({

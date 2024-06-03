@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 
-import Heading from '@components/Common/Heading'
 import Tag from '@components/Common/Tag'
 import Title from '@components/Common/Title'
 import PostPreview from '@components/Post/PostPreview'
@@ -43,9 +42,8 @@ const Post = async ({
 	).sort((a: any, b: any) => b[1] - a[1])
 
 	return (
-		<main className="mx-auto mb-auto w-11/12 py-16 lg:w-3/4">
-			<Heading heading={metadata!.description} />
-			<Title title={metadata!.title} />
+		<main className="mx-auto mb-auto w-11/12 lg:w-3/4">
+			<Title primary={metadata!.title} secondary={metadata!.description} />
 			<div className="flex gap-5 overflow-x-auto overflow-y-hidden pb-3">
 				<Tag />
 				{tags.map(([tag, count]) => (

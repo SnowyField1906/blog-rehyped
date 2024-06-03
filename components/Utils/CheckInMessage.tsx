@@ -94,7 +94,7 @@ const CheckInMessage = ({
 					)}
 				</div>
 				<div className="w-1/2 font-decoration text-2xl">
-					<p className="select-none text-6xl text-zinc-400">{`“`}</p>
+					<p className="translate-y-5 select-none text-6xl text-zinc-400">{`“`}</p>
 					{editPopup ? (
 						<textarea
 							className="h-auto w-full border border-zinc-900 bg-zinc-100 p-2 text-2xl focus:outline-none"

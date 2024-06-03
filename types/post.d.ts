@@ -7,7 +7,13 @@ type Frontmatter = {
     date: string
 }
 
+type Heading = {
+    depth: number
+    value: string
+    url: string
+}
+
 type Markdown = Frontmatter & {
     code: string
-    toc: string[]
+    headings: Heading[]
 }

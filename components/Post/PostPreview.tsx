@@ -17,7 +17,7 @@ const PostPreview = async ({ frontmatter }: { frontmatter: Frontmatter }) => {
 				<div className="mb-3 flex gap-5 text-xs uppercase tracking-wider">
 					{frontmatter.tags.map((tag) => (
 						<Link
-							className="minimum-link w-fit hover:text-black"
+							className="minimal-link w-fit hover:text-black"
 							key={tag}
 							href={`/posts?tag=${tag}`}
 						>

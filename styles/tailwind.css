@@ -2,54 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --primary-50: #fff4f8;
-    --primary-100: #ffe9f2;
-    --primary-200: #ffd3e4;
-    --primary-300: #ffbcd7;
-    --primary-400: #ffa6c9;
-    --primary-500: #ff90bc;
-    --primary-600: #e682a9;
-    --primary-700: #b36584;
-    --primary-800: #80485e;
-    --primary-900: #4c2b38;
-    --primary-950: #331d26;
-    --secondary-50: #f3fafb;
-    --secondary-100: #e8f5f7;
-    --secondary-200: #d0ebef;
-    --secondary-300: #b9e1e7;
-    --secondary-400: #a1d7df;
-    --secondary-500: #8acdd7;
-    --secondary-600: #7cb9c2;
-    --secondary-700: #619097;
-    --secondary-800: #45676c;
-    --secondary-900: #293d40;
-    --secondary-950: #1c292b;
-    --tertiary-50: #fefefc;
-    --tertiary-100: #fefef9;
-    --tertiary-200: #fdfdf3;
-    --tertiary-300: #fbfbec;
-    --tertiary-400: #fafae6;
-    --tertiary-500: #f9f9e0;
-    --tertiary-600: #e0e0ca;
-    --tertiary-700: #aeae9d;
-    --tertiary-800: #7d7d70;
-    --tertiary-900: #4b4b43;
-    --tertiary-950: #32322d;
-}
-
 @layer components {
-    .bg-global {
-        @apply bg-opacity-5 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-tertiary-50 via-primary-50 to-secondary-50;
-    }
     .magic-link {
-        @apply -mx-1 -mb-0.5 bg-gradient-to-r from-primary-600 to-primary-600 bg-no-repeat px-1 pb-0.5 font-normal
-		 text-primary-600 [background-position:0_100%]
+        @apply -mx-[1px] bg-gradient-to-r from-zinc-700 to-zinc-700 bg-no-repeat px-1 font-normal
+		 text-zinc-500 [background-position:0_100%]
 		  [background-size:100%_0.1em]  
 		  hover:text-white 
 		  hover:[background-size:100%_100%] focus:[background-size:100%_100%]
@@ -57,8 +19,8 @@
 		  motion-safe:duration-300;
     }
     .magic-link-no-underline {
-        @apply -mx-1 -mb-0.5 bg-gradient-to-r from-primary-600 to-primary-600 bg-no-repeat px-1 pb-0.5 font-normal
-		 text-primary-600 [background-position:0_100%]
+        @apply -mx-[1px] bg-gradient-to-r from-zinc-700 to-zinc-700 bg-no-repeat px-1 font-normal
+		 text-zinc-500 [background-position:0_100%]
 		  [background-size:100%_0em]  
 		  hover:text-white
 		  hover:[background-size:100%_100%] focus:[background-size:100%_100%]
@@ -94,10 +56,6 @@
 
     .code-line.deleted {
         @apply bg-red-500 bg-opacity-20;
-    }
-
-    .highlight-line {
-        @apply -mx-4 border-l-4 border-primary-500  bg-gray-700 bg-opacity-50;
     }
 
     .line-number::before {

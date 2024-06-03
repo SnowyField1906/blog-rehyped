@@ -56,7 +56,7 @@ export const getMarkdown = async (slug: string): Promise<Markdown> => {
         )
     }
 
-    const toc = []
+    const headings = []
     const { code, frontmatter } = await bundleMDX({
         source,
         // mdx imports can be automatically source from the components directory
@@ -65,7 +65,7 @@ export const getMarkdown = async (slug: string): Promise<Markdown> => {
             options.remarkPlugins = [
                 ...(options.remarkPlugins ?? []),
                 remarkExtractfrontmatter,
-                [remarkTocHeadings, { exportRef: toc }],
+                [remarkTocHeadings, { exportRef: headings }],
                 remarkGfm,
                 remarkCodeTitles,
                 [remarkFootnotes, { inlineNotes: true }],
@@ -90,7 +90,7 @@ export const getMarkdown = async (slug: string): Promise<Markdown> => {
     return {
         ...(frontmatter as Frontmatter),
         code,
-        toc,
+        headings,
         slug,
         thumbnail: '/posts/' + slug + '/thumbnail.png',
         date: new Date(frontmatter.date).toISOString(),

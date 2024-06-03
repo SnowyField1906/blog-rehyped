@@ -30,7 +30,7 @@ const RootLayout = ({
 				/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<Analytics />
-				<div className="h-full min-h-screen bg-zinc-100">
+				<div className="flex h-full min-h-screen flex-col gap-20 bg-zinc-100">
 					<Header />
 					{children}
 					<Footer />

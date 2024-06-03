@@ -28,8 +28,8 @@ const Tag = ({
 			className={cn(
 				'text-nowrap uppercase tracking-wider',
 				isActive
-					? 'stable-minimum-link pointer-events-none text-black'
-					: 'minimum-link text-zinc-800'
+					? 'stable-minimal-link pointer-events-none text-black'
+					: 'minimal-link text-zinc-800'
 			)}
 		>
 			{name === '' ? 'View All' : `${name}${count ? ` (${count})` : ''}`}

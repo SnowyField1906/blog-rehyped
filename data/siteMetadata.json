@@ -19,12 +19,12 @@
         {
             "title": "Posts",
             "path": "/posts",
-            "description": "I post about my knowledge and experiences here, I hope you find something useful."
+            "description": "These articles are mainly my professional knowledge through my work & research."
         },
         {
-            "title": "Note",
-            "path": "/note",
-            "description": "I save my important notes and reusable code snippets here, they might be not much useful for you."
+            "title": "Proses",
+            "path": "/proses",
+            "description": "These articles are mainly my personal thoughts through my ordinary life & experience."
         },
         {
             "title": "Stats",
@@ -32,29 +32,14 @@
             "description": "I use this dashboard to track various metrics across platforms like Spotify, GitHub, and more."
         },
         {
-            "title": "About",
-            "path": "/about",
-            "description": "I put technical details about me and this blog here."
-        },
-        {
             "title": "Checkin",
             "path": "/checkin",
             "description": "An artifact of the 90's webs. Leave a comment below for my future visitors. Feel free to write anything!"
         },
         {
-            "title": "Contact",
-            "path": "/contact",
-            "description": "All my contacts"
-        },
-        {
-            "title": "Journey",
-            "path": "/journey",
-            "description": "My journey in the tech world"
-        },
-        {
-            "title": "Now",
-            "path": "/now",
-            "description": "Where am I and what am I doing?"
+            "title": "Profile",
+            "path": "/profile",
+            "description": "A brief introduction of myself."
         }
     ],
     "analytics": {

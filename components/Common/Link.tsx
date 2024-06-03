@@ -41,7 +41,7 @@ const Link = ({
 		>
 			<span className="magic-link-no-underline flex w-fit indent-0">
 				{rest.children}
-				<LuArrowUpRight className="ml-0.5 mt-1 w-min" />
+				<LuArrowUpRight className="-mr-0.5 ml-0.5 mt-1 w-min" />
 			</span>
 		</a>
 	)
