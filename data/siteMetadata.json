@@ -19,12 +19,7 @@
         {
             "title": "Posts",
             "path": "/posts",
-            "description": "These articles are mainly my professional knowledge through my work & research."
-        },
-        {
-            "title": "Proses",
-            "path": "/proses",
-            "description": "These articles are mainly my personal thoughts through my ordinary life & experience."
+            "description": "These articles are mainly my professional knowledge through my work and research."
         },
         {
             "title": "Stats",

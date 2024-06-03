@@ -37,14 +37,14 @@ const NowPlaying = () => {
 
 	return (
 		<a
-			className="flex w-min place-items-center items-center gap-3 truncate text-base"
+			className="flex w-min place-items-center items-center gap-3 truncate font-sans text-sm lg:text-base xl:text-lg"
 			href={song?.is_playing ? song.item.external_urls.spotify : undefined}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<PiVinylRecordFill
 				className={cn(
-					'h-10 w-10 text-zinc-900',
+					'h-8 w-8 text-zinc-900 lg:h-10 lg:w-10',
 					song?.is_playing && 'animate-[spin_3s_linear_infinite]'
 				)}
 			/>

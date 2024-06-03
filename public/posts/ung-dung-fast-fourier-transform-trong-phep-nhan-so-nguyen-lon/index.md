@@ -115,10 +115,7 @@ $$
 
 Cho số phức $w$ là **Primitive n-th Root of Unity** (Căn Đơn vị Nguyên thủy bậc n). Ta định nghĩa **n-th root of unity** (căn đơn vị bậc n) là các số phức thoả phương trình $w^n - 1 = 0$. Trong đó tính **primitive** (nguyên thủy) cho biết các số phức $w$ được coi là nghiệm khi và chỉ khi nó không phải là k-th root of unity với bất kì $k < n$.
 
-<figure>
-<img className="w-full flex justify-center mx-auto" alt="Roots of Unity" src="/static/images/posts/roots-of-unity.png" />
-<figcaption className="text-center text-gray-500">Source: wuchuanxun (Github)</figcaption>
-</figure>
+<Figure name="roots-of-unity.png" caption="Source: wuchuanxun (Github)" />
 
 Nghiệm của phương trình trên là một tập hợp các số phức $X = \{w_0, w_1, \dots, w_{k-1}\}$ cách đều nhau trên một **unit circle** (đường tròn đơn vị) trong mặt phẳng phức. Để hiểu tại sao lại là **n-th root** (căn bậc n), đây là dạng đầy đủ của nghiệm $w^k_n$:
 

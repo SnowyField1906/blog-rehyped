@@ -105,14 +105,7 @@ Các node Execution có thể tận dụng tối đa khả năng tính toán c�
 
 Trong whitepaper của mình, Flow đã khẳng định việc này tăng hiệu suất của network [lên đến 56 lần](https://arxiv.org/pdf/1909.05821.pdf) so với các kiến trúc truyền thống.
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/flow-nodes.gif"
-    alt="Node đa vai trò"
-/>
-<figcaption>Source: flow.com</figcaption>
-</figure>
+<Figure name="flow-nodes.gif" caption="Source: flow.com"/>
 
 #### Các loại node
 

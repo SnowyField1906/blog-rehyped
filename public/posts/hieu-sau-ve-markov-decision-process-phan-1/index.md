@@ -511,37 +511,19 @@ Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương �
 
 Chúng ta đã nắm được các khái niệm cơ bản, bây giờ quay lại bài toán Pac-Man với những giá trị từ các ví dụ đã cho ở phần trước, một bản đồ game $4 \times 4$ sẽ trông như sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-1.png"
-    alt="Ví dụ Environment trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-1.png" caption="Ví dụ Environment trong game Pac-Man"/>
 
 Rõ ràng nhiệm vụ của chúng ta là tạo ra một Policy hợp lí. Nhưng làm thế nào để tạo Policy? Trước tiên hãy random một vài cái và nhận xét.
 
 ### Policy 1
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-1.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-1.png" caption="Ví dụ Policy trong game Pac-Man"/>
 
 Giả sử Pac-Man bắt đầu ở vị trí $(0, 2)$, nó sẽ đi sang phải $(0, 3)$, sau đó bị mắc kẹt vì không thể đi lên trên được nữa. Với lượng Random Rate $20\%$ đã cho (thực tế chỉ còn $10\%$ vì sẽ bị dội ngược lại nếu di chuyển sang phải), có thể Pac-Man sẽ quay về bên trái nhưng sau đó lại có tới $80\%$ đi tiếp sang phải. Rõ ràng Policy này không ổn chút nào.
 
 Chúng ta có thể kiểm chứng bằng cách thả Pac-Man vào vị trí $(0, 0)$ và cho nó di chuyển dưới dự ảnh hưởng của Policy này $100$ lần. Đối với những lần Pac-Man đến ô thức ăn màu xanh, ta sẽ kiểm tra Cucumlative Reward nhận được trong quá trình di chuyển:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-frequency-1.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-frequency-1.png" caption="Ví dụ Policy trong game Pac-Man" />
 
 Có thể thấy vì là ngẫu nhiên nên biểu đồ của chúng ta không phân bố đều. Đặc biệt là Cucumlative Reward lớn nhất chỉ có $-10$, trong số đó cũng xảy ra một vài trường hợp chỉ còn $-14$ sau khi đến được ô màu xanh. Chứng tỏ Pac-Man đã đi lòng vòng khá nhiều trước khi có thể đến được đích.
 
@@ -549,35 +531,17 @@ Có thể thấy vì là ngẫu nhiên nên biểu đồ của chúng ta không 
 
 Hãy thử tạo ngẫu nhiên một Policy khác:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-2.png" caption="Ví dụ Policy trong game Pac-Man" />
 
 Thoạt nhìn Policy này trông có vẻ ổn hơn, có một số vị trí không cần phải dựa vào Random Rate vẫn dến được đích như vị trí $(0, 2)$. Bây giờ hãy kiểm tra Cucumlative Reward thu được khi bắt đầu tại vị trí $(0, 0)$:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-frequency-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-frequency-2.png" caption="Ví dụ Policy trong game Pac-Man" />
 
 Kết quả khá ấn tượng khi Cucumlative Reward cao nhất lên đến xấp xỉ $+10$, đây cũng là điểm số tối ưu nhất vì chỉ có Reward của đích đến là dương và là $+10$, chứng tỏ nó đã tốn rất ít bước di chuyển.
 
 Tuy nhiên đây chỉ là do chúng ta mặc định bắt đầu tại $(0, 0)$, hãy thử một vị trí khác là $(2, 0)$:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-frequency-2-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-frequency-2-2.png" caption="Ví dụ Policy trong game Pac-Man" />
 
 Kết quả này thậm chí còn tệ hơn cả Policy 1, vậy là Policy 2 cũng không phải là một Policy tối ưu.
 
@@ -585,23 +549,11 @@ Kết quả này thậm chí còn tệ hơn cả Policy 1, vậy là Policy 2 c�
 
 Lần này chúng ta sẽ không tạo Policy một cách ngẫu nhiên nữa mà sẽ can thiệp vào quá trình này:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-3.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-3.png" caption="Ví dụ Policy trong game Pac-Man" />
 
 Đây là một Policy "nhân tạo" đã được can thiệp, trông có vẻ rất hợp lí vì bất kì vị trí nào cũng đều dẫn đến ô màu xanh một cách ngắn nhất. Hãy kiểm tra Cucumlative Reward thu được khi bắt đầu tại vị trí $(0, 0)$:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-frequency-3.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-frequency-3.png" caption="Ví dụ Policy trong game Pac-Man" />
 
 Một kết quả xuất sắc, Cucumlative Reward cao nhất là $9.4$, có nghĩa là nó chỉ mất $0.6$ điểm, tương đương với $6$ bước di chuyển để đi đến đích. Với các lần thử khác, Random Rate đã khiến nó mất thêm một ít điểm nhưng không vấn đề gì. Chúng ta không cần phải kiểm tra các vị trí khác vì kết quả cũng sẽ tương tự.
 

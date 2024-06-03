@@ -35,7 +35,7 @@ const MessageInput = ({ session }: { session: Session | null }) => {
 				<div className="flex flex-col p-5">
 					<textarea
 						placeholder="Type your message here..."
-						className="h-full w-full items-center justify-center bg-zinc-100 p-2 text-lg focus:outline-none lg:text-2xl"
+						className="h-full w-full items-center justify-center bg-zinc-100 p-2 text-base focus:outline-none lg:text-lg xl:text-xl"
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}
 					/>
@@ -51,13 +51,12 @@ const MessageInput = ({ session }: { session: Session | null }) => {
 				</div>
 			) : (
 				<p className="flex w-full place-items-center justify-center gap-5 p-5">
-					<span className="text-right text-2xl">
+					<span className="text-base lg:text-lg xl:text-xl">
 						Sign in to make a mark on this site
 					</span>
 					<Button
 						variant="primary"
 						size="base"
-						arrow="right"
 						className="mx-0"
 						onClick={async () =>
 							await signIn('google').then(() => router.refresh())

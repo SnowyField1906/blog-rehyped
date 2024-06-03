@@ -80,10 +80,7 @@ Lí do $\frac{1}{2}$ được thêm vào là để đơn giản hóa việc tín
 
 Sau khi tìm được nghiệm, chúng ta có thể quan sát được vị trí tương quan giữa các điểm dữ liệu và model.
 
-<figure>
-<img className="w-full md:w-1/2 flex justify-center mx-auto" alt="Đường hồi quy" src="/static/images/posts/sum-of-squares.png" />
-<figcaption className="text-center text-gray-500">Source: ProProcessEngineer (YouTube)</figcaption>
-</figure>
+<Figure caption="Source: ProProcessEngineer (YouTube)" src="/static/images/posts/sum-of-squares.png" />
 
 ### Lời giải
 
@@ -172,10 +169,7 @@ $$
 \end{align*}
 $$
 
-<figure>
-<img className="w-full md:w-1/2 flex justify-center mx-auto" alt="Đường hồi quy" src="/static/images/posts/assignment-1-chart.png" />
-<figcaption className="text-center text-gray-500">Nghiệm của bài toán là $y = 0.07 + 1.17x$</figcaption>
-</figure>
+<Figure caption="Nghiệm của bài toán là $y = 0.07 + 1.17x$" src="/static/images/posts/assignment-1-chart.png" />
 
 #### Mô hình $y = \theta_0 + \theta_1 e^x + \theta_2 x^2$
 
@@ -315,10 +309,7 @@ $$
 \end{align*}
 $$
 
-<figure>
-<img className="w-full md:w-1/2 flex justify-center mx-auto" alt="Đường hồi quy" src="/static/images/posts/assignment-3-chart.png" />
-<figcaption className="text-center text-gray-500">Nghiệm của bài toán là $y = -0.43 + 1.42x - 0.02x^2$</figcaption>
-</figure>
+<Figure caption="Nghiệm của bài toán là $y = -0.43 + 1.42x - 0.02x^2$" src="/static/images/posts/assignment-3-chart.png" />
 
 ## QR Decomposition
 

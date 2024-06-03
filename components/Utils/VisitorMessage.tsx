@@ -59,19 +59,19 @@ const VisitorMessage = ({
 					</Button>
 				</Popup>
 			)}
-			<p className="mb-5 mt-10 font-heading text-5xl font-light">
+			<p className="mt-2 font-heading text-3xl font-light lg:mb-5 lg:mt-10 lg:text-4xl xl:text-5xl">
 				{visitor.email === email ? 'You' : visitor.name}
 			</p>
 			<div
 				className={cn(
-					'flex w-full place-items-center items-center',
-					reverse && 'flex-row-reverse'
+					'flex w-full flex-col place-items-center items-center lg:flex-row',
+					reverse && 'lg:flex-row-reverse'
 				)}
 			>
-				<div className="flex w-1/2 flex-col gap-3 font-display text-xl text-zinc-500">
+				<div className="flex w-full flex-col gap-1 font-display text-base text-zinc-500 lg:w-1/2 lg:gap-3 lg:text-lg xl:text-xl">
 					<p>{formatDateTime(visitor.createdAt)}</p>
 					{visitor.email === email && (
-						<div className="mx-auto flex w-min gap-5">
+						<div className="mx-auto flex w-min gap-2 lg:gap-5">
 							<Button
 								variant={editPopup ? 'primary' : 'secondary'}
 								size="base"
@@ -91,16 +91,16 @@ const VisitorMessage = ({
 						</div>
 					)}
 				</div>
-				<div className="w-1/2 font-display text-xl">
-					<p className="translate-y-5 select-none text-6xl text-zinc-400">{`“`}</p>
+				<div className="w-full font-display text-base lg:w-1/2 lg:text-lg xl:text-xl">
+					<p className="select-none text-5xl text-zinc-400">{`“`}</p>
 					{editPopup ? (
 						<textarea
-							className="h-auto w-full border border-zinc-900 bg-zinc-100 p-2 text-xl focus:outline-none"
+							className="h-auto w-full -translate-y-5 border border-zinc-900 bg-zinc-100 p-2 text-xl focus:outline-none"
 							value={editContent}
 							onChange={(e) => setEditContent(e.target.value)}
 						/>
 					) : (
-						<p>{visitor.content}</p>
+						<p className="-translate-y-5 ">{visitor.content}</p>
 					)}
 				</div>
 			</div>

@@ -36,14 +36,7 @@ Monte Carlo thực chất là một phương pháp được sử dụng rất nh
 
 Một ví dụ điển hình để hình dung về thuật toán Monte Carlo là việc ước tính giá trị $\pi$ (pi) thông qua việc tạo ra các điểm ngẫu nhiên trong một hình vuông và đếm số điểm nằm trong một hình tròn nằm trong hình vuông đó:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/monte-carlo-pi.gif"
-    alt="Ví dụ về Monte Carlo"
-/>
-<figcaption>Source: medium.com by ln8378</figcaption>
-</figure>
+<Figure name="monte-carlo-pi.gif" caption="Ví dụ về Monte Carlo"/>
 
 Cho đường tròn $x^2 + y^2 = 1$ nội tiếp hình vuông $x \in [-1, 1], y \in [-1, 1]$. Giả sử chúng ta tạo ra $N$ điểm $(x_i, y_i)$ ngẫu nhiên trong hình vuông này. Khi đó, ta sẽ theo dõi số điểm nằm trong hình tròn $N_{circle}$ theo thuật toán sau:
 
@@ -290,33 +283,15 @@ Sau mỗi Episode, chúng ta sẽ khởi tạo lại $\mathbf{C}[s, a]$ và $\te
 
 Lấy ví dụ từ series trước, sau khi chạy thuật toán với 100 Episode, chúng ta có tổng Reward nhận được như sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mc-rewards.png"
-    alt="Reward nhận được sau 1000 Episode"
-/>
-</figure>
+<Figure name="mc-rewards.png" caption="Reward nhận được sau 1000 Episode"/>
 
 Còn đây là tỉ lệ thắng qua mỗi Episode:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mc-winning-rate.png"
-    alt="Tỉ lệ thắng nhận được sau 1000 Episode"
-/>
-</figure>
+<Figure name="mc-winning-rate.png" caption="Tỉ lệ thắng nhận được sau 1000 Episode"/>
 
 Cuối cùng là Policy tính được:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mc-policy.png"
-    alt="Policy sau 1000 Episode"
-/>
-</figure>
+<Figure name="mc-policy.png" caption="Policy sau 1000 Episode"/>
 
 Đây là input từ ADP và MDP, có thể thấy nó không hiệu quả lắm và Policy cũng không hợp lí. Bởi vì không như ADP hay MDP, Monte Carlo rất phụ thuộc vào Reward và nó ảnh hưởng trực tiếp đến Policy. Do đó, chúng ta hãy thử với bộ Reward mới:
 
@@ -333,13 +308,7 @@ $$
 
 Policy thu được đã khả quan hơn rất nhiều:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mc-policy-2.png"
-    alt="Policy sau 1000 Episode"
-/>
-</figure>
+<Figure name="mc-policy-2.png" caption="Policy sau 1000 Episode"/>
 
 ## Triển khai code Python
 

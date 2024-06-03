@@ -95,14 +95,7 @@ $$
 
 ### Kết luận về Gradient Descent
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/gd-example-plot.png"
-    alt="Mô phỏng quá trình Gradient Descent"
-/>
-<figcaption>Source: researchgate.com by Alexander Amini</figcaption>
-</figure>
+<Figure name="gd-example-plot.png" caption="Mô phỏng quá trình Gradient Descent"/>
 
 Ta có thể thấy đường đi của **Gradient Descent** trông như một quả bóng lăn xuống sườn núi. Điều này cũng chính là ý nghĩa của gradient trong lĩnh vực **Vector Calculus** (Giải tích Vector).
 
@@ -151,14 +144,7 @@ $$
 
 #### Kết luận về SGD
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/gd-vs-sgd-example-plot.png"
-    alt="Mô phỏng quá trình SGD so với Gradient Descent"
-/>
-<figcaption>Source: machinelearningcoban.com</figcaption>
-</figure>
+<Figure name="gd-vs-sgd-example-plot.png" caption="Mô phỏng quá trình SGD so với Gradient Descent"/>
 
 Ta có thể thấy đường đi của **SGD** là đường zigzag. Lí do là vì mỗi lần lặp, nó chỉ tính gradient dựa trên một điểm dữ liệu ngẫu nhiên, mà điểm này không thể đại diện cho toàn bộ tập dữ liệu. Do đó, nó sẽ cho ra một hướng đi không chính xác, và cần nhiều lần lặp hơn để đạt được điều kiện dừng.
 
@@ -189,14 +175,7 @@ Chúng ta sẽ không cần phải đi vào chi tiết thuật toán này.
 
 Thuật toán này được triển khai bằng cách thay vì trừ trực tiếp gradient hiện tại vào $w$, ta sẽ trừ với tổng của 2 vector là vector trước đó và gradient hiện tại:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/momentum-vector.png"
-    alt="Mô phỏng quá trình Momentum so với SGD"
-/>
-<figcaption>Source: cs231n.github.io</figcaption>
-</figure>
+<Figure name="momentum-vector.png" caption="Mô phỏng quá trình Momentum so với SGD"/>
 
 Qua hình ảnh ta có thể hình dung được hướng đi của **Momentum** là tổng của 2 vector: hướng đi trước đó và gradient hiện tại.
 
@@ -230,14 +209,7 @@ $$
 
 #### Kết luận về Momentum
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/sgd-vs-momentum-example-plot.png"
-    alt="Mô phỏng vector Momentum"
-/>
-<figcaption>Source: eloquentarduino.github.io</figcaption>
-</figure>
+<Figure name="sgd-vs-momentum-example-plot.png" caption="Mô phỏng vector Momentum"/>
 
 Ta có thể thấy rằng đường đi của **Momentum** đã hẹp hơn so với **SGD** và tiến về phía cực trị nhanh hơn. Chúng ta sẽ biết được **Momentum** có thể vượt qua được local minima như thế nào trong hình minh họa ở phần tiếp theo.
 
@@ -266,14 +238,7 @@ $$
 
 Sau đó, ta sẽ tính gradient của tại vị trí dự đoán này và dùng nó để cập nhật lại các parameter $w$.
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/nag-vector.png"
-    alt="Mô phỏng vector NAG"
-/>
-<figcaption>Source: cs231n.github.io</figcaption>
-</figure>
+<Figure name="nag-vector.png" caption="Mô phỏng vector NAG"/>
 
 Qua hình ảnh ta có thể hình dung được hướng đi của **NAG** là tổng của 2 vector: hướng đi trước đó và gradient tại vị trí dự đoán.
 
@@ -299,14 +264,7 @@ $$
 
 #### Kết luận về NAG
 
-<figure>
-<img
-    className="w-full flex justify-center mx-auto"
-    src="/static/images/posts/sgd-vs-momentum-vs-nag-example-plot.gif"
-    alt="Mô phỏng quá trình NAG so với Momentum và SGD"
-/>
-<figcaption>Source: gbhat.com</figcaption>
-</figure>
+<Figure name="sgd-vs-momentum-vs-nag-example-plot.gif" caption="Mô phỏng quá trình NAG so với Momentum và SGD"/>
 
 Ta có thể thấy rằng cả **Momentum** và **NAG** đều có khả năng vượt qua được local minima. Tuy nhiên, **NAG** không bị mất thời gian dao động khi đến đích như **Momentum**.
 
@@ -487,11 +445,4 @@ Chúng ta sẽ không cần phải đi vào chi tiết thuật toán này.
 
 ## Kết luận
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/optimizers-comparison.gif"
-    alt="So sánh các thuật toán optimizer"
-/>
-<figcaption>Source: analyticsvidhya.com/</figcaption>
-</figure>
+<Figure name="optimizers-comparison.gif" caption="So sánh các thuật toán optimizer"/>

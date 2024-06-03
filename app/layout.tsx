@@ -30,9 +30,9 @@ const RootLayout = ({
 				/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<Analytics />
-				<main className="flex h-full min-h-screen w-full flex-col gap-20">
+				<main className="flex h-full min-h-screen w-full flex-col gap-10 lg:gap-14 xl:gap-20">
 					<Header />
-					<div className="mx-auto flex w-11/12 flex-col gap-20 lg:w-3/4">
+					<div className="mx-auto flex w-11/12 flex-col gap-10 lg:w-3/4 lg:gap-14 xl:gap-20">
 						{children}
 					</div>
 					<Footer />

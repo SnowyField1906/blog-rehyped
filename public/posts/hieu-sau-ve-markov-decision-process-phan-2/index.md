@@ -14,8 +14,6 @@ _Markov Decision Process (MDP) là một bài toán Dynamic Programming (Quy ho�
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration._
 
-<img className="w-full flex justify-center mx-auto" src="/static/images/thumbnails/hieu-sau-ve-markov-decision-process.png" alt="Hiểu sâu về Markov Decision Process" />
-
 > Khuyến nghị đọc trước [Phần 1](https://rehyped.snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-1) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
@@ -179,13 +177,7 @@ $$
 
 Để dễ hình dung, hãy xem qua hình bên dưới:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-2.png" caption="Ví dụ Policy trong game Pac-Man 2"/>
 
 Giả sử Pac-Man bắt đầu tại State $s_0 = 2$, ta sẽ có:
 
@@ -290,13 +282,7 @@ $$
 
 Quay lại với ví dụ trước:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-2.png" caption="Ví dụ Policy trong game Pac-Man 2"/>
 
 Thay vì:
 
@@ -330,13 +316,7 @@ Thuật toán Policy Evaluation có 2 cách triển khai chính là **Xấp xỉ
 
 Trước hết, ta sẽ mượn lại Policy ở ví dụ trên:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-2.png" caption="Ví dụ Policy trong game Pac-Man"/>
 
 Ta sẽ liệt kê Value của toàn bộ State:
 
@@ -521,23 +501,11 @@ Sau khi tìm được Value mới, ta sẽ cập nhật Policy hiện tại bằ
 
 -   Trước:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-evaluation.png"
-    alt="Ví dụ Evaluation trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-evaluation.png" caption="Ví dụ Evaluation trong trong game Pac-Man"/>
 
 -   Sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-improvement.png"
-    alt="Ví dụ Evaluation trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-improvement.png" caption="Ví dụ Improvement trong trong game Pac-Man"/>
 
 Kết quả khá khả qua khi sau lần Policy Improvement đầu tiên, Policy đã ở trạng thái tối ưu rồi.
 
@@ -555,25 +523,13 @@ $$
 
 Ta có kết quả sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-improvement-2.png"
-    alt="Ví dụ Evaluation trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-improvement-2.png" caption="Ví dụ Evaluation trong game Pac-Man"/>
 
 ### Kết luận
 
 Vì Policy sau lần Improvement thứ 2 không có sự thay đổi nào so với Policy Improvement lần 1 nên thuật toán sẽ dừng lại.
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-final-pi.png"
-    alt="Kết quả Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-final-pi.png" caption="Kết quả Policy trong game Pac-Man"/>
 
 ## Triển khai code Python
 

@@ -32,7 +32,7 @@ const Visitor = async () => {
 		<>
 			<Title primary={metadata!.title} secondary={metadata!.description} />
 			<MessageInput session={session} />
-			<div className="flex flex-col justify-center gap-10 text-center">
+			<div className="flex flex-col justify-center gap-4 text-center lg:gap-10">
 				{visitors.map((visitor, index) => (
 					<>
 						<VisitorMessage
@@ -42,11 +42,14 @@ const Visitor = async () => {
 							reverse={index % 2 === 0}
 						/>
 						{index !== visitors.length - 1 && (
-							<div className="flex-col -space-y-5">
-								<p className="text-4xl text-zinc-900">•</p>
-								<div className="mx-auto h-28 w-min border border-zinc-900"></div>
-								<p className="text-4xl text-zinc-900">•</p>
-							</div>
+							<>
+								<div className="hidden flex-col -space-y-5 lg:flex">
+									<p className="text-4xl text-zinc-900">•</p>
+									<div className="mx-auto h-20 w-min border border-zinc-900 lg:h-28"></div>
+									<p className="text-4xl text-zinc-900">•</p>
+								</div>
+								<hr className="mx-auto mt-5 h-min w-1/2 border-[0.5px] border-zinc-500 lg:hidden" />
+							</>
 						)}
 					</>
 				))}

@@ -114,13 +114,7 @@ Do đó, chúng ta sẽ phải sử dụng phương pháp **Xấp xỉ Value** �
 
 Trước hết, ta sẽ mượn lại bản đồ từ ví dụ trước (không cần quan tâm đến Policy nữa):
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-policy-2.png"
-    alt="Ví dụ Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-policy-2.png" caption="Ví dụ Policy trong game Pac-Man 2"/>
 
 Ta sẽ chỉ liệt kê một State làm ví dụ, ở phần trước, $\mathcal{V}(11)$ được biểu diễn như sau:
 
@@ -208,13 +202,8 @@ Value Iteration cũng sẽ có Policy Improvement với thuật toán hoàn toà
 
 Đây là kết quả cuối cùng, sau khi chạy Policy Improvement:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mdp-world-final-vi.png"
-    alt="Kết quả Policy trong game Pac-Man"
-/>
-</figure>
+<Figure name="mdp-world-final-vi.png" caption="Ví dụ Policy trong game Pac-Man"/>
+
 
 ## Triển khai code Python
 

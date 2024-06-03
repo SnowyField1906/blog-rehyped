@@ -13,27 +13,21 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import siteMetadata from '@/data/siteMetadata.json'
 import Button from '@components/Common/Button'
 import Image from '@components/Common/Image'
-import Loading from '@components/Common/Loading'
 import cn from '@libs/class'
 
 const Header = () => {
 	const router = useRouter()
-	const [loading, setLoading] = useState(true)
 	const [session, setSession] = useState<Session | null>()
 	const [isOpen, setIsOpen] = useState(false)
+	const [mount, setMount] = useState(false)
 
 	useEffect(() => {
+		setMount(true)
 		;(async () => {
-			setLoading(true)
-
 			const session = await getSession()
 			setSession(session)
-
-			setLoading(false)
 		})()
 	}, [])
-
-	if (loading) return <Loading fullScreen />
 
 	return (
 		<header className="grid w-full select-none p-8 tracking-wide text-zinc-900 lg:px-20">
@@ -46,21 +40,23 @@ const Header = () => {
 				</Link>
 				<Menu as="div" className="block lg:hidden">
 					<Menu.Button className="ml-2 cursor-pointer rounded-full bg-zinc-300 ring-zinc-400 transition-all hover:ring-1">
-						<motion.button
-							className="flex h-8 w-8 items-center justify-center p-2"
-							whileTap={{
-								scale: 0.5,
-							}}
-							transition={{ duration: 0.1, ease: 'easeIn' }}
-							aria-label="Toggle List Menu"
-							type="button"
-						>
-							{isOpen ? (
-								<RxHamburgerMenu className="h-4 w-4" />
-							) : (
-								<RxHamburgerMenu className="h-4 w-4" />
-							)}
-						</motion.button>
+						{mount && (
+							<motion.button
+								className="flex h-8 w-8 items-center justify-center p-2"
+								whileTap={{
+									scale: 0.5,
+								}}
+								transition={{ duration: 0.1, ease: 'easeIn' }}
+								aria-label="Toggle List Menu"
+								type="button"
+							>
+								{isOpen ? (
+									<RxHamburgerMenu className="h-4 w-4" />
+								) : (
+									<RxHamburgerMenu className="h-4 w-4" />
+								)}
+							</motion.button>
+						)}
 					</Menu.Button>
 
 					<Transition
@@ -115,10 +111,10 @@ const Header = () => {
 													{session ? (
 														<>
 															<div className="mr-2 flex w-8 flex-row items-center">
-																{session.user?.image ? (
+																{session?.user?.image ? (
 																	<img
 																		className="h-6 w-6 cursor-pointer rounded-full"
-																		src={session.user.image}
+																		src={session?.user.image}
 																		alt="User Profile Icon"
 																	/>
 																) : (
@@ -135,18 +131,16 @@ const Header = () => {
 															</div>
 														</>
 													) : (
-														<>
-															<div
-																className="w-full text-left"
-																onClick={async () =>
-																	await signIn('google').then(() =>
-																		router.refresh()
-																	)
-																}
-															>
-																Sign in
-															</div>
-														</>
+														<div
+															className="w-full text-left"
+															onClick={async () =>
+																await signIn('google').then(() =>
+																	router.refresh()
+																)
+															}
+														>
+															Sign in
+														</div>
 													)}
 												</div>
 											</a>
@@ -170,30 +164,24 @@ const Header = () => {
 							</Link>
 						))}
 					{session ? (
-						<>
-							<Button
-								variant="text"
-								size="xs"
-								className="flex items-center gap-2 rounded-full text-black ring-1 ring-zinc-500 hover:bg-zinc-300 hover:text-black"
-							>
-								<Image
-									alt="User avatar"
-									src={session?.user?.image || ''}
-									width={30}
-									height={30}
-									className="mx-auto ml-2 rounded-full"
-								/>
-								<p className="py-2 pl-4 pr-6">{session?.user?.name}</p>
-							</Button>
+						<div className="flex items-center gap-2 rounded-full p-1 text-black ring-1 ring-zinc-500 ">
+							<Image
+								alt="User avatar"
+								src={session?.user?.image || ''}
+								width={30}
+								height={30}
+								className="mx-auto ml-2 rounded-full"
+							/>
+							<p className="px-2 py-2">{session?.user?.name}</p>
 							<button
 								onClick={async () =>
 									await signOut().then(() => router.refresh())
 								}
 								className="rounded-full text-zinc-500 transition-all duration-200 ease-in-out hover:text-black"
 							>
-								<AiOutlineLogout className="h-7 w-7" />
+								<AiOutlineLogout className="mr-2 h-6 w-6" />
 							</button>
-						</>
+						</div>
 					) : (
 						<Button
 							variant="secondary"

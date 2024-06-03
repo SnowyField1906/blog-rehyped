@@ -16,7 +16,6 @@ const config: Config = {
             sans: ['Sarabun', 'sans-serif'],
             serif: ['Noto Serif JP', 'serif'],
             heading: ['Cormorant SC', 'serif'],
-            display: ['Yrsa', 'serif'],
             display: ['Playfair Display', 'serif'],
         },
         fontSize: {
@@ -140,6 +139,7 @@ const config: Config = {
                     '[class~="katex"]': {
                         fontSize: theme('fontSize.xl')[0],
                         color: 'var(--tw-prose-bold)',
+                        overflowX: 'hidden',
                         ...theme('fontSize.xl')[1],
                     },
 
@@ -270,7 +270,7 @@ const config: Config = {
                         fontSize: theme('fontSize.3xl')[0],
                         ...theme('fontSize.3xl')[1],
                         marginTop: theme('spacing.12'),
-                        marginBottom: theme('spacing.6'),
+                        marginBottom: theme('spacing.8'),
                     },
                     h3: {
                         color: 'var(--tw-prose-headings)',
@@ -278,7 +278,33 @@ const config: Config = {
                         ...theme('fontSize.2xl')[1],
                         fontWeight: '600',
                         marginTop: theme('spacing.10'),
+                        marginBottom: theme('spacing.6'),
+                    },
+                    h4: {
+                        color: 'var(--tw-prose-headings)',
+                        fontSize: theme('fontSize.xl')[0],
+                        ...theme('fontSize.xl')[1],
+                        fontWeight: '600',
+                        marginTop: theme('spacing.8'),
                         marginBottom: theme('spacing.4'),
+                    },
+                    h5: {
+                        color: 'var(--tw-prose-headings)',
+                        fontSize: theme('fontSize.lg')[0],
+                        ...theme('fontSize.lg')[1],
+                        fontWeight: '600',
+                        marginTop: theme('spacing.8'),
+                        marginBottom: theme('spacing.4'),
+                    },
+
+                    figcaption: {
+                        color: 'var(--tw-prose-captions)',
+                        fontSize: theme('fontSize.base')[0],
+                        letterSpacing: '0.01em',
+                        textAlign: 'center',
+                        fontFamily: theme('fontFamily.sans').join(', '),
+                        ...theme('fontSize.base')[1],
+                        marginTop: theme('spacing.2'),
                     },
 
                     // Media
@@ -290,14 +316,14 @@ const config: Config = {
                         marginTop: '0',
                         marginBottom: '0',
                     },
-                    figcaption: {
-                        color: 'var(--tw-prose-captions)',
-                        fontSize: theme('fontSize.base')[0],
-                        letterSpacing: '0.01em',
+                    '[class~="math-display"]': {
                         textAlign: 'center',
-                        fontFamily: theme('fontFamily.sans').join(', '),
-                        ...theme('fontSize.base')[1],
-                        marginTop: theme('spacing.2'),
+                        overflowX: 'auto',
+                        width: '100%',
+                    },
+                    '[class~="tag"]': {
+                        paddingLeft: '10px',
+                        paddingRight: '2px',
                     },
 
                     // Tables
@@ -439,6 +465,10 @@ const config: Config = {
                     h3: {
                         fontSize: theme('fontSize.xl')[0],
                         ...theme('fontSize.xl')[1],
+                    },
+                    h4: {
+                        fontSize: theme('fontSize.lg')[0],
+                        ...theme('fontSize.lg')[1],
                     },
                 },
             },

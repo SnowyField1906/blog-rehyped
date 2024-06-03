@@ -199,33 +199,15 @@ $$
 
 Lấy ví dụ từ series trước, sau khi chạy thuật toán với 100 Episode, chúng ta có tổng Reward nhận được như sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/adp-rewards.png"
-    alt="Reward nhận được sau 1000 Episode"
-/>
-</figure>
+<Figure name="adp-rewards.png" caption="Reward nhận được sau 1000 Episode" />
 
 Còn đây là tỉ lệ thắng qua mỗi Episode:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/adp-winning-rate.png"
-    alt="Tỉ lệ thắng nhận được sau 1000 Episode"
-/>
-</figure>
+<Figure name="adp-winning-rate.png" caption="Tỉ lệ thắng nhận được sau 1000 Episode" />
 
 Cuối cùng là Value tính được:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/adp-values.png"
-    alt="Value sau 1000 Episode"
-/>
-</figure>
+<Figure name="adp-values.png" caption="Value sau 1000 Episode" />
 
 ## Triển khai code Python
 

@@ -30,14 +30,14 @@ const Button = ({
 	const Component = props?.href ? (isAnchor ? 'a' : Link) : 'button'
 
 	className = cn(
-		'not-prose inline-flex gap-0.5 w-fit mx-auto justify-center overflow-hidden select-none font-normal font-sans place-items-center items-center transition-all duration-200 ease-in-out tracking-wide',
+		'not-prose inline-flex gap-0.5 text-nowrap w-fit mx-auto justify-center overflow-hidden select-none font-normal font-sans place-items-center items-center transition-all duration-200 ease-in-out tracking-wide',
 		variantStyles[variant],
 		`text-${size}`,
-		size === 'xl' && 'px-9 py-3',
-		size === 'lg' && 'px-7 py-2',
-		size === 'base' && 'px-6 py-[6px]',
-		size === 'sm' && 'px-3 py-[4px]',
-		size === 'xs' && 'px-1` py-1`',
+		size === 'xl' && 'text-lg lg:text-xl px-9 py-3',
+		size === 'lg' && 'text-base lg:text-lg px-7 lg:py-2',
+		size === 'base' && 'text-sm lg:text-base px-6 lg:py-[6px]',
+		size === 'sm' && 'text-xs lg:text-sm px-3 lg:py-[4px]',
+		size === 'xs' && 'text-2xs lg:text-xs px-1 lg:py-1`',
 		onDisabled ? 'pointer-events-none bg-zinc-600' : 'cursor-pointer',
 		className
 	)

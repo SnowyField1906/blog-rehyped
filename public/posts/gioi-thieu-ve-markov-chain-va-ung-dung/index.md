@@ -29,14 +29,7 @@ Tất cả xe đạp phải được trả lại trạm vào cuối ngày tại 
 
 Khi đó ta có thể biểu diễn Markov Chain của dịch vụ thuê xe đạp này như hình bên dưới.
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/markov-example.png"
-    alt="Mô phỏng ví dụ về Markov Chain"
-/>
-<figcaption>Source: math.libretexts.org</figcaption>
-</figure>
+<Figure name="markov-example.png" caption="Mô phỏng ví dụ về Markov Chain"/>
 
 Qua đó, ta có thể thấy rằng Markov Chain có thể được biểu diễn bởi một **Directed Networks** (Mạng Có hướng), trong đó các đỉnh là tập hợp các **State** (Trạng thái) có thể xảy ra, với trọng số là xác suất chuyển từ một trạng thái này sang trạng thái khác.
 
@@ -273,13 +266,7 @@ $$
 
 Cho một con chuột sống trong căn nhà gồm $4$ phòng như sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/mouse-room-example.png"
-    alt="Mô phỏng căn nhà của con chuột"
-/>
-</figure>
+<Figure name="mouse-room-example.png" caption="Mô phỏng căn nhà của con chuột"/>
 
 Mỗi ngày, con chuột sẽ lựa chọn ngẫu nhiên giữa việc ở lại phòng hiện tại với xác suất $1/4$, hoặc di chuyển đến một phòng liền kề với xác suất $3/4$.
 
@@ -319,13 +306,7 @@ Dựa vào ý tưởng của bài toán con chuột, ta có thể sử dụng Ma
 
 Ví dụ khi ta nhập từ "I", sẽ có một xác suất sinh ra từ "can", và với từ "can", sẽ có một xác suất sinh ra từ "fix" hoặc "not", và với từ "not", sẽ có một xác suất sinh ra từ "fix",...
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/text-room-example.png"
-    alt="Mô phỏng ví dụ về language model đơn giản bằng Markov Chain"
-/>
-</figure>
+<Figure name="text-room-example.png" caption="Mô phỏng ví dụ về language model đơn giản bằng Markov Chain"/>
 
 Để có thể triển khai được mô hình này, ta cần một đoạn văn lớn làm dữ liệu, và [shakespeare.txt](https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt) là một tập dữ liệu phù hợp cho ví dụ này.
 

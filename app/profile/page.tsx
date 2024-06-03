@@ -22,7 +22,7 @@ export const generateMetadata = (): Metadata => {
 
 const Profile = async () => {
 	return (
-		<main className="m-auto flex h-full w-11/12 flex-col place-items-center items-center gap-10 lg:w-3/4">
+		<>
 			<Title primary={metadata!.title} secondary={metadata!.description} />
 			<div className="grid w-full grid-cols-2">
 				<div className="flex flex-col gap-28">
@@ -57,7 +57,7 @@ const Profile = async () => {
 					</ProfileSpecific>
 				</div>
 			</div>
-		</main>
+		</>
 	)
 }
 

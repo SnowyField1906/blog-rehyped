@@ -26,7 +26,7 @@ const Tag = ({
 		<Link
 			href={name === '' ? `/${page}` : `/${page}?${is}=${name}`}
 			className={cn(
-				'text-nowrap uppercase tracking-wider',
+				'text-nowrap uppercase lg:tracking-wider',
 				isActive
 					? 'stable-minimal-link pointer-events-none text-black'
 					: 'minimal-link text-zinc-800'

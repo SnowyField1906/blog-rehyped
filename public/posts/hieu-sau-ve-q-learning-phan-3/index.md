@@ -120,23 +120,11 @@ Q-Value (learning rate): 5.42
 
 Có thể thấy rằng sử dụng learning rate cũng cho kết quả xấp xỉ với sample-average:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/comparison-q-learning.png"
-    alt="Q-Value với learning rate và sample-average"
-/>
-</figure>
+<Figure name="comparison-q-learning.png" caption="Q-Value với learning rate và sample-average"/>
 
 Còn đây là với $\alpha = 0.4$:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/comparison-q-learning-2.png"
-    alt="Q-Value với learning rate và sample-average"
-/>
-</figure>
+<Figure name="comparison-q-learning-2.png" caption="Q-Value với learning rate và sample-average"/>
 
 Qua đó, với một learning rate nhỏ, chúng ta có xu hướng tin vào kinh nghiệm trong quá khứ (quá trình học ít dao động hơn), còn với một learning rate lớn, chúng ta có xu hướng tin vào những gì đang xảy ra (quá trình học dao động nhiều hơn).
 
@@ -237,33 +225,15 @@ $$
 
 Lấy ví dụ từ series trước, sau khi chạy thuật toán với 100 Episode, chúng ta có tổng Reward nhận được như sau:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/q-rewards.png"
-    alt="Reward nhận được sau 1000 Episode"
-/>
-</figure>
+<Figure name="q-rewards.png" caption="Reward nhận được sau 1000 Episode"/>
 
 Còn đây là tỉ lệ thắng qua mỗi Episode:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/q-winning-rate.png"
-    alt="Tỉ lệ thắng nhận được sau 1000 Episode"
-/>
-</figure>
+<Figure name="q-winning-rate.png" caption="Tỉ lệ thắng nhận được sau 1000 Episode"/>
 
 Cuối cùng là Policy tính được:
 
-<figure>
-<img
-    className="w-full md:w-1/2 flex justify-center mx-auto"
-    src="/static/images/posts/q-policy.png"
-    alt="Policy sau 1000 Episode"
-/>
-</figure>
+<Figure name="q-policy.png" caption="Policy sau 1000 Episode"/>
 
 ## Triển khai code Python
 

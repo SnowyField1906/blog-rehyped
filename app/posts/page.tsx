@@ -44,18 +44,16 @@ const Post = async ({
 	return (
 		<>
 			<Title primary={metadata!.title} secondary={metadata!.description} />
-			<div className="flex gap-5 overflow-x-auto overflow-y-hidden pb-3">
+			<div className="flex flex-wrap justify-center gap-3 text-2xs lg:gap-5 lg:text-sm xl:text-base">
 				<Tag />
 				{tags.map(([tag, count]) => (
 					<Tag key={tag} name={tag} count={count as number} />
 				))}
 			</div>
-			<div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-				<div className="grid gap-6 lg:grid-cols-2">
-					{frontmatters.map((frontmatter) => (
-						<PostPreview key={frontmatter.slug} frontmatter={frontmatter} />
-					))}
-				</div>
+			<div className="grid gap-6 lg:grid-cols-2">
+				{frontmatters.map((frontmatter) => (
+					<PostPreview key={frontmatter.slug} frontmatter={frontmatter} />
+				))}
 			</div>
 		</>
 	)

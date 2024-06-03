@@ -153,6 +153,36 @@ input:-webkit-autofill:focus {
     -webkit-transition: width 0.25s ease;
 }
 
+@media (max-width: 600px) {
+    .katex-display > .katex > .katex-html > .tag {
+        position: relative !important;
+        right: 0;
+    }
+}
+
+@media (min-width: 600px) {
+    .katex-display > .katex > .katex-html > .tag {
+        position: absolute !important;
+        right: 0;
+    }
+}
+
+/* downscale latex font size by 80% */
+.math-display > .katex-display > .katex > .katex-html {
+    font-size: 90%;
+    letter-spacing: -0.05em;
+}
+
+.math-inline > .katex > .katex-html {
+    font-size: 90%;
+    letter-spacing: -0.05em;
+}
+
+/* prevent katex increase width by overflow */
+.math-display > .katex-display > .katex > .katex-html > .tag {
+    overflow: hidden;
+}
+
 .pushable {
     position: relative;
     border: none;
