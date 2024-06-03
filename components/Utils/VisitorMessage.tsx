@@ -64,11 +64,11 @@ const VisitorMessage = ({
 			</p>
 			<div
 				className={cn(
-					'flex w-full flex-col place-items-center items-center lg:flex-row',
+					'flex w-full flex-col place-items-center items-center gap-2 lg:flex-row lg:gap-0',
 					reverse && 'lg:flex-row-reverse'
 				)}
 			>
-				<div className="flex w-full flex-col gap-1 font-display text-base text-zinc-500 lg:w-1/2 lg:gap-3 lg:text-lg xl:text-xl">
+				<div className="flex w-full flex-col gap-2 font-display text-base text-zinc-500 lg:w-1/2 lg:gap-3 lg:text-lg xl:text-xl">
 					<p>{formatDateTime(visitor.createdAt)}</p>
 					{visitor.email === email && (
 						<div className="mx-auto flex w-min gap-2 lg:gap-5">

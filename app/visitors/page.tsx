@@ -48,7 +48,7 @@ const Visitor = async () => {
 									<div className="mx-auto h-20 w-min border border-zinc-900 lg:h-28"></div>
 									<p className="text-4xl text-zinc-900">•</p>
 								</div>
-								<hr className="mx-auto mt-5 h-min w-1/2 border-[0.5px] border-zinc-500 lg:hidden" />
+								<hr className="mx-auto h-min w-1/2 border-[0.5px] border-zinc-500 lg:hidden" />
 							</>
 						)}
 					</>

@@ -24,8 +24,8 @@ const Profile = async () => {
 	return (
 		<>
 			<Title primary={metadata!.title} secondary={metadata!.description} />
-			<div className="grid w-full grid-cols-2">
-				<div className="flex flex-col gap-28">
+			<div className="flex w-full flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-0">
+				<div className="flex flex-col gap-10 lg:gap-28">
 					<ProfileSpecific title="Present" className="ml-auto">
 						<p>{`I have been trying to shift my field from Blockchain to Machine Learning as a backup plan. I'm following a lot of cool repositories on Github but I still don't have time to try them out.`}</p>
 						<p>{`I'm currently pursuing my favorite major at my dream university, but I've been enduring a lot of pain and frustration with it due to various reasons. I wish to leave it as soon as possible and my goal is to apply to a remote university abroad in the near future.`}</p>
@@ -37,8 +37,8 @@ const Profile = async () => {
 						<p>{`Lately, I've been looping Hustlang Robber songs quite a bit. However, if I could recommend some rappers to you, they would be MCK, Wxrdie, and Binz.`}</p>
 					</ProfileSpecific>
 				</div>
-				<div className="flex flex-col gap-28">
-					<ProfileSpecific title="Preferences" className="ml-auto mt-28">
+				<div className="flex flex-col gap-10 lg:gap-28">
+					<ProfileSpecific title="Preferences" className="ml-auto lg:mt-28">
 						<p>{`I have a deep passion for knowledge and research, particularly in Mathematics, Science, and Spirituality also. I'm drawn to abstract and enigmatic concepts that challenge understanding. My choices consistently lean towards the atypical and out of the ordinary. Sometimes I hate this.`}</p>
 						<p>{`My preferred destinations are Japan, Taiwan, and especially Nordic countries. But there is no place I love more than Vietnam, my born-and-raised home.`}</p>
 						<p>{`I have a fondness for purple, all shades of purple. Additionally, I also like blue, white, and black.`}</p>
@@ -49,8 +49,8 @@ const Profile = async () => {
 						<p>{`Besides Anime, I also enjoy indulging in J-dramas, Documentaries, and Science films. However, I specifically prefer movies over series due to my lack of patience.`}</p>
 					</ProfileSpecific>
 				</div>
-				<div className="col-span-2 flex flex-col gap-28">
-					<ProfileSpecific title="Personality" className="mx-auto mt-28">
+				<div className="col-span-2 flex flex-col gap-10 lg:gap-28">
+					<ProfileSpecific title="Personality" className="mx-auto lg:mt-28">
 						<p>{`While I'm not strictly a Jungian, I find that delving into MBTI occasionally helps unearth some of my traits that I have never realized. Describing myself is challenging, so I borrow those ides to do aid in self-expression.`}</p>
 						<p>{`It's fortunate that mine is exactly INFJ type. Nevertheless, it's prone to lead me entering the negative Ni-Ti Loop, which makes me incredibly draining.`}</p>
 						<p>{`By the way, my Enneagram is 4 with wing 5, instinctual variant so/sp and tritype 461.`}</p>
