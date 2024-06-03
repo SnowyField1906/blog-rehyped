@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import * as service from '@services/checkin'
+import * as service from '@services/visitor'
 
 export const GET = async () => {
     const res = await service.findAll()

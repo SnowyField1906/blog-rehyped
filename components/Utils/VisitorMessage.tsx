@@ -7,42 +7,40 @@ import Button from '@components/Common/Button'
 import Popup from '@components/Common/Popup'
 import { DELETE, PUT } from '@libs/api'
 import cn from '@libs/class'
-import { formatDate } from '@libs/date'
+import { formatDate, formatDateTime } from '@libs/date'
 
-const CheckInMessage = ({
+const VisitorMessage = ({
 	email,
-	checkIn,
+	visitor,
 	reverse,
 }: {
 	email: string | null | undefined
-	checkIn: CheckIn & { _id: any }
+	visitor: Visitor
 	reverse: boolean
 }) => {
 	const [loading, setLoading] = useState(false)
 	const [deletePopup, setDeletePopup] = useState(false)
 	const [editPopup, setEditPopup] = useState(false)
-	const [editContent, setEditContent] = useState(checkIn.content)
+	const [editContent, setEditContent] = useState(visitor.content)
 
 	const router = useRouter()
 
 	const handleDelete = async () => {
 		setLoading(true)
-		const { _id, ...rest } = checkIn
-		await DELETE('/checkin', rest, true)
+		await DELETE('/visitor', visitor, true)
 		setDeletePopup(false)
 		setLoading(false)
 		router.refresh()
 	}
 	const handleEdit = async () => {
 		setLoading(true)
-		const { _id, ...rest } = checkIn
-		await PUT('/checkin', { ...rest, content: editContent }, true)
+		await PUT('/visitor', { ...visitor, content: editContent }, true)
 		setEditPopup(false)
 		setLoading(false)
 		router.refresh()
 	}
 
-	const invalidEdit = editContent === checkIn.content || editContent === ''
+	const invalidEdit = editContent === visitor.content || editContent === ''
 
 	return (
 		<div className="w-full text-center">
@@ -62,7 +60,7 @@ const CheckInMessage = ({
 				</Popup>
 			)}
 			<p className="mb-5 mt-10 font-heading text-5xl font-light">
-				{checkIn.email === email ? 'You' : checkIn.name}
+				{visitor.email === email ? 'You' : visitor.name}
 			</p>
 			<div
 				className={cn(
@@ -70,9 +68,9 @@ const CheckInMessage = ({
 					reverse && 'flex-row-reverse'
 				)}
 			>
-				<div className="flex w-1/2 flex-col gap-3 font-decoration text-3xl text-zinc-400">
-					<p>{formatDate(checkIn.createdAt)}</p>
-					{checkIn.email === email && (
+				<div className="flex w-1/2 flex-col gap-3 font-display text-xl text-zinc-500">
+					<p>{formatDateTime(visitor.createdAt)}</p>
+					{visitor.email === email && (
 						<div className="mx-auto flex w-min gap-5">
 							<Button
 								variant={editPopup ? 'primary' : 'secondary'}
@@ -93,16 +91,16 @@ const CheckInMessage = ({
 						</div>
 					)}
 				</div>
-				<div className="w-1/2 font-decoration text-2xl">
+				<div className="w-1/2 font-display text-xl">
 					<p className="translate-y-5 select-none text-6xl text-zinc-400">{`“`}</p>
 					{editPopup ? (
 						<textarea
-							className="h-auto w-full border border-zinc-900 bg-zinc-100 p-2 text-2xl focus:outline-none"
+							className="h-auto w-full border border-zinc-900 bg-zinc-100 p-2 text-xl focus:outline-none"
 							value={editContent}
 							onChange={(e) => setEditContent(e.target.value)}
 						/>
 					) : (
-						<p>{checkIn.content}</p>
+						<p>{visitor.content}</p>
 					)}
 				</div>
 			</div>
@@ -110,4 +108,4 @@ const CheckInMessage = ({
 	)
 }
 
-export default CheckInMessage
+export default VisitorMessage

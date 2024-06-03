@@ -3,14 +3,14 @@ import { Session } from 'next-auth'
 import React from 'react'
 
 import Title from '@components/Common/Title'
-import CheckInMessage from '@components/Utils/CheckInMessage'
 import MessageInput from '@components/Utils/MessageInput'
+import VisitorMessage from '@components/Utils/VisitorMessage'
 import siteMetadata from '@data/siteMetadata.json'
 import { auth } from '@libs/auth'
-import { findAll } from '@services/checkin'
+import { findAll } from '@services/visitor'
 
 const metadata = siteMetadata.internalLinks.find(
-	(link) => link.title === 'Checkin'
+	(link) => link.title === 'Visitors'
 )
 
 export const generateMetadata = (): Metadata => {
@@ -24,24 +24,24 @@ export const generateMetadata = (): Metadata => {
 	}
 }
 
-const CheckIn = async () => {
+const Visitor = async () => {
 	const session: Session | null = await auth()
-	const checkIns: (CheckIn & { _id: any })[] = await findAll()
+	const visitors: Visitor[] = await findAll()
 
 	return (
-		<main className="m-auto flex h-full w-11/12 flex-col place-items-center items-center gap-10 lg:w-3/4">
+		<>
 			<Title primary={metadata!.title} secondary={metadata!.description} />
 			<MessageInput session={session} />
 			<div className="flex flex-col justify-center gap-10 text-center">
-				{checkIns.map((checkIn, index) => (
+				{visitors.map((visitor, index) => (
 					<>
-						<CheckInMessage
+						<VisitorMessage
 							key={index}
 							email={session?.user?.email}
-							checkIn={checkIn}
+							visitor={visitor}
 							reverse={index % 2 === 0}
 						/>
-						{index !== checkIns.length - 1 && (
+						{index !== visitors.length - 1 && (
 							<div className="flex-col -space-y-5">
 								<p className="text-4xl text-zinc-900">•</p>
 								<div className="mx-auto h-28 w-min border border-zinc-900"></div>
@@ -51,8 +51,8 @@ const CheckIn = async () => {
 					</>
 				))}
 			</div>
-		</main>
+		</>
 	)
 }
 
-export default CheckIn
+export default Visitor

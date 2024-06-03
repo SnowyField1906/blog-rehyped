@@ -14,7 +14,7 @@ const RootLayout = ({
 	children: React.ReactNode
 }>) => {
 	return (
-		<html lang="en" className="scroll-smooth">
+		<html lang="en" className="scroll-smooth bg-zinc-100">
 			<DocumentHead />
 			<body>
 				<NextTopLoader
@@ -30,11 +30,13 @@ const RootLayout = ({
 				/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<Analytics />
-				<div className="flex h-full min-h-screen flex-col gap-20 bg-zinc-100">
+				<main className="flex h-full min-h-screen w-full flex-col gap-20">
 					<Header />
-					{children}
+					<div className="mx-auto flex w-11/12 flex-col gap-20 lg:w-3/4">
+						{children}
+					</div>
 					<Footer />
-				</div>
+				</main>
 			</body>
 		</html>
 	)

@@ -6,8 +6,13 @@ import * as service from '@services/view'
 export const GET = async (req: NextRequest) => {
     const { slug } = deserializeParams(req.nextUrl.searchParams)
 
-    const res = await service.find(slug)
-    return NextResponse.json(res)
+    if (slug) {
+        const res = await service.find(slug)
+        return NextResponse.json(res)
+    } else {
+        const res = await service.count()
+        return NextResponse.json(res)
+    }
 }
 
 export const POST = async (req: NextRequest) => {

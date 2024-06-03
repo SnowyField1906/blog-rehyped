@@ -18,6 +18,16 @@ export const formatDate = (date, ago = false) => {
     return now
 }
 
+export const formatDateTime = (date) => {
+    return new Date(date).toLocaleString(siteMetadata.locale, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+    })
+}
+
 export const convertDate = (date: string) => {
     const d = new Date(date)
     const year = d.getFullYear()

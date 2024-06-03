@@ -11,7 +11,10 @@ import remarkFootnotes from 'remark-footnotes'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 
-import { getAllFirstLevelFolders } from '@/libs/files'
+import {
+    getAllFirstLevelFolders,
+    getCountAllFirstLevelFolders,
+} from '@/libs/files'
 import {
     remarkCodeTitles,
     remarkExtractfrontmatter,
@@ -118,4 +121,8 @@ export const getAllFrontmatters = (): Frontmatter[] => {
     })
 
     return frontmatters.sort((a, b) => (a.date > b.date ? -1 : 1))
+}
+
+export const getMarkdownCounts = (): number => {
+    return getCountAllFirstLevelFolders(prefixPath)
 }

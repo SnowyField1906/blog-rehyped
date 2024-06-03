@@ -36,7 +36,7 @@ const Header = () => {
 	if (loading) return <Loading fullScreen />
 
 	return (
-		<header className="grid select-none px-6 py-5 tracking-wide text-zinc-900 lg:px-20">
+		<header className="grid w-full select-none p-8 tracking-wide text-zinc-900 lg:px-20">
 			<div className="flex justify-between">
 				<Link
 					href="/"

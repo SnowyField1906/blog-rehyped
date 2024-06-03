@@ -16,7 +16,7 @@ const config: Config = {
             sans: ['Sarabun', 'sans-serif'],
             serif: ['Noto Serif JP', 'serif'],
             heading: ['Cormorant SC', 'serif'],
-            decoration: ['Yrsa', 'serif'],
+            display: ['Yrsa', 'serif'],
             display: ['Playfair Display', 'serif'],
         },
         fontSize: {
@@ -362,7 +362,7 @@ const config: Config = {
                         color: 'var(--tw-prose-links)',
                         textDecoration: 'underline transparent',
                         fontWeight: '500',
-                        transitionProperty: 'color, text-decoration-color',
+                        transitionProperty: 'color, text-display-color',
                         transitionDuration: theme('transitionDuration.DEFAULT'),
                         transitionTimingFunction: theme(
                             'transitionTimingFunction.DEFAULT'

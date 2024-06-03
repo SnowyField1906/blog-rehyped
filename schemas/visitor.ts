@@ -1,8 +1,8 @@
 import { Document, Schema, model, models } from 'mongoose'
 
-export interface ICheckIn extends Document, CheckIn {}
+export interface IVisitor extends Document, Visitor {}
 
-const CheckInSchema = new Schema<ICheckIn>(
+const VisitorSchema = new Schema<IVisitor>(
     {
         email: { type: String, required: true },
         name: { type: String, required: true },
@@ -13,6 +13,6 @@ const CheckInSchema = new Schema<ICheckIn>(
     { timestamps: true }
 )
 
-const CheckIn = models.CheckIn || model<ICheckIn>('CheckIn', CheckInSchema)
+const Visitor = models.Visitor || model<IVisitor>('Visitor', VisitorSchema)
 
-export default CheckIn
+export default Visitor

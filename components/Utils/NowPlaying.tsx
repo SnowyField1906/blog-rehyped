@@ -1,33 +1,67 @@
-import React from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 import { PiVinylRecordFill } from 'react-icons/pi'
 
 import cn from '@libs/class'
 import { getNowPlaying } from '@libs/spotify'
 
-const NowPlaying = async () => {
-	const song = await getNowPlaying()
+const NowPlaying = () => {
+	const [song, setSong] = useState<any | undefined>(undefined)
+
+	const fetchNowPlaying = async () => {
+		const song = await getNowPlaying()
+		setSong(song)
+	}
+
+	useEffect(() => {
+		fetchNowPlaying()
+	}, [])
+
+	useEffect(() => {
+		if (!song) return
+
+		const remainingTime: number = song!.item!.duration_ms - song!.progress_ms
+
+		let timeoutId: NodeJS.Timeout | null = null
+		if (remainingTime > 0) {
+			timeoutId = setTimeout(() => {
+				fetchNowPlaying()
+			}, remainingTime)
+		}
+
+		return () => {
+			if (timeoutId) clearTimeout(timeoutId)
+		}
+	}, [song])
 
 	return (
 		<a
-			className="inline-flex w-full max-w-full flex-col place-items-center items-center gap-3 truncate text-lg sm:flex-row"
-			href={song.is_playing ? song.item.external_urls.spotify : undefined}
+			className="flex w-min place-items-center items-center gap-3 truncate text-base"
+			href={song?.is_playing ? song.item.external_urls.spotify : undefined}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<PiVinylRecordFill
 				className={cn(
 					'h-10 w-10 text-zinc-900',
-					song.is_playing && 'animate-[spin_3s_linear_infinite]'
+					song?.is_playing && 'animate-[spin_3s_linear_infinite]'
 				)}
 			/>
-			<p className="capsize font-medium text-zinc-500">
-				{song.is_playing ? song.item.name : 'Not Playing'}
+			<p
+				className={cn(
+					'truncate font-medium',
+					song?.is_playing && 'text-zinc-900',
+					!song?.is_playing && 'text-zinc-900'
+				)}
+			>
+				{song?.is_playing ? song.item.name : 'Not Playing'}
 			</p>
-			<p className="capsize max-w-max truncate text-zinc-500">
-				{song.is_playing
-					? song?.item.artists.map((_artist) => _artist.name).join(', ')
-					: 'Spotify'}
-			</p>
+			{song?.is_playing && (
+				<p className="truncate text-zinc-500">
+					{song?.item.artists.map((_artist) => _artist.name).join(', ')}
+				</p>
+			)}
 		</a>
 	)
 }

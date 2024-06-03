@@ -3,7 +3,7 @@ type View = {
     count: number
 }
 
-type CheckIn = {
+type Visitor = {
     email: string
     name: string
     content: string

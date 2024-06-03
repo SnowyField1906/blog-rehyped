@@ -10,7 +10,7 @@ const Title = ({
 	isMain?: boolean
 }) => {
 	return (
-		<div className="py-8 text-center text-black lg:py-12 lg:text-5xl">
+		<div className="text-center text-black">
 			<p
 				className={cn(
 					'font-heading font-normal',

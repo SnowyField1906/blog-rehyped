@@ -16,21 +16,21 @@ const MessageInput = ({ session }: { session: Session | null }) => {
 	const handleSubmit = async () => {
 		setLoading(true)
 		const date: string = new Date().toISOString()
-		const checkIn: CheckIn = {
+		const visitor: Visitor = {
 			email: session!.user!.email!,
 			name: session!.user!.name!,
 			content: message,
 			createdAt: date,
 			updatedAt: date,
 		}
-		await POST('/checkin', checkIn, true)
+		await POST('/visitor', visitor, true)
 		setMessage('')
 		setLoading(false)
 		router.refresh()
 	}
 
 	return (
-		<div className="w-full border border-zinc-900 font-decoration text-xl font-extralight text-zinc-700 lg:text-3xl">
+		<div className="w-full border border-zinc-900 font-display text-xl font-extralight text-zinc-700 lg:text-3xl">
 			{session ? (
 				<div className="flex flex-col p-5">
 					<textarea
@@ -51,12 +51,12 @@ const MessageInput = ({ session }: { session: Session | null }) => {
 				</div>
 			) : (
 				<p className="flex w-full place-items-center justify-center gap-5 p-5">
-					<span className="text-right">
+					<span className="text-right text-2xl">
 						Sign in to make a mark on this site
 					</span>
 					<Button
 						variant="primary"
-						size="lg"
+						size="base"
 						arrow="right"
 						className="mx-0"
 						onClick={async () =>
