@@ -36,10 +36,12 @@ const nextConfig = {
         GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
         MONGO_URI: process.env.MONGO_URI,
-        NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-        TMDB_KEY: process.env.TMDB_KEY,
-        TMDB_ACCESS_TOKEN: process.env.TMDB_ACCESS_TOKEN,
-        IMGBB_API_KEY: process.env.IMGBB_API_KEY,
+        SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
+        SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
+        SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
+        EMAILOCTOPUS_API_URL: process.env.EMAILOCTOPUS_API_URL,
+        EMAILOCTOPUS_API_KEY: process.env.EMAILOCTOPUS_API_KEY,
+        EMAILOCTOPUS_LIST_ID: process.env.EMAILOCTOPUS_LIST_ID,
     },
     async headers() {
         return [

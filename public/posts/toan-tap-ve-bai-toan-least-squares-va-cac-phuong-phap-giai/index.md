@@ -15,7 +15,7 @@ _Hồi quy là một bài toán kinh điển trong Machine Learning mà Least Sq
 
 _Trong bài viết này, chúng ta sẽ tìm hiểu về Least Squares và các phương pháp giải cụ thể và chi tiết cho bài toán này._
 
-> Khuyến nghị đọc trước [QR Decomposition là gì và chi tiết cách tính](https://snowyfield.me/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://snowyfield.me/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [QR Decomposition là gì và chi tiết cách tính](https://rehyped.snowyfield.me/posts/qr-decomposition-la-gi-va-chi-tiet-cach-tinh) và [Singular Value Decomposition là gì và chi tiết cách tính](https://rehyped.snowyfield.me/posts/singular-value-decomposition-la-gi-va-chi-tiet-cach-tinh) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Bài toán Least Squares
 

@@ -26,7 +26,7 @@ export const generateMetadata = (): Metadata => {
 
 const CheckIn = async () => {
 	const session: Session | null = await auth()
-	const checkIns: CheckIn[] = await findAll()
+	const checkIns: (CheckIn & { _id: any })[] = await findAll()
 
 	return (
 		<main className="m-auto flex h-full w-11/12 flex-col place-items-center items-center gap-10 lg:w-3/4">

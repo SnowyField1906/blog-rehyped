@@ -14,7 +14,7 @@ _Markov Decision Process (MDP) là một bài toán Dynamic Programming (Quy ho�
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration._
 
-> Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụng](https://snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụng](https://rehyped.snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Khái niệm
 
@@ -505,7 +505,7 @@ $$
 \end{align}
 $$
 
-Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương ứng với một [Transition Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Ma trận Chuyển tiếp) như trong [Markov Chain](https://snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung), thể hiện quá trình chuyển đổi qua lại giữa các State.
+Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương ứng với một [Transition Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Ma trận Chuyển tiếp) như trong [Markov Chain](https://rehyped.snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung), thể hiện quá trình chuyển đổi qua lại giữa các State.
 
 ## Xây dựng MDP
 

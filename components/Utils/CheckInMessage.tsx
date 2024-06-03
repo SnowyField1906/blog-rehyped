@@ -15,7 +15,7 @@ const CheckInMessage = ({
 	reverse,
 }: {
 	email: string | null | undefined
-	checkIn: CheckIn
+	checkIn: CheckIn & { _id: any }
 	reverse: boolean
 }) => {
 	const [loading, setLoading] = useState(false)
@@ -27,7 +27,7 @@ const CheckInMessage = ({
 
 	const handleDelete = async () => {
 		setLoading(true)
-		const { id, ...rest }: CheckIn = checkIn
+		const { _id, ...rest } = checkIn
 		await DELETE('/checkin', rest, true)
 		setDeletePopup(false)
 		setLoading(false)
@@ -35,7 +35,7 @@ const CheckInMessage = ({
 	}
 	const handleEdit = async () => {
 		setLoading(true)
-		const { id, ...rest }: CheckIn = checkIn
+		const { _id, ...rest } = checkIn
 		await PUT('/checkin', { ...rest, content: editContent }, true)
 		setEditPopup(false)
 		setLoading(false)

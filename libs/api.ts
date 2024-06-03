@@ -4,7 +4,7 @@ import siteMetadata from '@data/siteMetadata.json'
 
 const TOKEN_INFO_GOOGLE_API = 'https://www.googleapis.com/oauth2/v3/tokeninfo'
 const TOKEN_GOOGLE_API = 'https://oauth2.googleapis.com/token'
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? siteMetadata.siteUrl
+const BASE_URL = siteMetadata.siteUrl + '/api'
 
 const Fetcher = async (...args: Parameters<typeof fetch>) => {
     const res = await fetch(...args)

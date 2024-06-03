@@ -34,7 +34,7 @@ const Post = async ({
 	)
 
 	const _tags: string[] = _frontmatters.map((e) => e.tags).flat()
-	const tags: [string, number][] = Object.entries(
+	const tags: [string, unknown][] = Object.entries(
 		_tags.reduce((acc, tag) => {
 			acc[tag] = (acc[tag] || 0) + 1
 			return acc
@@ -47,7 +47,7 @@ const Post = async ({
 			<div className="flex gap-5 overflow-x-auto overflow-y-hidden pb-3">
 				<Tag />
 				{tags.map(([tag, count]) => (
-					<Tag key={tag} name={tag} count={count} />
+					<Tag key={tag} name={tag} count={count as number} />
 				))}
 			</div>
 			<div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">

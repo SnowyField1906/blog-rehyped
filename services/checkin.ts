@@ -2,7 +2,7 @@ import { verify } from '@libs/api'
 import { connectDB } from '@libs/mongodb'
 import CheckIn, { ICheckIn } from '@schemas/checkin'
 
-export const findAll = async (): Promise<CheckIn[]> => {
+export const findAll = async (): Promise<(CheckIn & { _id: any })[]> => {
     await connectDB()
 
     const checkIns: ICheckIn[] = await CheckIn.find().sort({ createdAt: -1 })
