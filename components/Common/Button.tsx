@@ -5,15 +5,6 @@ import cn from '@libs/class'
 
 import Loading from './Loading'
 
-const variantStyles = {
-	primary:
-		'rounded-full py-2 px-6 text-white bg-zinc-900 hover:bg-zinc-600 hover:text-white',
-	secondary:
-		'rounded-full py-2 px-6 text-black bg-zinc-200/70 hover:bg-zinc-300/70 hover:ring-1 ring-inset ring-zinc-500 hover:ring-zinc-500',
-	filled: 'rounded-full py-2 px-6 text-white bg-zinc-900 hover:bg-zinc-700',
-	text: 'text-zinc-500 hover:text-zinc-900',
-}
-
 const Button = ({
 	variant = 'primary',
 	size = 'lg',
@@ -28,19 +19,6 @@ const Button = ({
 	props.target = isAnchor ? '_blank' : null
 
 	const Component = props?.href ? (isAnchor ? 'a' : Link) : 'button'
-
-	className = cn(
-		'not-prose inline-flex gap-0.5 text-nowrap w-fit mx-auto justify-center overflow-hidden select-none font-normal font-sans place-items-center items-center transition-all duration-200 ease-in-out tracking-wide',
-		variantStyles[variant],
-		`text-${size}`,
-		size === 'xl' && 'text-lg lg:text-xl px-9 py-3',
-		size === 'lg' && 'text-base lg:text-lg px-7 lg:py-2',
-		size === 'base' && 'text-sm lg:text-base px-6 lg:py-[6px]',
-		size === 'sm' && 'text-xs lg:text-sm px-3 lg:py-[4px]',
-		size === 'xs' && 'text-2xs lg:text-xs px-1 lg:py-1`',
-		onDisabled ? 'pointer-events-none bg-zinc-600' : 'cursor-pointer',
-		className
-	)
 
 	const arrowIcon = (
 		<ArrowIcon
@@ -57,7 +35,38 @@ const Button = ({
 	)
 
 	return (
-		<Component className={className} {...props}>
+		<Component
+			className={cn(
+				'not-prose inline-flex w-fit select-none gap-0.5 overflow-hidden text-nowrap font-sans',
+				variant === 'primary' && 'primary-button',
+				variant === 'secondary' && 'secondary-button',
+				variant === 'text' && 'text-button',
+				variant === 'filled' && 'filled-button',
+				size === 'xl' && 'text-base lg:text-lg xl:text-xl',
+				size === 'lg' && 'text-sm lg:text-base xl:text-lg',
+				size === 'base' && 'text-xs lg:text-sm xl:text-base',
+				size === 'sm' && 'text-2xs lg:text-xs xl:text-sm',
+				size === 'xs' && 'text-2xs lg:text-xs xl:text-sm',
+				variant !== 'text' &&
+					size === 'xl' &&
+					'lg:py-2xl:px-10 px-8 py-2 lg:px-9 xl:py-2',
+				variant !== 'text' &&
+					size === 'lg' &&
+					'lg:py-2xl:px-8 px-6 py-2 lg:px-7 xl:py-2',
+				variant !== 'text' &&
+					size === 'base' &&
+					'lg:py-2xl:px-6 px-4 py-2 lg:px-4 xl:py-2',
+				variant !== 'text' &&
+					size === 'sm' &&
+					'lg:py-1xl:px-4 px-3 py-1 lg:px-3 xl:py-1',
+				variant !== 'text' &&
+					size === 'xs' &&
+					'lg:py-1xl:px-3 px-2 py-1 lg:px-2 xl:py-1',
+				onDisabled ? 'pointer-events-none bg-zinc-600' : 'cursor-pointer',
+				className
+			)}
+			{...props}
+		>
 			{onLoading ? (
 				<Loading size={size} />
 			) : (

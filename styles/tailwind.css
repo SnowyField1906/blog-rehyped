@@ -27,39 +27,23 @@
 		  motion-safe:transition-all
 		  motion-safe:duration-300;
     }
+    .button {
+        @apply tracking-wide transition-all duration-200 ease-in-out;
+    }
+    .primary-button {
+        @apply button rounded-full bg-zinc-900 px-6 py-2 text-white hover:bg-zinc-600 hover:text-white xl:font-normal;
+    }
+    .secondary-button {
+        @apply button rounded-full bg-zinc-200/70 px-6 py-2 text-black ring-inset ring-zinc-500 hover:bg-zinc-300/70 hover:ring-1 hover:ring-zinc-500;
+    }
+    .filled-button {
+        @apply button rounded-full bg-zinc-900 px-6 py-2 text-white hover:bg-zinc-700;
+    }
+    .text-button {
+        @apply button font-light text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-900;
+    }
 
     .border-box {
-        @apply transform overflow-hidden rounded-md border-2 border-solid border-gray-200 bg-transparent bg-opacity-20 transition duration-200 hover:scale-105 hover:rounded-md hover:border-tertiary-400 hover:bg-gray-200;
-    }
-
-    /* Code title styles */
-    .remark-code-title {
-        @apply font-mono rounded-t bg-gray-700 px-5 py-3 text-sm font-bold text-gray-200;
-    }
-
-    .remark-code-title + div > pre {
-        @apply mt-0 rounded-t-none;
-    }
-
-    /* Code block styles */
-    .code-highlight {
-        @apply float-left min-w-full;
-    }
-
-    .code-line {
-        @apply -mx-4 block border-l-4 border-transparent pl-4 pr-4;
-    }
-
-    .code-line.inserted {
-        @apply bg-green-500 bg-opacity-20;
-    }
-
-    .code-line.deleted {
-        @apply bg-red-500 bg-opacity-20;
-    }
-
-    .line-number::before {
-        @apply -ml-2 mr-4 inline-block w-4 text-right text-gray-400;
-        content: attr(line);
+        @apply hover:border-tertiary-400 transform overflow-hidden rounded-md border-2 border-solid border-gray-200 bg-transparent bg-opacity-20 transition duration-200 hover:scale-105 hover:rounded-md hover:bg-gray-200;
     }
 }

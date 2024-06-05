@@ -12,6 +12,12 @@ const config: Config = {
         themes: ['light'],
     },
     theme: {
+        screens: {
+            sm: '500px',
+            md: [{ min: '668px', max: '767px' }, { min: '868px' }],
+            lg: '790px',
+            xl: '1200px',
+        },
         fontFamily: {
             sans: ['Sarabun', 'sans-serif'],
             serif: ['Noto Serif JP', 'serif'],

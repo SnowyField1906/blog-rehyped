@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import React from 'react'
 
 import Title from '@components/Common/Title'
-import ProfileSpecific from '@components/Utils/ProfileSpecific'
+import ProfileSpecific from '@components/Profile/ProfileSpecific'
 import siteMetadata from '@data/siteMetadata.json'
 
 const metadata = siteMetadata.internalLinks.find(

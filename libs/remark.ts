@@ -46,7 +46,7 @@ export const remarkCodeTitles = () => {
         })
 }
 
-export const remarkExtractfrontmatter = () => {
+export const remarkExtractFrontmatter = () => {
     return (tree, file) => {
         visit(tree, 'yaml', (node, index, parent) => {
             file.data.frontmatter = load(node.value)

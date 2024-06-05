@@ -44,7 +44,7 @@ const Post = async ({
 	return (
 		<>
 			<Title primary={metadata!.title} secondary={metadata!.description} />
-			<div className="flex flex-wrap justify-center gap-3 text-2xs lg:gap-5 lg:text-sm xl:text-base">
+			<div className="flex flex-wrap justify-center gap-3 lg:gap-5">
 				<Tag />
 				{tags.map(([tag, count]) => (
 					<Tag key={tag} name={tag} count={count as number} />

@@ -42,6 +42,7 @@ const MessageInput = ({ session }: { session: Session | null }) => {
 					<Button
 						variant="primary"
 						size="lg"
+						className="mx-auto"
 						onClick={handleSubmit}
 						onLoading={loading}
 						onDisabled={loading || !message}

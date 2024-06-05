@@ -9,7 +9,6 @@
     "siteRepo": "https://github.com/SnowyField1906/rehyped-blog",
     "siteLogo": "/static/logo.png",
     "siteBanner": "/static/banner.png",
-    "avatar": "/static/avatar.png",
     "internalLinks": [
         {
             "title": "Home",
@@ -22,9 +21,9 @@
             "description": "These articles are mainly my professional knowledge through my work and research."
         },
         {
-            "title": "Stats",
-            "path": "/stats",
-            "description": "I use this dashboard to track various metrics across platforms like Spotify, GitHub, and more."
+            "title": "Music",
+            "path": "/music",
+            "description": "I use this dashboard to track various metrics of my Spotify account."
         },
         {
             "title": "Visitors",
@@ -54,5 +53,19 @@
         "lang": "en",
         "darkTheme": "dark",
         "themeURL": ""
-    }
+    },
+    "playlists": [
+        {
+            "name": "Essentials",
+            "id": "0fttleBNo8RglYCOrJBscG"
+        },
+        {
+            "name": "Features",
+            "id": "4hEsiGE5GnGl1gaF4ly29r"
+        },
+        {
+            "name": "Fresh Picks",
+            "id": "2y07GHlHy5Qlnz9flg8AZX"
+        }
+    ]
 }

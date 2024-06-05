@@ -1,12 +1,12 @@
 import React from 'react'
 
+import NowPlaying from '@components/Spotify/NowPlaying'
 import Newsletter from '@components/Utils/Newsletter'
-import NowPlaying from '@components/Utils/NowPlaying'
 
 const Footer = () => {
 	return (
 		<div className="w-full font-display text-base font-light lg:text-lg xl:text-xl">
-			<hr className="h-min border-[0.5px] border-zinc-900" />
+			{/* <hr className="h-min border-[0.5px] border-zinc-900" /> */}
 
 			<footer className="grid w-full gap-5 p-8 text-center lg:hidden lg:px-20">
 				<div className="grid place-items-center items-center">
@@ -16,7 +16,7 @@ const Footer = () => {
 					<p>Register for the newsletter</p>
 					<Newsletter />
 				</div>
-				<p className="w-full font-sans text-xs font-extralight lg:text-sm xl:text-base">{`${new Date().getFullYear()} © SnowyField. All rights reserved.`}</p>
+				{/* <p className="w-full font-sans text-xs font-extralight lg:text-sm xl:text-base">{`${new Date().getFullYear()} © SnowyField. All rights reserved.`}</p> */}
 			</footer>
 
 			<footer className="hidden w-full gap-3 p-8 lg:grid lg:px-20">
@@ -28,7 +28,7 @@ const Footer = () => {
 					<Newsletter />
 					<NowPlaying />
 				</div>
-				<p className="w-full text-center font-sans text-xs font-extralight lg:text-sm xl:text-base">{`${new Date().getFullYear()} © SnowyField. All rights reserved.`}</p>
+				{/* <p className="w-full text-center font-sans text-xs font-extralight lg:text-sm xl:text-base">{`${new Date().getFullYear()} © SnowyField. All rights reserved.`}</p> */}
 			</footer>
 		</div>
 	)

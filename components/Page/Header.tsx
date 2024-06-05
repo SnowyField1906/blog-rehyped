@@ -30,7 +30,7 @@ const Header = () => {
 	}, [])
 
 	return (
-		<header className="grid w-full select-none p-8 tracking-wide text-zinc-900 lg:px-20">
+		<header className="z-50 grid w-full select-none p-8 tracking-wide text-zinc-900 lg:px-20">
 			<div className="flex justify-between">
 				<Link
 					href="/"

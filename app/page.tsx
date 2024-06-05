@@ -81,7 +81,8 @@ const Home = async () => {
 						variant="text"
 						arrow="right"
 						href="/posts"
-						className="mx-0 font-display text-sm font-light lg:text-base xl:text-lg"
+						size="lg"
+						className="font-display"
 					>
 						read my articles
 					</Button>
@@ -107,7 +108,8 @@ const Home = async () => {
 						variant="text"
 						arrow="right"
 						href="/profile"
-						className="mx-0 font-display text-sm font-light lg:text-base xl:text-lg"
+						size="lg"
+						className="font-display"
 					>
 						view more about me
 					</Button>
@@ -133,7 +135,8 @@ const Home = async () => {
 						variant="text"
 						arrow="right"
 						href={siteMetadata.siteRepo}
-						className="mx-0 font-display text-sm font-light lg:text-base xl:text-lg"
+						size="lg"
+						className="font-display"
 					>
 						check out the source code
 					</Button>

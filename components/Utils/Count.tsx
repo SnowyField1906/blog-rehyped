@@ -11,9 +11,9 @@ const Count = ({ name, num }: { name: string; num: number }) => {
 			<CountUp
 				end={num}
 				duration={2}
-				className="font-display text-2xl font-light lg:text-4xl xl:text-5xl"
+				className="font-display text-3xl font-light lg:text-4xl xl:text-5xl"
 			/>
-			<p className="font-display text-base font-light lg:text-lg xl:text-xl">
+			<p className="text-nowrap font-display text-base font-light lg:text-lg xl:text-xl">
 				{name}
 			</p>
 		</div>
