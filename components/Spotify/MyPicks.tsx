@@ -30,7 +30,7 @@ const MyPicks = ({ playlists }) => {
 
 	return (
 		<div className="mx-auto flex w-full flex-col justify-center gap-10 lg:w-3/4">
-			<p className="font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
+			<p className="text-center font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
 				My music taste
 			</p>
 			<div className="mx-auto flex place-items-center items-center gap-2 lg:gap-4">
@@ -45,7 +45,7 @@ const MyPicks = ({ playlists }) => {
 					</Button>
 				))}
 			</div>
-			<div className="mx-auto mr-auto flex w-full flex-col justify-start gap-6 xl:w-2/3">
+			<div className="mx-auto mr-auto flex w-full flex-col justify-start gap-6 text-center xl:w-2/3">
 				<p>
 					<span className="font-display text-xs text-zinc-900 lg:text-sm xl:text-base">
 						{playlistsState[type]?.description}

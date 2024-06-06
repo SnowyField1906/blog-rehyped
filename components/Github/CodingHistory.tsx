@@ -25,8 +25,8 @@ const CodingHistory = ({ days }) => {
 	if (!isClient) return null
 
 	return (
-		<div className="mx-auto flex w-full flex-col justify-center">
-			<p className="font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
+		<div className="mx-auto mt-28 flex h-60 w-full flex-col justify-center lg:mt-0">
+			<p className="text-center font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
 				Coding time history
 			</p>
 			<div className="mx-auto flex w-11/12 -translate-y-16 flex-col justify-around lg:flex-row">

@@ -46,15 +46,13 @@ const Coding = async () => {
 				secondary={metadata!.description}
 				type="activity"
 			/>
-			<div className="flex flex-col justify-center gap-14 text-center lg:gap-20">
-				<GithubProfile user={user} />
-				<PieStats
-					weekdays={insightsWeekdays}
-					operatingSystems={insightsOperatingSystems}
-					editors={insightsEditors}
-				/>
-				<CodingHistory days={insightsDays} />
-			</div>
+			<GithubProfile user={user} />
+			<PieStats
+				weekdays={insightsWeekdays}
+				operatingSystems={insightsOperatingSystems}
+				editors={insightsEditors}
+			/>
+			<CodingHistory days={insightsDays} />
 		</>
 	)
 }

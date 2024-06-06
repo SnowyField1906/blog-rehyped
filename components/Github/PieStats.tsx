@@ -3,7 +3,7 @@ import PieStat from '@components/Charts/PieStat'
 const PieStats = ({ weekdays, operatingSystems, editors }) => {
 	return (
 		<div className="mx-auto flex w-full flex-col justify-center">
-			<p className="font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
+			<p className="text-center font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
 				Coding time distribution
 			</p>
 			<div className="flex -translate-y-16 flex-col justify-around lg:flex-row">

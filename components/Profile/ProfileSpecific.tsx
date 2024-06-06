@@ -16,7 +16,7 @@ const ProfileSpecific = ({
 				className
 			)}
 		>
-			<p className="font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
+			<p className="text-center font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
 				{title}
 			</p>
 			<div className="flex flex-col gap-3 font-display text-sm font-light lg:text-base">

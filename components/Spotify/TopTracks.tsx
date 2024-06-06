@@ -37,7 +37,7 @@ const TopTracks = ({ tracks }) => {
 
 	return (
 		<div className="mx-auto flex w-full flex-col justify-center gap-10 lg:w-3/4">
-			<p className="font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
+			<p className="text-center font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
 				Most listened tracks
 			</p>
 			<div className="mx-auto flex place-items-center items-center gap-2 lg:gap-4">

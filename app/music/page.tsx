@@ -65,33 +65,29 @@ const Music = async () => {
 				secondary={metadata!.description}
 				type="activity"
 			/>
-			<div className="flex flex-col justify-center gap-14 text-center lg:gap-20">
-				<div className="flex w-full items-center justify-center font-display ">
-					<NowPlaying pulse hideOnOff text />
-				</div>
-				<SpotifyProfile user={user} />
-				<TopArtists
-					artists={{
-						short: topArtistsShort,
-						medium: topArtistsMedium,
-						long: topArtistsLong,
-					}}
-				/>
-				<TopTracks
-					tracks={{
-						short: topTracksShort,
-						medium: topTracksMedium,
-						long: topTracksLong,
-					}}
-				/>
-				<MyPicks
-					playlists={{
-						essentials: essentialsPlaylist,
-						features: featuresPlaylist,
-						freshPicks: freshPicksPlaylist,
-					}}
-				/>
-			</div>
+			<NowPlaying pulse hideOnOff text />
+			<SpotifyProfile user={user} />
+			<TopArtists
+				artists={{
+					short: topArtistsShort,
+					medium: topArtistsMedium,
+					long: topArtistsLong,
+				}}
+			/>
+			<TopTracks
+				tracks={{
+					short: topTracksShort,
+					medium: topTracksMedium,
+					long: topTracksLong,
+				}}
+			/>
+			<MyPicks
+				playlists={{
+					essentials: essentialsPlaylist,
+					features: featuresPlaylist,
+					freshPicks: freshPicksPlaylist,
+				}}
+			/>
 		</>
 	)
 }
