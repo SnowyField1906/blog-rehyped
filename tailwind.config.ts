@@ -75,7 +75,8 @@ const config: Config = {
                     '[class~="katex"]': {
                         fontSize: theme('fontSize.xl')[0],
                         color: 'var(--tw-prose-bold)',
-                        overflowX: 'hidden',
+                        overflowX: 'auto',
+                        overflowY: 'hidden',
                         ...theme('fontSize.xl')[1],
                     },
 
@@ -255,6 +256,7 @@ const config: Config = {
                     '[class~="math-display"]': {
                         textAlign: 'center',
                         overflowX: 'auto',
+                        overflowY: 'hidden',
                         width: '100%',
                     },
                     '[class~="tag"]': {
