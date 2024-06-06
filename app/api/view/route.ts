@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { deserializeParams } from '@libs/api'
 import * as service from '@services/view'
 
-export const maxDuration = 300
-
 export const GET = async (req: NextRequest) => {
     const { slug } = deserializeParams(req.nextUrl.searchParams)
 

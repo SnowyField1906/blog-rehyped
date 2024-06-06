@@ -65,10 +65,23 @@ const Home = async () => {
 							alt="signature"
 						/>
 					</div>
-					<p className="flex flex-col gap-5 font-display text-sm font-light lg:text-base xl:text-lg">
-						Welcome to my space on the internet, where I share my thoughts,
-						experiences and everything in between.
-					</p>
+					<div className="flex flex-col  gap-5 lg:gap-8 xl:gap-10">
+						<p className="flex flex-col gap-5 font-display text-sm font-light lg:text-base xl:text-lg">
+							Welcome to my space on the internet, where I share my thoughts,
+							experiences and everything in between.
+						</p>
+						<div className="flex w-full justify-end">
+							<Button
+								variant="text"
+								arrow="right"
+								href="/resume.pdf"
+								size="lg"
+								className="mr-0 font-display xl:mr-5"
+							>
+								review my resume
+							</Button>
+						</div>
+					</div>
 				</div>
 				<img
 					src="/static/signature.png"

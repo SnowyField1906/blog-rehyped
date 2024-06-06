@@ -9,6 +9,8 @@ import siteMetadata from '@data/siteMetadata.json'
 import { auth } from '@libs/auth'
 import { findAll } from '@services/visitor'
 
+export const maxDuration = 60
+
 const metadata = siteMetadata.internalLinks.find(
 	(link) => link.title === 'Visitors'
 )
