@@ -51,9 +51,11 @@ const NowPlaying = ({
 
 	const TextWrapper = ({ children }) => {
 		return (
-			<div className="flex w-full items-center justify-center font-display ">
-				<div className={cn('flex items-center', pulse && 'animate-pulse')}>
-					<p className="text-center font-display text-xl text-zinc-900 lg:text-2xl xl:text-3xl">
+			<div className="flex w-full items-center justify-center font-display">
+				<div
+					className={cn('flex items-center gap-3', pulse && 'animate-pulse')}
+				>
+					<p className="text-center font-display text-base text-zinc-900 lg:text-lg xl:text-xl">
 						Streaming now
 					</p>
 

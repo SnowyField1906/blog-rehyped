@@ -3,8 +3,6 @@
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import cn from '@libs/class'
-
 const Figure = ({ name, caption }: { name: string; caption?: string }) => {
 	const [full, setFull] = useState(false)
 	const pathName = usePathname()

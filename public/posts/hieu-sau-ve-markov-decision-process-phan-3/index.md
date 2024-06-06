@@ -14,7 +14,7 @@ _Markov Decision Process (MDP) là một bài toán Dynamic Programming (Quy ho�
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration._
 
-> Khuyến nghị đọc trước [Phần 2](https://rehyped.snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-2) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Phần 2](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-2) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 

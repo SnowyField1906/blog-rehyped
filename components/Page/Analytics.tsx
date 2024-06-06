@@ -17,38 +17,38 @@ export const logEvent = (
 	})
 }
 
-// const GoogleScript = (): JSX.Element => {
-// 	return (
-// 		<>
-// 			<Script
-// 				async
-// 				src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
-// 			/>
+const GoogleScript = (): JSX.Element => {
+	return (
+		<>
+			<Script
+				async
+				src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
+			/>
 
-// 			<Script strategy="lazyOnload" id="ga-script">
-// 				{`
-//           window.dataLayer = window.dataLayer || [];
-//           function gtag(){dataLayer.push(arguments);}
-//           gtag('js', new Date());
-//           gtag('config', '${siteMetadata.analytics.googleAnalyticsId}');
-//         `}
-// 			</Script>
-// 		</>
-// 	)
-// }
+			<Script strategy="lazyOnload" id="ga-script">
+				{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${siteMetadata.analytics.googleAnalyticsId}');
+        `}
+			</Script>
+		</>
+	)
+}
 
-// const UmamiScript = (): JSX.Element => {
-// 	return (
-// 		<>
-// 			<Script
-// 				async
-// 				defer
-// 				data-website-id={siteMetadata.analytics.umamiWebsiteId}
-// 				src="https://analytics.umami.is/script.js"
-// 			/>
-// 		</>
-// 	)
-// }
+const UmamiScript = (): JSX.Element => {
+	return (
+		<>
+			<Script
+				async
+				defer
+				data-website-id={siteMetadata.analytics.umamiWebsiteId}
+				src="https://analytics.umami.is/script.js"
+			/>
+		</>
+	)
+}
 
 const VercelScript = (): JSX.Element => {
 	return (
@@ -64,8 +64,8 @@ const Analytics = (): JSX.Element => {
 	return (
 		<>
 			{isProduction && <VercelScript />}
-			{/* {isProduction && <GoogleScript />}
-			{isProduction && <UmamiScript />} */}
+			{isProduction && <GoogleScript />}
+			{isProduction && <UmamiScript />}
 		</>
 	)
 }

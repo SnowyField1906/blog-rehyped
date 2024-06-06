@@ -65,9 +65,10 @@ const TopArtists = ({ artists }) => {
 								src={artist.images[2].url}
 								alt={artist.name}
 								className={cn(
-									'w-8 rounded-full lg:w-14 xl:w-24',
-									(index === 1 || index === 3) && 'w-14 lg:w-24 xl:w-32',
-									index === 2 && 'w-24 lg:w-32 xl:w-44'
+									'h-8 w-8 rounded-full lg:h-14 lg:w-14 xl:h-24 xl:w-24',
+									(index === 1 || index === 3) &&
+										'h-14 w-14 lg:h-24 lg:w-24 xl:h-32 xl:w-32',
+									index === 2 && 'h-24 w-24 lg:h-32 lg:w-32 xl:h-44 xl:w-44'
 								)}
 							/>
 							<span

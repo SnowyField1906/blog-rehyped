@@ -14,7 +14,7 @@ _Các thuật toán Optimizer (Tối ưu) là một phần quan trọng lĩnh v�
 
 _Để hiểu rõ hơn về các thuật toán optimizer, chúng ta sẽ cùng tìm hiểu về các thuật toán optimizer thông dụng nhất và so sánh hiệu quả của chúng trong bài viết này. Bao gồm: Gradient Descent, SGD, Momentum, NAG, Adagrad, RMSProp/Adadelta và Adam._
 
-> Khuyến nghị đọc trước [Toàn tập về bài toán Least Squares và các phương pháp giải](https://rehyped.snowyfield.me/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Toàn tập về bài toán Least Squares và các phương pháp giải](https://snowyfield.me/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Khái niệm
 

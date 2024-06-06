@@ -9,7 +9,7 @@ _Các trò chơi online ngày nay đang trở thành một phần quan trọng c
 
 _Tuy nhiên, vấn đề này có thể được giải quyết bằng cách sử dụng Zero-Knowledge Proof (ZKP) và Blockchain để loại bỏ bên thứ 3, tăng tính bảo mật cho người chơi và tính minh bạch cho trò chơi._
 
-> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://rehyped.snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Giới thiệu về Mental Poker
 

@@ -4,6 +4,8 @@ import MDXLayout from '@components/MDX/MDXLayout'
 import siteMetadata from '@data/siteMetadata.json'
 import { getMarkdown } from '@libs/markdown'
 
+export const maxDuration = 300
+
 export const generateMetadata = async ({
 	params,
 }: {
