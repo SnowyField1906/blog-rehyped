@@ -26,6 +26,11 @@
             "description": "I use this dashboard to track various metrics of my Spotify account."
         },
         {
+            "title": "Coding",
+            "path": "/coding",
+            "description": "I use this dashboard to track various metrics of my GitHub and WakaTime account."
+        },
+        {
             "title": "Visitors",
             "path": "/visitors",
             "description": "An artifact of the 90's webs. Leave a comment below for my future visitors. Feel free to write anything!"

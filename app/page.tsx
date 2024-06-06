@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import CountUp from 'react-countup'
+import dynamic from 'next/dynamic'
 
 import Button from '@components/Common/Button'
 import Count from '@components/Utils/Count'
@@ -22,6 +22,13 @@ export const generateMetadata = (): Metadata => {
 	}
 }
 
+const FontGroup = dynamic(() => import('@components/Home/FontGroup'), {
+	ssr: false,
+})
+const TechGroup = dynamic(() => import('@components/Home/TechGroup'), {
+	ssr: false,
+})
+
 const Home = async () => {
 	const viewCount = await count()
 	const markdownCount = getMarkdownCounts()
@@ -40,13 +47,13 @@ const Home = async () => {
 	return (
 		<>
 			<div className="flex items-center justify-between gap-5">
-				<div className="flex flex-col">
+				<div className="flex flex-col gap-2 lg:gap-6 xl:gap-8">
 					<div className="flex place-items-center items-center justify-between gap-2">
 						<div className="flex flex-col">
 							<p className="font-display text-3xl font-light lg:text-5xl xl:text-7xl">
 								SnowyField
 							</p>
-							<p className="mt-2 flex h-full flex-col gap-0 font-sans text-2xs font-extralight lg:mt-5 lg:flex-row lg:gap-5 lg:text-base xl:text-lg">
+							<p className="mt-2 flex h-full flex-col gap-0 font-sans text-2xs font-extralight lg:text-sm xl:mt-5 xl:flex-row xl:gap-5 xl:text-base">
 								<span>SMART CONTRACT ENGINEER</span>
 								<span className="w-min border-[0.5px] border-zinc-900"></span>
 								<span>FULLSTACK DEVELOPER</span>
@@ -54,11 +61,10 @@ const Home = async () => {
 						</div>
 						<img
 							src="/static/signature.png"
-							className="block w-1/2 lg:hidden"
+							className="block w-1/2 lg:w-1/3 xl:hidden"
 							alt="signature"
 						/>
 					</div>
-					<hr className="my-10 h-min w-1/3 border border-zinc-900" />
 					<p className="flex flex-col gap-5 font-display text-sm font-light lg:text-base xl:text-lg">
 						Welcome to my space on the internet, where I share my thoughts,
 						experiences and everything in between.
@@ -66,7 +72,7 @@ const Home = async () => {
 				</div>
 				<img
 					src="/static/signature.png"
-					className="hidden w-2/5 lg:block"
+					className="hidden w-2/5 xl:block"
 					alt="signature"
 				/>
 			</div>
@@ -121,14 +127,8 @@ const Home = async () => {
 				</p>
 				<p className="flex flex-col gap-3 font-display text-sm font-light text-zinc-700 lg:text-base xl:text-lg">
 					<span>This site functions as a blog/portfolio.</span>
-					<span>
-						Technology stack: Next.js (frontend and backend), MongoDB (database)
-						and Tailwind CSS (styling).
-					</span>
-					<span>
-						Fonts: Sarabun (sans-serif), Noto Serif JP (serif), Cormorant SC
-						(heading) and Playfair Display (display).
-					</span>
+					<TechGroup />
+					<FontGroup />
 				</p>
 				<div className="flex w-full justify-end">
 					<Button

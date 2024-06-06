@@ -72,7 +72,7 @@ const PostLayout = ({
 			</div>
 			<ScrollTop />
 			<header className="mx-auto flex w-11/12 flex-col gap-10 text-center lg:w-3/4">
-				<div className="flex items-center justify-center gap-5 text-zinc-500">
+				<div className="flex flex-wrap items-center justify-center gap-5 text-zinc-500">
 					{markdown.tags.map((tag) => (
 						<Tag key={tag} name={tag} />
 					))}

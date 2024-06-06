@@ -1,59 +1,27 @@
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/nightOwl'
-import * as React from 'react'
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown'
+import python from 'react-syntax-highlighter/dist/cjs/languages/prism/python'
+import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
+import { solarizedlight } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
-const RE = /{([\d,-]+)}/
+SyntaxHighlighter.registerLanguage('typescript', typescript)
+SyntaxHighlighter.registerLanguage('python', python)
+SyntaxHighlighter.registerLanguage('markdown', markdown)
 
-const calculateLinesToHighlight = (meta) => {
-	if (!RE.test(meta)) {
-		return () => false
-	}
-	const lineNumbers = RE.exec(meta)[1]
-		.split(`,`)
-		.map((v) => v.split(`-`).map((x) => parseInt(x, 10)))
-	return (index) => {
-		const lineNumber = index + 1
-		const inRange = lineNumbers.some(([start, end]) =>
-			end ? lineNumber >= start && lineNumber <= end : lineNumber === start
-		)
-		return inRange
-	}
-}
-
-const Code = ({ codeString, language, metastring, ...props }) => {
-	const shouldHighlightLine = calculateLinesToHighlight(metastring)
-
-	return (
-		<Highlight
-			{...defaultProps}
-			code={codeString}
-			language={language}
-			theme={theme}
-			{...props}
+const Code = ({ inline, className, ...props }) => {
+	const hasLang = /language-(\w+)/.exec(className || '')
+	return !inline && hasLang ? (
+		<SyntaxHighlighter
+			style={solarizedlight}
+			language={hasLang[1]}
+			PreTag="div"
+			className="scrollbar-thin scrollbar-track-base-content/5 scrollbar-thumb-base-content/40 scrollbar-track-rounded-md scrollbar-thumb-rounded mockup-code"
+			showLineNumbers={false}
 		>
-			{({ className, style, tokens, getLineProps, getTokenProps }) => (
-				<div className="gatsby-highlight" data-language={language}>
-					<pre className={className} style={style}>
-						{tokens.map((line, i) => {
-							const lineProps = getLineProps({ line, key: i })
-
-							if (shouldHighlightLine(i)) {
-								lineProps.className = `${lineProps.className} highlight-line`
-							}
-
-							return (
-								<div {...lineProps}>
-									<span className="line-number-style">{i + 1}</span>
-									{line.map((token, key) => (
-										<span {...getTokenProps({ token, key })} />
-									))}
-								</div>
-							)
-						})}
-					</pre>
-				</div>
-			)}
-		</Highlight>
+			{String(props.children).replace(/\n$/, '')}
+		</SyntaxHighlighter>
+	) : (
+		<code className={className} {...props} />
 	)
 }
 

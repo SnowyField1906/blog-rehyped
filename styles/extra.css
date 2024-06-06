@@ -96,6 +96,10 @@ input:-webkit-autofill:focus {
     transition: background-color 0 !important;
 }
 
+.recharts-pie-label-line {
+    display: none !important;
+}
+
 .simple-link {
     position: relative;
 }
@@ -181,6 +185,10 @@ input:-webkit-autofill:focus {
 /* prevent katex increase width by overflow */
 .math-display > .katex-display > .katex > .katex-html > .tag {
     overflow: hidden;
+}
+
+.react-syntax-highlighter-line-number {
+    border: none !important;
 }
 
 .pushable {

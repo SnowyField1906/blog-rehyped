@@ -24,10 +24,10 @@ const Button = ({
 		<ArrowIcon
 			className={cn(
 				size === 'xl' && 'h-8 w-8',
-				size === 'lg' && 'mt-0.5 h-7 w-7',
-				size === 'base' && 'mt-0.5 h-6 w-6',
-				size === 'sm' && 'mt-0.5 h-5 w-5',
-				variant === 'text' && 'top-px',
+				size === 'lg' && 'mt-0 h-6 w-6 lg:mt-0.5 lg:h-7 lg:w-7',
+				size === 'base' && 'mt-0 h-5 w-5 lg:mt-0.5 lg:h-6 lg:w-6',
+				size === 'sm' && 'mt-0 h-3 w-3 lg:mt-0.5 lg:h-4 lg:w-4',
+				variant === 'text' && 'mb-1',
 				arrow === 'left' && '-ml-1 rotate-180',
 				arrow === 'right' && '-mr-1'
 			)}

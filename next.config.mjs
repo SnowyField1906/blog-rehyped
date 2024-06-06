@@ -42,6 +42,7 @@ const nextConfig = {
         EMAILOCTOPUS_API_URL: process.env.EMAILOCTOPUS_API_URL,
         EMAILOCTOPUS_API_KEY: process.env.EMAILOCTOPUS_API_KEY,
         EMAILOCTOPUS_LIST_ID: process.env.EMAILOCTOPUS_LIST_ID,
+        WAKATIME_API_KEY: process.env.WAKATIME_API_KEY,
     },
     async headers() {
         return [

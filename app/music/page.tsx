@@ -13,7 +13,7 @@ import {
 	getPlaylist,
 	getTopArtists,
 	getTopTracks,
-	getUserProfile,
+	getUser,
 } from '@libs/spotify'
 
 const metadata = siteMetadata.internalLinks.find(
@@ -35,7 +35,7 @@ const Music = async () => {
 	const token = await getAccessToken()
 
 	const [
-		userProfile,
+		user,
 		topArtistsShort,
 		topArtistsMedium,
 		topArtistsLong,
@@ -46,7 +46,7 @@ const Music = async () => {
 		featuresPlaylist,
 		freshPicksPlaylist,
 	] = await Promise.all([
-		getUserProfile(token),
+		getUser(token),
 		getTopArtists('short_term', 5, token),
 		getTopArtists('medium_term', 5, token),
 		getTopArtists('long_term', 5, token),
@@ -69,7 +69,7 @@ const Music = async () => {
 				<div className="flex w-full items-center justify-center font-display ">
 					<NowPlaying pulse hideOnOff text />
 				</div>
-				<SpotifyProfile user={userProfile} />
+				<SpotifyProfile user={user} />
 				<TopArtists
 					artists={{
 						short: topArtistsShort,

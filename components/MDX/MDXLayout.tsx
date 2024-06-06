@@ -7,6 +7,7 @@ import { useMemo } from 'react'
 
 import Button from '@components/Common/Button'
 import Image from '@components/Common/Image'
+import Code from '@components/MDX/Code'
 import Figure from '@components/MDX/Figure'
 import Pre from '@components/MDX/Pre'
 import PostLayout from '@layouts/PostLayout'
@@ -15,8 +16,9 @@ const mdxComponents: MDXComponents = {
 	Figure,
 	Button,
 	Image,
-	pre: Pre as any,
 	a: Link as any,
+	code: Code as any,
+	pre: Pre,
 	// h2: (props) => <Heading level={2} {...props} />,
 	// h3: (props) => <Heading level={3} {...props} />,
 	// h4: (props) => <Heading level={4} {...props} />,

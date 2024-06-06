@@ -28,6 +28,41 @@ export const formatDateTime = (date) => {
     })
 }
 
+export const formatTime = (
+    duration,
+    hours = true,
+    minutes = false,
+    seconds = false
+) => {
+    let h = Math.floor(duration / 3600)
+    let m = Math.floor((duration % 3600) / 60)
+    let s = Math.floor(duration % 60)
+
+    h = h < 10 ? 0 + h : h
+    m = m < 10 ? 0 + m : m
+    s = s < 10 ? 0 + s : s
+
+    const string = `${hours ? h + ' hours' : ''} ${minutes ? m + ' minutes' : ''} ${seconds ? s + ' seconds' : ''}`
+
+    return string.trim()
+}
+
+export const parseMonth = (timestamp) => {
+    console.log(timestamp)
+    const date = new Date(timestamp)
+
+    return new Date(date).toLocaleString(siteMetadata.locale, {
+        month: 'long',
+    })
+}
+
+export const getDateFromDayOrder = (dayOrder) => {
+    const date = new Date()
+    date.setDate(date.getDate() - dayOrder)
+
+    return date
+}
+
 export const convertDate = (date: string) => {
     const d = new Date(date)
     const year = d.getFullYear()

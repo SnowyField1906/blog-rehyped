@@ -75,7 +75,7 @@ export const getTopArtists = async (
     return response.json()
 }
 
-export const getUserProfile = async (token?: any) => {
+export const getUser = async (token?: any) => {
     const { access_token } = token || (await getAccessToken())
 
     const user = fetch('https://api.spotify.com/v1/me', {

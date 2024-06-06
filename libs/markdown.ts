@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 
-import { rehypeCode } from 'fumadocs-core/mdx-plugins'
 import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -17,6 +16,7 @@ import {
     getCountAllFirstLevelFolders,
 } from '@/libs/files'
 import {
+    remarkCodeTitles,
     remarkExtractFrontmatter,
     remarkImgToJsx,
     remarkTocHeadings,
@@ -72,6 +72,7 @@ export const getMarkdown = async (slug: string): Promise<Markdown> => {
                 remarkGfm,
                 [remarkFootnotes, { inlineNotes: true }],
                 remarkMath,
+                remarkCodeTitles,
                 remarkImgToJsx,
             ] as any
             options.rehypePlugins = [
@@ -79,7 +80,6 @@ export const getMarkdown = async (slug: string): Promise<Markdown> => {
                 rehypeSlug,
                 rehypeAutolinkHeadings,
                 rehypeKatex,
-                rehypeCode,
                 rehypePresetMinify,
             ]
             return options

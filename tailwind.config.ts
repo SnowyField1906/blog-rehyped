@@ -23,6 +23,7 @@ const config: Config = {
             serif: ['Noto Serif JP', 'serif'],
             heading: ['Cormorant SC', 'serif'],
             display: ['Playfair Display', 'serif'],
+            mono: ['Fira Code', 'monospace'],
         },
         fontSize: {
             '2xs': ['0.75rem', { lineHeight: '1.25rem' }],
@@ -40,49 +41,6 @@ const config: Config = {
             '8xl': ['5.75rem', { lineHeight: '1' }],
             '9xl': ['7rem', { lineHeight: '1' }],
         },
-        // extend: {
-        //     colors: {
-        //         primary: {
-        //             50: 'rgb(var(--primary-50) / <alpha-value>)',
-        //             100: 'rgb(var(--primary-100) / <alpha-value>)',
-        //             200: 'rgb(var(--primary-200) / <alpha-value>)',
-        //             300: 'rgb(var(--primary-300) / <alpha-value>)',
-        //             400: 'rgb(var(--primary-400) / <alpha-value>)',
-        //             500: 'rgb(var(--primary-500) / <alpha-value>)',
-        //             600: 'rgb(var(--primary-600) / <alpha-value>)',
-        //             700: 'rgb(var(--primary-700) / <alpha-value>)',
-        //             800: 'rgb(var(--primary-800) / <alpha-value>)',
-        //             900: 'rgb(var(--primary-900) / <alpha-value>)',
-        //             950: 'rgb(var(--primary-950) / <alpha-value>)',
-        //         },
-        //         secondary: {
-        //             50: 'rgb(var(--secondary-50) / <alpha-value>)',
-        //             100: 'rgb(var(--secondary-100) / <alpha-value>)',
-        //             200: 'rgb(var(--secondary-200) / <alpha-value>)',
-        //             300: 'rgb(var(--secondary-300) / <alpha-value>)',
-        //             400: 'rgb(var(--secondary-400) / <alpha-value>)',
-        //             500: 'rgb(var(--secondary-500) / <alpha-value>)',
-        //             600: 'rgb(var(--secondary-600) / <alpha-value>)',
-        //             700: 'rgb(var(--secondary-700) / <alpha-value>)',
-        //             800: 'rgb(var(--secondary-800) / <alpha-value>)',
-        //             900: 'rgb(var(--secondary-900) / <alpha-value>)',
-        //             950: 'rgb(var(--secondary-950) / <alpha-value>)',
-        //         },
-        //         tertiary: {
-        //             50: 'rgb(var(--tertiary-50) / <alpha-value>)',
-        //             100: 'rgb(var(--tertiary-100) / <alpha-value>)',
-        //             200: 'rgb(var(--tertiary-200) / <alpha-value>)',
-        //             300: 'rgb(var(--tertiary-300) / <alpha-value>)',
-        //             400: 'rgb(var(--tertiary-400) / <alpha-value>)',
-        //             500: 'rgb(var(--tertiary-500) / <alpha-value>)',
-        //             600: 'rgb(var(--tertiary-600) / <alpha-value>)',
-        //             700: 'rgb(var(--tertiary-700) / <alpha-value>)',
-        //             800: 'rgb(var(--tertiary-800) / <alpha-value>)',
-        //             900: 'rgb(var(--tertiary-900) / <alpha-value>)',
-        //             950: 'rgb(var(--tertiary-950) / <alpha-value>)',
-        //         },
-        //     },
-        // },
         typography: ({ theme }) => ({
             DEFAULT: {
                 css: {
@@ -100,36 +58,8 @@ const config: Config = {
                     '--tw-prose-quotes': theme('colors.zinc.800'),
                     '--tw-prose-quote-borders': theme('colors.zinc.200'),
                     '--tw-prose-captions': theme('colors.zinc.500'),
-                    '--tw-prose-code': theme('colors.zinc.800'),
-                    '--tw-prose-code-bg': theme('colors.zinc.100'),
-                    '--tw-prose-code-ring': theme('colors.zinc.300'),
                     '--tw-prose-th-borders': theme('colors.zinc.300'),
                     '--tw-prose-td-borders': theme('colors.zinc.200'),
-
-                    '--tw-prose-invert-body': theme('colors.zinc.400'),
-                    '--tw-prose-invert-headings': theme('colors.white'),
-                    '--tw-prose-invert-links': theme('colors.primary.400'),
-                    '--tw-prose-invert-links-hover':
-                        theme('colors.primary.500'),
-                    '--tw-prose-invert-links-underline': theme(
-                        'colors.primary.500 / 0.3'
-                    ),
-                    '--tw-prose-invert-bold': theme('colors.zinc.300'),
-                    '--tw-prose-invert-counters': theme('colors.zinc.400'),
-                    '--tw-prose-invert-bullets': theme('colors.zinc.600'),
-                    '--tw-prose-invert-hr': theme('colors.zinc.300 / 0.05'),
-                    '--tw-prose-invert-quotes': theme('colors.zinc.100'),
-                    '--tw-prose-invert-quote-borders': theme('colors.zinc.700'),
-                    '--tw-prose-invert-captions': theme('colors.zinc.400'),
-                    '--tw-prose-invert-code': theme('colors.zinc.300'),
-                    '--tw-prose-invert-code-bg': theme(
-                        'colors.zinc.700 / 0.15'
-                    ),
-                    '--tw-prose-invert-code-ring': theme(
-                        'colors.zinc.300 / 0.1'
-                    ),
-                    '--tw-prose-invert-th-borders': theme('colors.zinc.600'),
-                    '--tw-prose-invert-td-borders': theme('colors.zinc.700'),
 
                     // Base
                     color: 'var(--tw-prose-body)',
@@ -427,6 +357,7 @@ const config: Config = {
                         backgroundColor: 'var(--tw-prose-code-bg)',
                         fontSize: theme('fontSize.2xs'),
                     },
+
                     ':is(a, h1, h2, h3, blockquote, thead th) code': {
                         color: 'inherit',
                     },
@@ -476,32 +407,6 @@ const config: Config = {
                         fontSize: theme('fontSize.lg')[0],
                         ...theme('fontSize.lg')[1],
                     },
-                },
-            },
-            invert: {
-                css: {
-                    '--tw-prose-body': 'var(--tw-prose-invert-body)',
-                    '--tw-prose-headings': 'var(--tw-prose-invert-headings)',
-                    '--tw-prose-links': 'var(--tw-prose-invert-links)',
-                    '--tw-prose-links-hover':
-                        'var(--tw-prose-invert-links-hover)',
-                    '--tw-prose-links-underline':
-                        'var(--tw-prose-invert-links-underline)',
-                    '--tw-prose-bold': 'var(--tw-prose-invert-bold)',
-                    '--tw-prose-counters': 'var(--tw-prose-invert-counters)',
-                    '--tw-prose-bullets': 'var(--tw-prose-invert-bullets)',
-                    '--tw-prose-hr': 'var(--tw-prose-invert-hr)',
-                    '--tw-prose-quotes': 'var(--tw-prose-invert-quotes)',
-                    '--tw-prose-quote-borders':
-                        'var(--tw-prose-invert-quote-borders)',
-                    '--tw-prose-captions': 'var(--tw-prose-invert-captions)',
-                    '--tw-prose-code': 'var(--tw-prose-invert-code)',
-                    '--tw-prose-code-bg': 'var(--tw-prose-invert-code-bg)',
-                    '--tw-prose-code-ring': 'var(--tw-prose-invert-code-ring)',
-                    '--tw-prose-th-borders':
-                        'var(--tw-prose-invert-th-borders)',
-                    '--tw-prose-td-borders':
-                        'var(--tw-prose-invert-td-borders)',
                 },
             },
         }),

@@ -13,7 +13,7 @@ const PostPreview = async ({ frontmatter }: { frontmatter: Frontmatter }) => {
 					alt="Post Thumbnail"
 				/>
 			</div>
-			<div className="mt-2 flex gap-2 overflow-x-auto text-2xs uppercase lg:gap-5 lg:text-xs lg:tracking-wider">
+			<div className="mt-2 flex gap-2 text-2xs uppercase lg:gap-5 lg:text-xs lg:tracking-wider">
 				{frontmatter.tags.map((tag) => (
 					<Link
 						className="minimal-link w-fit hover:text-black"
