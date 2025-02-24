@@ -50,13 +50,13 @@ const TopArtists = ({ artists }) => {
 					</Button>
 				))}
 			</div>
-			<div className="mx-auto flex w-full place-items-center items-center">
+			<div className="mx-auto flex w-full place-items-center items-center justify-between">
 				{[4, 2, 0, 1, 3]
 					.map((index) => artistsState[range]?.items[index])
 					.map((artist, index) => (
 						<a
 							key={artist.id}
-							className="mx-auto flex w-fit flex-col place-items-center items-center gap-2"
+							className="flex w-fit flex-col place-items-center items-center gap-2"
 							href={artist.external_urls.spotify}
 							target="_blank"
 							rel="noopener noreferrer"
@@ -65,15 +65,15 @@ const TopArtists = ({ artists }) => {
 								src={artist.images[2].url}
 								alt={artist.name}
 								className={cn(
-									'h-8 w-8 rounded-full lg:h-14 lg:w-14 xl:h-24 xl:w-24',
+									'h-10 w-10 rounded-full object-cover lg:h-16 lg:w-16 xl:h-28 xl:w-28',
 									(index === 1 || index === 3) &&
-										'h-14 w-14 lg:h-24 lg:w-24 xl:h-32 xl:w-32',
-									index === 2 && 'h-24 w-24 lg:h-32 lg:w-32 xl:h-44 xl:w-44'
+										'h-16 w-16 lg:h-28 lg:w-28 xl:h-36 xl:w-36',
+									index === 2 && 'h-28 w-28 lg:h-36 lg:w-36 xl:h-52 xl:w-52'
 								)}
-							/>
+							/>{' '}
 							<span
 								className={cn(
-									'text-center font-display text-2xs text-zinc-700 lg:text-xs xl:text-sm',
+									'h-12 w-min text-wrap text-center font-display text-2xs text-zinc-700 lg:w-full lg:text-xs xl:text-sm',
 									(index === 1 || index === 3) &&
 										'text-xs font-medium lg:text-sm xl:text-base',
 									index === 2 && 'text-sm font-medium lg:text-base xl:text-lg'

@@ -46,20 +46,20 @@ const config: Config = {
                 css: {
                     '--tw-prose-body': theme('colors.zinc.700'),
                     '--tw-prose-headings': theme('colors.zinc.900'),
-                    '--tw-prose-links': theme('colors.primary.600'),
-                    '--tw-prose-links-hover': theme('colors.primary.800'),
-                    '--tw-prose-links-underline': theme(
-                        'colors.primary.800 / 0.3'
-                    ),
+                    '--tw-prose-links': theme('colors.zinc.800'),
+                    '--tw-prose-links-hover': theme('colors.zinc.800'),
+                    '--tw-prose-links-underline': theme('colors.zinc.400'),
+                    '--tw-prose-links-underline-hover':
+                        theme('colors.zinc.800'),
                     '--tw-prose-bold': theme('colors.zinc.800'),
-                    '--tw-prose-counters': theme('colors.zinc.500'),
-                    '--tw-prose-bullets': theme('colors.zinc.300'),
+                    '--tw-prose-counters': theme('colors.zinc.800'),
+                    '--tw-prose-bullets': theme('colors.zinc.800'),
                     '--tw-prose-hr': theme('colors.zinc.800 / 0.05'),
                     '--tw-prose-quotes': theme('colors.zinc.800'),
-                    '--tw-prose-quote-borders': theme('colors.zinc.200'),
+                    '--tw-prose-quote-borders': theme('colors.zinc.800'),
                     '--tw-prose-captions': theme('colors.zinc.500'),
-                    '--tw-prose-th-borders': theme('colors.zinc.300'),
-                    '--tw-prose-td-borders': theme('colors.zinc.200'),
+                    '--tw-prose-th-borders': theme('colors.zinc.800'),
+                    '--tw-prose-td-borders': theme('colors.zinc.800'),
 
                     // Base
                     color: 'var(--tw-prose-body)',
@@ -78,6 +78,12 @@ const config: Config = {
                         overflowX: 'auto',
                         overflowY: 'hidden',
                         ...theme('fontSize.xl')[1],
+                    },
+                    '[aria-describedby~="footnote-label"]::before': {
+                        content: '"["',
+                    },
+                    '[aria-describedby~="footnote-label"]::after': {
+                        content: '"]"',
                     },
 
                     // Lists
@@ -181,16 +187,9 @@ const config: Config = {
                         color: 'var(--tw-prose-quotes)',
                         borderLeftWidth: '0.25rem',
                         borderLeftColor: 'var(--tw-prose-quote-borders)',
-                        quotes: '"\\201C""\\201D""\\2018""\\2019"',
                         marginTop: theme('spacing.8'),
                         marginBottom: theme('spacing.8'),
                         paddingLeft: theme('spacing.5'),
-                    },
-                    'blockquote p:first-of-type::before': {
-                        content: 'open-quote',
-                    },
-                    'blockquote p:last-of-type::after': {
-                        content: 'close-quote',
                     },
 
                     // Headings
@@ -324,7 +323,9 @@ const config: Config = {
                     // Inline elements
                     a: {
                         color: 'var(--tw-prose-links)',
-                        textDecoration: 'underline transparent',
+                        textDecoration: 'underline',
+                        textDecorationColor: 'var(--tw-prose-links-underline)',
+                        textUnderlineOffset: '0.2em',
                         fontWeight: '500',
                         transitionProperty: 'color, text-display-color',
                         transitionDuration: theme('transitionDuration.DEFAULT'),
@@ -334,8 +335,7 @@ const config: Config = {
                         '&:hover': {
                             color: 'var(--tw-prose-links-hover)',
                             textDecorationColor:
-                                'var(--tw-prose-links-underline)',
-                            textUnderlineOffset: '0.2em',
+                                'var(--tw-prose-links-underline-hover)',
                         },
                     },
                     ':is(h1, h2, h3) a': {

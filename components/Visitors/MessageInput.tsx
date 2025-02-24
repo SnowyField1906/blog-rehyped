@@ -59,8 +59,11 @@ const MessageInput = ({ session }: { session: Session | null }) => {
 						variant="primary"
 						size="base"
 						className="mx-0"
-						onClick={async () =>
-							await signIn('google').then(() => router.refresh())
+						onClick={() =>
+							signIn('google', {
+								callbackUrl: window.location.href,
+								redirect: true,
+							})
 						}
 					>
 						Sign in

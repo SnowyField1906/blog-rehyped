@@ -173,18 +173,24 @@ input:-webkit-autofill:focus {
 
 /* downscale latex font size by 80% */
 .math-display > .katex-display > .katex > .katex-html {
-    font-size: 90%;
+    font-size: 120%;
     letter-spacing: -0.05em;
+    /* prevent katex increase width by overflow */
+    overflow: hidden;
 }
 
 .math-inline > .katex > .katex-html {
-    font-size: 90%;
+    font-size: 120%;
     letter-spacing: -0.05em;
 }
 
 /* prevent katex increase width by overflow */
 .math-display > .katex-display > .katex > .katex-html > .tag {
     overflow: hidden;
+}
+
+.tag > .vlist-t > .vlist-r > .vlist {
+    text-align: right;
 }
 
 .react-syntax-highlighter-line-number {

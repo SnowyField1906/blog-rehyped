@@ -14,7 +14,7 @@ _Markov Decision Process (MDP) là một bài toán Dynamic Programming (Quy ho�
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration._
 
-> Khuyến nghị đọc trước [Phần 2](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-2) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Phần 2](https://snowyfield.site/posts/hieu-sau-ve-markov-decision-process-phan-2) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 
@@ -36,7 +36,7 @@ Phần này tương đối đơn giản vì một phần là ta đã đi qua Pol
 
 Ở phần trước, chúng ta đã biết được 3 công thức quan trọng của Policy Iteration:
 
--   Công thức tính $\mathcal{V}$:
+- Công thức tính $\mathcal{V}$:
 
 $$
 \begin{align}
@@ -45,7 +45,7 @@ $$
 \end{align}
 $$
 
--   Công thức quan hệ giữa Value của State hiện tại và State kế tiếp:
+- Công thức quan hệ giữa Value của State hiện tại và State kế tiếp:
 
 $$
 \begin{align}
@@ -55,7 +55,7 @@ $$
 \end{align}
 $$
 
--   Công thức tính Policy (Policy Improvement):
+- Công thức tính Policy (Policy Improvement):
 
 $$
 \begin{align}
@@ -204,7 +204,6 @@ Value Iteration cũng sẽ có Policy Improvement với thuật toán hoàn toà
 
 <Figure name="mdp-world-final-vi.png" caption="Ví dụ Policy trong game Pac-Man"/>
 
-
 ## Triển khai code Python
 
 Toàn bộ code có thể xem chi tiết tại: [snowyfield1906/ai-general-research/reinforcement_learning](https://github.com/SnowyField1906/ai-general-research/reinforcement_learning).
@@ -231,7 +230,7 @@ def __init__(self, reward_function, transition_model, init_value=None):
 
 #### Các hàm Value Evaluation và Policy Improvement
 
--   Value Evaluation
+- Value Evaluation
 
 ```python
 def one_evaluation(self):
@@ -254,7 +253,7 @@ def one_evaluation(self):
     return delta
 ```
 
--   Policy Improvement
+- Policy Improvement
 
 ```python
 def policy_improvement(self):

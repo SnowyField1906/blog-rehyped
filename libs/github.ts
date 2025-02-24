@@ -6,6 +6,9 @@ const basic = Buffer.from(`${username}:${process.env.GITHUB_TOKEN}`).toString(
 
 export const getUser = async () => {
     const user = fetch(`https://api.github.com/users/${username}`, {
+        next: {
+            revalidate: 3600,
+        },
         headers: {
             Authorization: `Basic ${basic}`,
         },
@@ -28,6 +31,9 @@ export const getAllCommits = async () => {
     const response = await fetch(
         `https://api.github.com/users/${username}/received_events?per_page=100?page=3`,
         {
+            next: {
+                revalidate: 3600,
+            },
             headers: {
                 Authorization: `Basic ${basic}`,
             },

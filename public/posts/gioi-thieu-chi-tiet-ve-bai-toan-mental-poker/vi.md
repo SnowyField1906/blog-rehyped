@@ -9,7 +9,7 @@ _Các trò chơi online ngày nay đang trở thành một phần quan trọng c
 
 _Tuy nhiên, vấn đề này có thể được giải quyết bằng cách sử dụng Zero-Knowledge Proof (ZKP) và Blockchain để loại bỏ bên thứ 3, tăng tính bảo mật cho người chơi và tính minh bạch cho trò chơi._
 
-> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.site/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Giới thiệu về Mental Poker
 
@@ -48,9 +48,9 @@ Với cách này, chúng ta sẽ tổ chức trò chơi theo kiểu Dealer (Nhà
 
 Việc dealer nắm giữ thông tin của các người chơi để tránh việc người chơi tương tác trực tiếp với nhau nhằm gian lận là một điều tất yếu. Tuy nhiên, điều này lại đồng nghĩa với việc chúng ta phải tin tưởng vào dealer tuyệt đối, trong khi:
 
--   Dealer hoàn toàn biết được toàn bộ lá bài và có thể thông đồng với một ai đó để giúp họ gian lận.
--   Ai đó có thể đe dọa hoặc âm thầm theo dõi dealer để gian lận.
--   Dealer có thể thao túng, nói dối người chơi hoặc âm thầm thay đổi giá trị của các lá bài.
+- Dealer hoàn toàn biết được toàn bộ lá bài và có thể thông đồng với một ai đó để giúp họ gian lận.
+- Ai đó có thể đe dọa hoặc âm thầm theo dõi dealer để gian lận.
+- Dealer có thể thao túng, nói dối người chơi hoặc âm thầm thay đổi giá trị của các lá bài.
 
 #### Kết luận vấn đề
 
@@ -75,9 +75,9 @@ Ví dụ, khi Bob có một tin nhắn từ Alice và tin nhắn này bị mã h
 
 Để hình tượng hóa phương pháp này, hãy liên tưởng đến một chiếc hộp đã được khóa và chúng ta muốn khóa thêm một lần nữa:
 
--   Đối với các phương pháp mã hóa thông thường, chúng ta sẽ khóa lên chiếc ổ khóa cũ.
+- Đối với các phương pháp mã hóa thông thường, chúng ta sẽ khóa lên chiếc ổ khóa cũ.
     Lúc này, để mở được hộp, chúng ta phải mở ổ khóa bên ngoài trước để có thể mở ổ khóa bên trong.
--   Nhưng đối với Commutative Encryption, chúng ta chỉ việc khóa thêm một ổ khóa.
+- Nhưng đối với Commutative Encryption, chúng ta chỉ việc khóa thêm một ổ khóa.
     Lúc này, chúng ta có thể mở được hộp mà không cần phải quan tâm đến thứ tự mở khóa.
 
 ## Đi vào thuật toán

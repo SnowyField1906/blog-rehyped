@@ -1,7 +1,6 @@
-import Visitor, { IVisitor } from '@schemas/visitor'
-
 import { verify } from '@libs/api'
 import { connectDB } from '@libs/mongodb'
+import Visitor, { IVisitor } from '@schemas/visitor'
 
 export const findAll = async (): Promise<Visitor[]> => {
     await connectDB()

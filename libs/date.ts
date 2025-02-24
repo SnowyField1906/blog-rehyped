@@ -58,7 +58,11 @@ export const parseMonth = (timestamp) => {
 
 export const getDateFromDayOrder = (dayOrder) => {
     const date = new Date()
-    date.setDate(date.getDate() - dayOrder)
+    const year = date.getFullYear()
+    const days =
+        365 - (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0) ? 1 : 0)
+
+    date.setDate(date.getDate() + dayOrder - days)
 
     return date
 }

@@ -14,7 +14,7 @@ const RootLayout = ({
 	children: React.ReactNode
 }>) => {
 	return (
-		<html lang="en" className="scroll-smooth bg-zinc-100">
+		<html lang="en" className="scroll-smooth bg-zinc-50">
 			<DocumentHead />
 			<body>
 				<NextTopLoader

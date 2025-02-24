@@ -35,17 +35,17 @@ Tuy nhiên DeFi cũng có một số rủi ro nhất định, trong đó rủi r
 
 #### Ưu điểm
 
--   **Phi tập trung và sự kiểm soát**: DeFi loại bỏ sự cần thiết của trung gian tài chính truyền thống như ngân hàng, giúp cá nhân có thể kiểm soát tài sản và giao dịch của mình mà không cần phải thông qua bên thứ ba.
--   **Tiếp cận mở**: Mọi người trên khắp thế giới đều có thể tham gia vào DeFi chỉ cần một kết nối internet, tạo ra những cơ hội tài chính mới cho những người không thể tiếp cận dịch vụ tài chính truyền thống, như vay vốn, đầu tư vào các tài sản, và tham gia vào các sản phẩm tài chính phức tạp.
--   **Khả năng kiểm tra và minh bạch**: Do thông tin trên Blockchain là công khai và không thể thay đổi, tạo nên sự minh bạch về các thông số báo cáo và giảm thiểu các vấn đề về gian lận trong các hệ thống tài chính.
+- **Phi tập trung và sự kiểm soát**: DeFi loại bỏ sự cần thiết của trung gian tài chính truyền thống như ngân hàng, giúp cá nhân có thể kiểm soát tài sản và giao dịch của mình mà không cần phải thông qua bên thứ ba.
+- **Tiếp cận mở**: Mọi người trên khắp thế giới đều có thể tham gia vào DeFi chỉ cần một kết nối internet, tạo ra những cơ hội tài chính mới cho những người không thể tiếp cận dịch vụ tài chính truyền thống, như vay vốn, đầu tư vào các tài sản, và tham gia vào các sản phẩm tài chính phức tạp.
+- **Khả năng kiểm tra và minh bạch**: Do thông tin trên Blockchain là công khai và không thể thay đổi, tạo nên sự minh bạch về các thông số báo cáo và giảm thiểu các vấn đề về gian lận trong các hệ thống tài chính.
 
 #### Nhược điểm
 
--   **An toàn và bảo mật**: Như đã nói ở trên, các Smart Contract không phải lúc nào cũng hoàn hảo và có thể có các lỗ hổng bảo mật dù đã được test và audit kĩ càng. Các hacker có thể tìm cách tấn công các dịch vụ DeFi để đánh cắp tài sản của người dùng.
--   **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai **Zero-Knowledge Proof**, nó có thể giúp các tội phạm rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã bị bắt giữ.
--   **Các rủi ro khác**: Có thể kể đến như biến động thị trường, thất thoát tiền mã hoá, mất khả năng trợ giúp,...
+- **An toàn và bảo mật**: Như đã nói ở trên, các Smart Contract không phải lúc nào cũng hoàn hảo và có thể có các lỗ hổng bảo mật dù đã được test và audit kĩ càng. Các hacker có thể tìm cách tấn công các dịch vụ DeFi để đánh cắp tài sản của người dùng.
+- **Pháp lý và quy định**: Vì DeFi hoạt động trong môi trường mới và thường không chịu sự kiểm soát chặt chẽ, các vấn đề liên quan đến pháp lý và quy định có thể phát sinh. Các tội phạm DeFi cũng thường rất khó truy vết. Một ví dụ điển hình là [Tornado Cash](https://en.wikipedia.org/wiki/Tornado_Cash). Bằng việc triển khai **Zero-Knowledge Proof**, nó có thể giúp các tội phạm rửa tiền mà không có cách nào để truy vết. Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã bị bắt giữ.
+- **Các rủi ro khác**: Có thể kể đến như biến động thị trường, thất thoát tiền mã hoá, mất khả năng trợ giúp,...
 
-> Đọc thêm về Zero-Knowledge tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.me/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
+> Đọc thêm về Zero-Knowledge tại bài viết [Zero-Knowledge Proof là gì và cách hoạt động](https://snowyfield.site/posts/zero-knowledge-proof-la-gi-va-cach-hoat-dong).
 
 ## Các hoạt động trên DeFi
 

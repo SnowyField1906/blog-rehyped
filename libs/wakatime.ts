@@ -9,6 +9,9 @@ export const getStats = async (
             headers: {
                 Authorization: `Basic ${basic}`,
             },
+            next: {
+                revalidate: 360,
+            },
         }
     )
 
@@ -23,6 +26,9 @@ export const getInsights = async (
         {
             headers: {
                 Authorization: `Basic ${basic}`,
+            },
+            next: {
+                revalidate: 360,
             },
         }
     )

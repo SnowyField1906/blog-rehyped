@@ -27,14 +27,14 @@ Trong đó AMM là mô hình được sử dụng rộng rãi nhất, trong khi 
 
 ### Các thuật ngữ cơ bản
 
--   **Pool**: Là cặp tiền mã hoá được sử dụng để trao đổi với nhau, thường kí hiệu là Base/Quote.
--   **Base**/**Quote Token**: Lần lượt là tiền mã hoá được dùng để **Giao dịch** và **Định giá**. Ví dụ trong cặp ETH/USDT, ETH là **Base Token** và USDT là **Quote Token**.
--   **Swap**: Lần lượt là hành động **Mua** và **Bán** một token trong một pool.
--   **Liquidity**: Là số lượng thanh khoản của một pool. Con số này biểu thị khả năng mua bán của một pool.
--   **Liquidity Provider**: Là người cung cấp thanh khoản cho một pool. LP sẽ nhận được phần thưởng từ phí swap.
--   **Execution Price**: Là giá trị thực tế mà một token được mua hoặc bán trong một giao dịch, đây là độ dài của đoạn thẳng nối 2 điểm giá (trước và sau) trên đồ thị.
--   **Slippage**: Là sự thay đổi giá của một token sau khi thực hiện swap. Slippage thường được tính bằng phần trăm.
--   **Oracle**: Là một dịch vụ cung cấp giá trị của một token, thông thường được sử dụng để định giá token trong một pool.
+- **Pool**: Là cặp tiền mã hoá được sử dụng để trao đổi với nhau, thường kí hiệu là Base/Quote.
+- **Base**/**Quote Token**: Lần lượt là tiền mã hoá được dùng để **Giao dịch** và **Định giá**. Ví dụ trong cặp ETH/USDT, ETH là **Base Token** và USDT là **Quote Token**.
+- **Swap**: Lần lượt là hành động **Mua** và **Bán** một token trong một pool.
+- **Liquidity**: Là số lượng thanh khoản của một pool. Con số này biểu thị khả năng mua bán của một pool.
+- **Liquidity Provider**: Là người cung cấp thanh khoản cho một pool. LP sẽ nhận được phần thưởng từ phí swap.
+- **Execution Price**: Là giá trị thực tế mà một token được mua hoặc bán trong một giao dịch, đây là độ dài của đoạn thẳng nối 2 điểm giá (trước và sau) trên đồ thị.
+- **Slippage**: Là sự thay đổi giá của một token sau khi thực hiện swap. Slippage thường được tính bằng phần trăm.
+- **Oracle**: Là một dịch vụ cung cấp giá trị của một token, thông thường được sử dụng để định giá token trong một pool.
 
 ### Khái niệm và nguyên tắc hoạt động của AMM
 
@@ -69,9 +69,9 @@ $$
 
 Trong đó:
 
--   $x$ là số lượng base token trong pool
--   $y$ là số lượng quote token trong pool
--   $k$ là một **Constant Product** (Tích hằng số) lớn hơn 0 và con số này không quan trọng
+- $x$ là số lượng base token trong pool
+- $y$ là số lượng quote token trong pool
+- $k$ là một **Constant Product** (Tích hằng số) lớn hơn 0 và con số này không quan trọng
 
 Vì $k$ là một hằng số nên khi $x$ tăng thì $y$ sẽ giảm và ngược lại. Số lượng của một loại tiền mã hóa và giá của nó trong pool sẽ không bao giờ bằng 0.
 
@@ -83,9 +83,9 @@ $$
 
 Trong đó:
 
--   $r = 1 + f$ là một hệ số với $f$ là phần trăm phí giao dịch, thường tính vào base token.
--   $\Delta x$ là số lượng base token muốn cho đi
--   $\Delta y$ là số lượng quote token muốn nhận lại
+- $r = 1 + f$ là một hệ số với $f$ là phần trăm phí giao dịch, thường tính vào base token.
+- $\Delta x$ là số lượng base token muốn cho đi
+- $\Delta y$ là số lượng quote token muốn nhận lại
 
 Khi mua một lượng token $y$ ($\Delta y$), ta sẽ phải đặt vào pool một lượng token $x$ ($\Delta x + f\Delta x$), gồm lượng token $x$ muốn đặt vào ($\Delta x$) phí giao dịch ($f\Delta x$). Phí giao dịch này sẽ được chia cho tất cả LP của pool đó.
 
@@ -150,8 +150,8 @@ $$
 
 Trong đó:
 
--   $P_{x}$ là giá của token $x$ đối với token $y$
--   $P_{y}$ là giá của token $y$ đối với token $x$
+- $P_{x}$ là giá của token $x$ đối với token $y$
+- $P_{y}$ là giá của token $y$ đối với token $x$
 
 #### Ví dụ minh họa
 
@@ -216,9 +216,9 @@ $$
 
 Trong đó:
 
--   $P_\text{LP}$ là giá trị của một LP token
--   $P_\text{T}$ là tổng giá trị của tất cả token trong pool
--   $\text{C}$ là tổng số lượng LP token đang lưu hành
+- $P_\text{LP}$ là giá trị của một LP token
+- $P_\text{T}$ là tổng giá trị của tất cả token trong pool
+- $\text{C}$ là tổng số lượng LP token đang lưu hành
 
 Ví dụ cặp ETH/USDT với ETH có giá là $2000$\$ và USDT có giá là $1$\$. Cho rằng trong pool có $2$ ETH và $4000$ USDT, khi đó giá của pool sẽ là:
 
@@ -247,10 +247,10 @@ $$
 
 Trong đó:
 
--   $\text{E}$ là lợi tức nhận được tính theo liquidity
--   $L$ Lượng liquidity đang cung cấp
--   $L_T$ Lượng liquidity của pool
--   $\Delta L_f$ Lượng phí mà người swap trả tính theo liquidity (tương đương $ f\Delta x$)
+- $\text{E}$ là lợi tức nhận được tính theo liquidity
+- $L$ Lượng liquidity đang cung cấp
+- $L_T$ Lượng liquidity của pool
+- $\Delta L_f$ Lượng phí mà người swap trả tính theo liquidity (tương đương $ f\Delta x$)
 
 Ví dụ cặp ETH/USDT ($0.3\%$) có liquidity là $8000$ và ta có $1000$ LP token, khi đó với một lượt swap có phí bằng 100 liquidty, ta sẽ nhận được:
 
@@ -290,9 +290,9 @@ $$
 
 Trong đó:
 
--   $\text{S}$ là độ trượt giá
--   $P_P$ là giá tuyệt đối
--   $P_A$ là giá thực tế
+- $\text{S}$ là độ trượt giá
+- $P_P$ là giá tuyệt đối
+- $P_A$ là giá thực tế
 
 Như vậy đã xảy ra trượt giá $\approx 8\%$. Giả sử nếu chúng ta cài đặt độ trượt giá là $5\%$, giao dịch này sẽ bị hủy.
 
@@ -300,15 +300,15 @@ Như vậy đã xảy ra trượt giá $\approx 8\%$. Giả sử nếu chúng ta
 
 #### Ưu điểm
 
--   **Đơn giản**: AMM là một mô hình đơn giản, dễ hiểu và dễ sử dụng. Phù hợp cho những người chỉ cần swap token một cách nhanh chóng mà không cần quan tâm đến những thứ khác.
--   **Không yêu cầu liquidity cao**: AMM vẫn có thể hoạt động tốt trong một thị trường có liquidity thấp, điều này rất thích hợp cho các DEX.
+- **Đơn giản**: AMM là một mô hình đơn giản, dễ hiểu và dễ sử dụng. Phù hợp cho những người chỉ cần swap token một cách nhanh chóng mà không cần quan tâm đến những thứ khác.
+- **Không yêu cầu liquidity cao**: AMM vẫn có thể hoạt động tốt trong một thị trường có liquidity thấp, điều này rất thích hợp cho các DEX.
 
 #### Nhược điểm
 
--   **Trượt giá**: Trượt giá có thể thường xuyên xảy ra trên các AMM DEX. Một lệnh swap lớn, một pool đang có khối lượng giao dịch cao hoặc liquidity thấp đều dẫn đến trượt giá.
--   **Dễ bị tấn công**: Vì AMM là một mô hình đơn giản, nên nó khá dễ bị tấn công bởi nhiều cách.
+- **Trượt giá**: Trượt giá có thể thường xuyên xảy ra trên các AMM DEX. Một lệnh swap lớn, một pool đang có khối lượng giao dịch cao hoặc liquidity thấp đều dẫn đến trượt giá.
+- **Dễ bị tấn công**: Vì AMM là một mô hình đơn giản, nên nó khá dễ bị tấn công bởi nhiều cách.
 
 ---
 
 Vậy là chúng ta đã đi qua cách hoạt động của mô hình AMM.
-Đến với [Phần 2 - Order Book](https://snowyfield.me/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2), chúng ta đã tìm hiểu về cách hoạt động của một Order Book.
+Đến với [Phần 2 - Order Book](https://snowyfield.site/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-2), chúng ta đã tìm hiểu về cách hoạt động của một Order Book.

@@ -123,8 +123,11 @@ const Header = () => {
 															</div>
 															<div
 																className="w-full text-left"
-																onClick={async () =>
-																	await signOut().then(() => router.refresh())
+																onClick={() =>
+																	signOut({
+																		redirect: true,
+																		callbackUrl: window.location.href,
+																	})
 																}
 															>
 																Sign out
@@ -133,10 +136,11 @@ const Header = () => {
 													) : (
 														<div
 															className="w-full text-left"
-															onClick={async () =>
-																await signIn('google').then(() =>
-																	router.refresh()
-																)
+															onClick={() =>
+																signIn('google', {
+																	callbackUrl: window.location.href,
+																	redirect: true,
+																})
 															}
 														>
 															Sign in
@@ -174,8 +178,11 @@ const Header = () => {
 							/>
 							<p className="px-2 py-2">{session?.user?.name}</p>
 							<button
-								onClick={async () =>
-									await signOut().then(() => router.refresh())
+								onClick={() =>
+									signOut({
+										redirect: true,
+										callbackUrl: window.location.href,
+									})
 								}
 								className="rounded-full text-zinc-500 transition-all duration-200 ease-in-out hover:text-black"
 							>
@@ -187,8 +194,11 @@ const Header = () => {
 							variant="secondary"
 							arrow="right"
 							size="base"
-							onClick={async () =>
-								await signIn('google').then(() => router.refresh())
+							onClick={() =>
+								signIn('google', {
+									callbackUrl: window.location.href,
+									redirect: true,
+								})
 							}
 						>
 							Sign in

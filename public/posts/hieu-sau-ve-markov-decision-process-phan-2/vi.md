@@ -14,7 +14,7 @@ _Markov Decision Process (MDP) là một bài toán Dynamic Programming (Quy ho�
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration._
 
-> Khuyến nghị đọc trước [Phần 1](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process-phan-1) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Phần 1](https://snowyfield.site/posts/hieu-sau-ve-markov-decision-process-phan-1) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 
@@ -125,8 +125,8 @@ $$
 
 Ví dụ, cho $\mathcal{V} = \{s_1 = 0.3, s_2 = 0.1, s_3 = -1.5, \dots \}$ và State $s$ với:
 
--   Action $a$ có $\mathcal{P} = [s_1 = 0.8, s_2 = 0.1, s_3 = 0.1, \dots]$.
--   Action $a'$ có $\mathcal{P}' = [s_1 = 0.2, s_2 = 0.8, s_3 = 0, \dots]$.
+- Action $a$ có $\mathcal{P} = [s_1 = 0.8, s_2 = 0.1, s_3 = 0.1, \dots]$.
+- Action $a'$ có $\mathcal{P}' = [s_1 = 0.2, s_2 = 0.8, s_3 = 0, \dots]$.
 
 Theo trực giác (cách trước đó), chúng ta sẽ cho Policy $\pi(s) = a$ vì Action $a$ trực tiếp đi đến State $s_1$, State có Value cao nhất.
 
@@ -181,7 +181,7 @@ $$
 
 Giả sử Pac-Man bắt đầu tại State $s_0 = 2$, ta sẽ có:
 
--   Bước đầu tiên:
+- Bước đầu tiên:
 
 $$
 \begin{align}
@@ -190,7 +190,7 @@ r_0 &= \mathcal{R}(s_0 = 2) &&= -0.1 \notag \\
 \end{align}
 $$
 
--   Bước thứ hai:
+- Bước thứ hai:
 
 $$
 \begin{align}
@@ -199,7 +199,7 @@ r_1 &= \mathcal{R}(s_1 = 3) &&= -0.1 \notag \\
 \end{align}
 $$
 
--   Bước thứ ba:
+- Bước thứ ba:
 
 $$
 \begin{align}
@@ -208,7 +208,7 @@ r_2 &= \mathcal{R}(s_2 = 7) &&= -0.1 \notag \\
 \end{align}
 $$
 
--   Bước thứ tư:
+- Bước thứ tư:
 
 $$
 \begin{align}
@@ -217,7 +217,7 @@ r_3 &= \mathcal{R}(s_3 = 11) &&= -0.1 \notag \\
 \end{align}
 $$
 
--   Bước cuối cùng (đã đạt Terminal State $s = 15$):
+- Bước cuối cùng (đã đạt Terminal State $s = 15$):
 
 $$
 \begin{align}
@@ -499,11 +499,11 @@ Sau khi tìm được Value mới, ta sẽ cập nhật Policy hiện tại bằ
 
 ### Lần 1
 
--   Trước:
+- Trước:
 
 <Figure name="mdp-world-evaluation.png" caption="Ví dụ Evaluation trong trong game Pac-Man"/>
 
--   Sau:
+- Sau:
 
 <Figure name="mdp-world-improvement.png" caption="Ví dụ Improvement trong trong game Pac-Man"/>
 
@@ -559,7 +559,7 @@ def __init__(self, reward_function, transition_model, init_policy=None, init_val
 
 #### Các hàm Policy Evaluation và Policy Improvement
 
--   Policy Evaluation
+- Policy Evaluation
 
 ```python
 def one_evaluation(self):
@@ -594,7 +594,7 @@ def evaluation(self):
     return len(delta_history)
 ```
 
--   Policy Improvement
+- Policy Improvement
 
 ```python
 def policy_improvement(self):

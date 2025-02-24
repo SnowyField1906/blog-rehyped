@@ -14,7 +14,7 @@ _Q-Learning là một thuật toán Reinforcement Learning (Học Tăng cường
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Q-Learning cùng với cách xây dựng và triển khai hai thuật toán quan trọng là **Adaptive Dynamic Programming** (Quy hoạch Động Thích ứng) và **Monte Carlo** (Mô phỏng Monte Carlo)._
 
-> Khuyến nghị đọc trước [Phần 1](https://snowyfield.me/posts/hieu-sau-ve-q-learning-phan-1/) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Phần 1](https://snowyfield.site/posts/hieu-sau-ve-q-learning-phan-1/) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 
@@ -62,7 +62,7 @@ Khi đó ta có thể xấp xỉ giá trị $\pi$ thông qua việc đếm số 
 
 Như ta đã biết, MDP và ADP là các thuật toán xác định Policy bằng cách ước tính Value của mỗi State. Để làm được điều này, chúng ta sẽ cần tới Reward và Transition Model. Vì vậy để bỏ đi hai yếu tố này, chúng ta sẽ cần phải thiết lập một thành phần mới với mục đích tương tự. Và thành phần (rất) quan trọng này chính là **Q-Value** (Giá trị Q), thứ sẽ ảnh hưởng đến các bài toán **Reinforcement Learning** (Học Tăng cường) sau này.
 
-> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process/).
+> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.site/posts/hieu-sau-ve-markov-decision-process/).
 
 ### Xây dựng Q-Value
 
@@ -337,7 +337,7 @@ def __init__(self, n_states, blackbox_move):
 
 #### Percept và Actuate
 
--   Percept:
+- Percept:
 
 ```python
 def percept(self, state, action, reward):
@@ -348,7 +348,7 @@ def percept(self, state, action, reward):
     self.c_table[visited] += reward
 ```
 
--   Actuate:
+- Actuate:
 
 ```python
 def actuate(self, next_state):
@@ -360,7 +360,7 @@ def actuate(self, next_state):
 
 #### Evaluation và Improvement
 
--   Evaluation:
+- Evaluation:
 
 ```python
 def one_evaluation(self, state):
@@ -376,7 +376,7 @@ def one_evaluation(self, state):
             state = next_state
 ```
 
--   Improvement:
+- Improvement:
 
 ```python
 def policy_improvement(self):

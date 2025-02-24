@@ -5,26 +5,26 @@ tags: ['Computer Science', 'Complex Numbers']
 description: Bài viết này sẽ giới thiệu một giải pháp hiệu quả của bài toán nhân 2 số nguyên lớn bằng cách sử dụng Fast Fourier Transform.
 ---
 
-_Phép nhân 2 số nguyên là một trong những bài toán lớn trong lĩnh vực **Cryptography** (Mật mã học). Nó ảnh hưởng trực tiếp đến hiệu suất của các thuật toán mã hoá, giải mã và các thuật toán khác. Nhân 2 số nguyên với $n$ chữ số có thể được thực hiện với độ phức tạp $O(n \log(n) \log(\log(n)))$ bằng cách sử dụng **Fast Fourier Transform** thay vì $O(n^2)$ bằng cách thông thường._
+_Phép nhân 2 số nguyên là một trong những bài toán lớn trong lĩnh vực cryptography. Nó ảnh hưởng trực tiếp đến hiệu suất của các thuật toán mã hoá, giải mã và các thuật toán khác. Nhân 2 số nguyên với $n$ chữ số có thể được thực hiện với độ phức tạp $O(n \log(n) \log(\log(n)))$ bằng cách sử dụng Fast Fourier Transform thay vì $O(n^2)$ bằng cách thông thường._
 
-_Kĩ thuật này sử dụng phương pháp **Polynomial Multiplication** (Nhân Đa thức) và **Recursive Divide and Conquer** (Chia Để Trị). Một trong những triển khai hiệu quả của Fast Fourier Transform trong việc tìm tích của 2 số nguyên lớn là thuật toán **Schönhage–Strassen**._
+_Kĩ thuật này sử dụng phương pháp Polynomial Multiplication và Recursive Divide and Conquer. Một trong những triển khai hiệu quả của Fast Fourier Transform trong việc tìm tích của 2 số nguyên lớn là thuật toán Schönhage–Strassen._
 
 ## Giới thiệu
 
 Như đã đề cập, việc nhân 2 số nguyên $n$ chữ số yêu cầu độ phức tạp là $O(n^2)$, đây là độ phức tạp khổng lồ khi các thuật toán mã hoá thường xử lí các số nguyên lên đến $4096$ bit. Do đó, con số tối đa là $2^{4096} - 1$ (gồm $4096$ bit $1$). Khi đó, độ dài của số nguyên này trong hệ thập phân sẽ là:
 
 $$
-\begin{aligned}
+\begin{align}
 \left\lfloor \frac{\log(2^{4096} - 1)}{\log(10)}\right\rfloor + 1 = 1234
-\end{aligned}
+\end{align}
 $$
 
 Với con số tối thiểu $2^{4096 - 1}$ (bit $1$ đầu tiên và $4095$ bit $0$), độ dài của số nguyên này trong hệ thập phân gần như là tương đương:
 
 $$
-\begin{aligned}
+\begin{align}
 \left\lfloor \frac{\log(2^{4096 - 1})}{\log(10)}\right\rfloor + 1 = 1233
-\end{aligned}
+\end{align}
 $$
 
 Điều này có nghĩa là độ dài $4096$ trong hệ nhị phân sẽ tương đương với độ dài $1233$ trong hệ thập phân. Đây là con số đủ lớn để độ phức tạp $O(n^2)$ trở thành một vấn đề cần giải quyết.
@@ -62,8 +62,8 @@ $$
 
 Trong đó:
 
--   $x$ là **base** (cơ số) của $N$
--   $a$ là **coefficient vector** (vector hệ số) của $N$.
+- $x$ là **base** (cơ số) của $N$
+- $a$ là **coefficient vector** (vector hệ số) của $N$.
 
 Ví dụ, cho số nguyên $123456789$, với base $B = 10$, ta sẽ có coefficient vector $a = [9, 8, 7, 6, 5, 4, 3, 2, 1]$. Lúc này, đa thức $P(x)$ sẽ là:
 
@@ -73,9 +73,9 @@ $$
 
 Ngoài ra, với số nguyên trên:
 
--   Với base $B = 100$, ta sẽ có $a = [89, 67, 45, 23, 1]$
--   Với base $B = 1000$, ta sẽ có $a = [789, 456, 123]$
--   Với base $B = 16$, ta sẽ có $a = [5, 1, 13, 12, 11, 5, 7]$ (tương đương $\text{0x51d0b57}$, là biểu diễn hexadecimal của $123456789$ dưới dạng little-endian).
+- Với base $B = 100$, ta sẽ có $a = [89, 67, 45, 23, 1]$
+- Với base $B = 1000$, ta sẽ có $a = [789, 456, 123]$
+- Với base $B = 16$, ta sẽ có $a = [5, 1, 13, 12, 11, 5, 7]$ (tương đương $\text{0x51d0b57}$, là biểu diễn hexadecimal của $123456789$ dưới dạng little-endian).
 
 Nhưng tại sao chúng ta lại biểu diễn dưới dạng little-endian như vậy mà không đảo ngược lại (cho $x^8$ ở vị trí đầu tiên)? Câu trả lời là việc biểu diễn **least significant digit** (chữ số hàng đơn vị) ở vị trí bit đầu tiên sẽ giúp máy tính tính toán nhanh hơn.
 
@@ -91,8 +91,8 @@ Chúng ta sẽ chia đa thức $P(x)$ thành 2 đa thức con $P_{even}(x)$ và 
 
 Trong đó:
 
--   $P_{even}(x)$ là đa thức con của $P(x)$ với các hệ số ở vị trí chẵn.
--   $P_{odd}(x)$ là đa thức con của $P(x)$ với các hệ số ở vị trí lẻ.
+- $P_{even}(x)$ là đa thức con của $P(x)$ với các hệ số ở vị trí chẵn.
+- $P_{odd}(x)$ là đa thức con của $P(x)$ với các hệ số ở vị trí lẻ.
 
 Ví dụ, đa thức $P(x) = a_0 + a_1x + a_2x^2 + \dots + a_{n-1}x^{n-1}$ sẽ được chia thành:
 
@@ -314,11 +314,11 @@ $$
 
 Còn bối rối? Dưới đây là một số kiến thức đã được đề cập trong bài viết:
 
--   [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
--   [Root of Unity](https://en.wikipedia.org/wiki/Root_of_unity)
--   [Divide-and-conquer algorithm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm)
--   [Master theorem (analysis of algorithms)](<https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)>)
--   [Schönhage–Strassen algorithm](https://en.wikipedia.org/wiki/Sch%C3%B6nhage%E2%80%93Strassen_algorithm)
--   [What is the advantage of little endian format?](https://softwareengineering.stackexchange.com/questions/95556/what-is-the-advantage-of-little-endian-format)
--   [Ratio of Bits to Decimal Digits](https://www.exploringbinary.com/ratio-of-bits-to-decimal-digits/)
--   [SnowyField1906/big-unsigned-integer](https://github.com/SnowyField1906/big-unsigned-integer)
+- [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
+- [Root of Unity](https://en.wikipedia.org/wiki/Root_of_unity)
+- [Divide-and-conquer algorithm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm)
+- [Master theorem (analysis of algorithms)](<https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)>)
+- [Schönhage–Strassen algorithm](https://en.wikipedia.org/wiki/Sch%C3%B6nhage%E2%80%93Strassen_algorithm)
+- [What is the advantage of little endian format?](https://softwareengineering.stackexchange.com/questions/95556/what-is-the-advantage-of-little-endian-format)
+- [Ratio of Bits to Decimal Digits](https://www.exploringbinary.com/ratio-of-bits-to-decimal-digits/)
+- [SnowyField1906/big-unsigned-integer](https://github.com/SnowyField1906/big-unsigned-integer)

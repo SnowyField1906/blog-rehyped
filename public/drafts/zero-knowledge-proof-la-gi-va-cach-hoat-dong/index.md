@@ -167,8 +167,8 @@ Bước cuối cùng, Alice rời đi, Bob đến phòng và mở hộp tương 
 
 Lúc này anh ấy có thể kiểm tra liệu Alice có cùng số lượng socola không:
 
--   Nếu trong hộp của Bob là một tờ giấy có dấu cộng, thì anh ấy biết rằng Alice cũng có cùng số lượng socola.
--   Nhưng nếu Bob thấy tờ giấy có dấu trừ? Điều này có nghĩa là anh ấy chỉ biết rằng mình không có cùng số lượng socola với Alice.
+- Nếu trong hộp của Bob là một tờ giấy có dấu cộng, thì anh ấy biết rằng Alice cũng có cùng số lượng socola.
+- Nhưng nếu Bob thấy tờ giấy có dấu trừ? Điều này có nghĩa là anh ấy chỉ biết rằng mình không có cùng số lượng socola với Alice.
 
 Khi Alice trở lại phòng, Bob sẽ đưa cho Alice tờ giấy mà mình lấy được.
 Khi đó, Alice cũng có thể xác định được rằng cả hai có cùng số lượng socola hay không.
@@ -221,14 +221,14 @@ Lúc này, người xáo bài có thể là một trong hai và người này ho
 
 Với ZKP, ta sẽ thực hiện bằng cách dùng một số ngẫu nhiên để xáo bài:
 
--   Alice sẽ mã hóa từng lá bài bằng Public Key của mình rồi xáo bài, sau đó gửi cho Bob.
--   Bob lại sẽ mã hóa từng lá bài bằng Public Key của mình rồi xáo bài, sau đó gửi lại cho Alice.
+- Alice sẽ mã hóa từng lá bài bằng Public Key của mình rồi xáo bài, sau đó gửi cho Bob.
+- Bob lại sẽ mã hóa từng lá bài bằng Public Key của mình rồi xáo bài, sau đó gửi lại cho Alice.
 
 Bây giờ toàn bộ lá bài đã được mã hóa và xáo trộn bởi Public Key cả hai mà không ai biết được thứ tự của chúng.
 
 Cơ chế Trusted Setup cũng hoạt động tơng tự như vậy, nó sẽ bắt đầu bằng việc tạo các Key ngẫu nhiên và dùng chúng để tính toán các thông số và mã hóa dữ liệu.
 
-> Đọc thêm về Mental Poker tại bài viết [Giới thiệu chi tiết về bài toán Mental Poker](https://snowyfield.me/posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker).
+> Đọc thêm về Mental Poker tại bài viết [Giới thiệu chi tiết về bài toán Mental Poker](https://snowyfield.site/posts/gioi-thieu-chi-tiet-ve-bai-toan-mental-poker).
 
 ## Chi tiết về Zero-Knowledge Proof
 
@@ -282,15 +282,15 @@ Khi đó họ chỉ cần thực hiện một loạt các hành động mà khô
 
 #### Ưu điểm
 
--   **Quyền riêng tư và bảo mật**: ZKP đảm bảo quyền riêng tư cũng như giữ bí mật thông tin dữ liệu người dùng khi chỉ thực hiện nhiệm vụ xác nhận tính đầy đủ và hợp lý của tuyên bố mà không cần người dùng phải cung cấp thêm thông tin khác.
+- **Quyền riêng tư và bảo mật**: ZKP đảm bảo quyền riêng tư cũng như giữ bí mật thông tin dữ liệu người dùng khi chỉ thực hiện nhiệm vụ xác nhận tính đầy đủ và hợp lý của tuyên bố mà không cần người dùng phải cung cấp thêm thông tin khác.
     Vậy nên, ZKP ngoài việc dùng trong layer 2 để mở rộng còn được dùng trong các ứng dụng về riêng tư và bảo mật như: Monero, Tornado Cash,...
--   **Nhiều khả năng ứng dụng**: ZkSync, StarkNET, Loopring là các ví dụ tiêu biểu cho việc sử dụng ZKP để tăng thông lượng và tăng khả năng mở rộng cho các mạng Blockchain.
+- **Nhiều khả năng ứng dụng**: ZkSync, StarkNET, Loopring là các ví dụ tiêu biểu cho việc sử dụng ZKP để tăng thông lượng và tăng khả năng mở rộng cho các mạng Blockchain.
     Ngoài ra nó còn được sử dụng trong các ứng dụng khác như chia sẻ dữ liệu, nhắn tin bảo mật, chứng thực,...
 
 #### Nhược điểm
 
--   **Quá trình tính toán phức tạp**: ZKP là một giao thức được hình thành từ rất nhiều những thuật toán có mức độ phức tạp cao, do đó nó đòi hỏi một giải thuật phức tạp cùng lượng lớn các phép tính. Vì vậy, các hệ thống máy tính phổ thông với cấu hình thấp sẽ gặp không ít trở ngại khi tham gia quá trình xác thực.
--   **Không thân thiện với developer**: Nhiều thống kê cho cho thấy điểm trừ của ZKP này là không thân thiện với developer. Điều này có thể là do ZKP là một công nghệ mới, nên nó cần thời gian để các developer có thể hiểu và sử dụng nó một cách hiệu quả.
+- **Quá trình tính toán phức tạp**: ZKP là một giao thức được hình thành từ rất nhiều những thuật toán có mức độ phức tạp cao, do đó nó đòi hỏi một giải thuật phức tạp cùng lượng lớn các phép tính. Vì vậy, các hệ thống máy tính phổ thông với cấu hình thấp sẽ gặp không ít trở ngại khi tham gia quá trình xác thực.
+- **Không thân thiện với developer**: Nhiều thống kê cho cho thấy điểm trừ của ZKP này là không thân thiện với developer. Điều này có thể là do ZKP là một công nghệ mới, nên nó cần thời gian để các developer có thể hiểu và sử dụng nó một cách hiệu quả.
 
 ### Ứng dụng của Zero-Knowledge Proof
 
@@ -313,7 +313,7 @@ Và vì tính **Zero-Knowledge**, người dùng không được xâm phạm quy
 
 Flow Blockchain đã triển khai [SPocK](https://flow.com/technical-paper) (Specialized Proof of Confidential Knowledge) để đảm bảo tính trung thực của các node Execution và Verification trong mạng.
 
-> Đọc thêm về SPoCK tại bài viết [Flow - Top Blockchain dành cho NFT](https://snowyfield.me/posts/flow-top-blockchain-danh-cho-nft#spock).
+> Đọc thêm về SPoCK tại bài viết [Flow - Top Blockchain dành cho NFT](https://snowyfield.site/posts/flow-top-blockchain-danh-cho-nft#spock).
 
 #### Học máy và trí tuệ nhân tạo
 
@@ -355,11 +355,11 @@ Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã
 
 **zk-SNARK** (Succinct Non-interactive Argument of Knowledge) lần đầu tiên được đề xuất vào năm 2012 và được triển khai ngay sau đó. Trong đó:
 
--   **Succinct** (Ngắn gọn): Những bằng chứng thuòng có kích thước nhỏ và có thể được xác minh nhanh chóng.
+- **Succinct** (Ngắn gọn): Những bằng chứng thuòng có kích thước nhỏ và có thể được xác minh nhanh chóng.
 
--   **Non-interactive** (Không Tương tác): Điều này thường mang lại nhiều lợi ích hơn [IZKP](#interactive-zero-knowledge-proof) khi chỉ cần một bằng chứng từ Prover.
+- **Non-interactive** (Không Tương tác): Điều này thường mang lại nhiều lợi ích hơn [IZKP](#interactive-zero-knowledge-proof) khi chỉ cần một bằng chứng từ Prover.
 
--   **Argument of Knowledge** (Lập luận Kiến thức): Là một phiên bản tính toán của Proof of Knowledge (Bằng chứng Kiến thức).
+- **Argument of Knowledge** (Lập luận Kiến thức): Là một phiên bản tính toán của Proof of Knowledge (Bằng chứng Kiến thức).
     Các tính toán này tạo nên các yêu cầu khắt khe hơn cho Prover, đảm bảo rằng các Prover rất khó để lừa dối Verifier.
 
 #### zk-STARK
@@ -368,9 +368,9 @@ Hiện Tornado Cash đã bị cấm ở vài quốc gia và developer cũng đã
 
 zk-STARK tương đổi khác với zk-SNARK mặc dù chỉ thay **SN** bằng **ST**, và đây cũng là 2 ưu điểm chính:
 
--   **Scalable** (Khả năng mở rộng): Các chứng minh có độ phức tạp là $O(n\log(n))$ với $n$ là kích thước của bằng chứng.
+- **Scalable** (Khả năng mở rộng): Các chứng minh có độ phức tạp là $O(n\log(n))$ với $n$ là kích thước của bằng chứng.
     Điều này giúp các bằng chứng có kích thước lớn được xác minh nhanh hơn nhiều so với zk-SNARK.
--   **Transparent** (Minh bạch): Hệ thống hoạt động mà không cần [Trusted Setup](#trusted-setup) và không cần phải thiết lập các khóa trước khi tham gia vào quá trình này.
+- **Transparent** (Minh bạch): Hệ thống hoạt động mà không cần [Trusted Setup](#trusted-setup) và không cần phải thiết lập các khóa trước khi tham gia vào quá trình này.
 
 Tuy nhiên, STARK có kích thước bằng chứng lớn hơn nhiều so với SNARK. Tuy nhiên, khả năng mở rộng của nó tốt hơn nhiều và có thể chống lại các cuộc tấn công từ máy tính lượng tử.
 Điều này là do zk-STARK không dựa vào Elliptic Curve như zk-SNARK mà dựa vào các hàm băm, cũng như loại bỏ rủi ro của Trusted Setup khi nó có thể bị tấn công bởi một người biết được cơ chế random.

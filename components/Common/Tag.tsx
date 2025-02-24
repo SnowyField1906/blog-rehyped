@@ -17,7 +17,7 @@ const Tag = ({
 	page?: string
 	is?: string
 }): JSX.Element => {
-	const searchParams = useSearchParams()
+	const searchParams: any = useSearchParams()
 	const tag = deserializeParams(searchParams)[is] ?? ''
 
 	const isActive = tag === name

@@ -6,13 +6,12 @@ import { getMarkdown } from '@libs/markdown'
 
 export const maxDuration = 60
 
-export const generateMetadata = async ({
+export const generateMetadata = ({
 	params,
 }: {
 	params: { slug: string }
-}): Promise<Metadata> => {
-	const markdown: Markdown = await getMarkdown(params.slug)
-
+}): Metadata => {
+	const markdown: Markdown = getMarkdown(params.slug)
 	return {
 		metadataBase: new URL(siteMetadata.siteUrl),
 		title: markdown.title + ' | ' + siteMetadata.headerTitle,
@@ -24,8 +23,7 @@ export const generateMetadata = async ({
 }
 
 const Post = async ({ params }: { params: { slug: string } }) => {
-	const markdown: Markdown = await getMarkdown(params.slug)
-
+	const markdown: Markdown = getMarkdown(params.slug)
 	return <MDXLayout markdown={markdown} />
 }
 

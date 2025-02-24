@@ -59,7 +59,7 @@ const VisitorMessage = ({
 					</Button>
 				</Popup>
 			)}
-			<p className="mt-2 font-heading text-3xl font-light lg:mb-5 lg:mt-10 lg:text-4xl xl:text-5xl">
+			<p className="mt-2 font-heading text-3xl font-light lg:mb-4 lg:mt-6 lg:text-4xl xl:text-5xl">
 				{visitor.email === email ? 'You' : visitor.name}
 			</p>
 			<div
@@ -68,7 +68,7 @@ const VisitorMessage = ({
 					reverse && 'lg:flex-row-reverse'
 				)}
 			>
-				<div className="flex w-full flex-col gap-2 font-display text-base text-zinc-500 lg:w-1/2 lg:gap-3 lg:text-lg xl:text-xl">
+				<div className="flex w-full flex-col gap-2 font-display text-base text-zinc-500 lg:w-2/5 lg:gap-3 lg:text-lg xl:text-xl">
 					<p>{formatDateTime(visitor.createdAt)}</p>
 					{visitor.email === email && (
 						<div className="mx-auto flex w-min gap-2 lg:gap-5">
@@ -91,16 +91,18 @@ const VisitorMessage = ({
 						</div>
 					)}
 				</div>
-				<div className="w-full font-display text-base lg:w-1/2 lg:text-lg xl:text-xl">
+				<div className="w-full font-display text-base lg:w-3/5 lg:text-lg xl:text-xl">
 					<p className="select-none text-5xl text-zinc-400">{`“`}</p>
 					{editPopup ? (
 						<textarea
-							className="h-auto w-full -translate-y-5 border border-zinc-900 bg-zinc-100 p-2 text-xl focus:outline-none"
+							className="h-auto w-full -translate-y-5 border border-zinc-900 bg-zinc-100 p-2 text-base focus:outline-none lg:text-lg xl:text-xl"
 							value={editContent}
 							onChange={(e) => setEditContent(e.target.value)}
 						/>
 					) : (
-						<p className="-translate-y-5 ">{visitor.content}</p>
+						<p className="-translate-y-5 whitespace-pre-line">
+							{visitor.content}
+						</p>
 					)}
 				</div>
 			</div>

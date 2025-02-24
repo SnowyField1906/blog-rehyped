@@ -14,7 +14,7 @@ _Markov Decision Process (MDP) là một bài toán Dynamic Programming (Quy ho�
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Markov Decision Process cùng với cách xây dựng và triển khai hai thuật toán phổ biến là Policy Iteration và Value Iteration._
 
-> Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụng](https://snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Giới thiệu về Markov Chain và ứng dụng](https://snowyfield.site/posts/gioi-thieu-ve-markov-chain-va-ung-dung) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Khái niệm
 
@@ -347,8 +347,8 @@ Policy cũng là một bản đồ mà thay vì chứa các Object, các vị tr
 
 Trong ví dụ sắp tới, chúng ta sẽ cho Random Rate là $0.2$ theo quy tắc như sau:
 
--   $80\%$ Pac-Man sẽ đi theo hướng như Policy đã chỉ định
--   $20\%$ Pac-Man sẽ đi theo 2 hướng bên cạnh Policy.
+- $80\%$ Pac-Man sẽ đi theo hướng như Policy đã chỉ định
+- $20\%$ Pac-Man sẽ đi theo 2 hướng bên cạnh Policy.
 
 ### Reward
 
@@ -505,7 +505,7 @@ $$
 \end{align}
 $$
 
-Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương ứng với một [Transition Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Ma trận Chuyển tiếp) như trong [Markov Chain](https://snowyfield.me/posts/gioi-thieu-ve-markov-chain-va-ung-dung), thể hiện quá trình chuyển đổi qua lại giữa các State.
+Còn đối với việc truy xuất thông qua $a$, mỗi Action sẽ tương ứng với một [Transition Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Ma trận Chuyển tiếp) như trong [Markov Chain](https://snowyfield.site/posts/gioi-thieu-ve-markov-chain-va-ung-dung), thể hiện quá trình chuyển đổi qua lại giữa các State.
 
 ## Xây dựng MDP
 
@@ -596,7 +596,7 @@ def __init__(self, filename):
 
 #### Các mapping function
 
--   Mapping function $\mathcal{S}$ và $\mathcal{S}^{-1}$:
+- Mapping function $\mathcal{S}$ và $\mathcal{S}^{-1}$:
 
 ```python
 def get_state_from_pos(self, pos):
@@ -606,7 +606,7 @@ def get_pos_from_state(self, state):
     return state // self.n_cols, state % self.n_cols
 ```
 
--   Mapping function $\mathcal{A}$ và $\mathcal{N}$:
+- Mapping function $\mathcal{A}$ và $\mathcal{N}$:
 
 ```python
 def get_next_pos(self, pos, action):
@@ -623,7 +623,7 @@ def get_likely_action(self, action):
     return [action, (action + 1) % A.LEN, (action - 1) % A.LEN]
 ```
 
--   Mapping function $\mathcal{R}$ và $\mathcal{T}$ (trả về toàn bộ thay vì mapping):
+- Mapping function $\mathcal{R}$ và $\mathcal{T}$ (trả về toàn bộ thay vì mapping):
 
 ```python
 def get_reward_function(self):
@@ -662,7 +662,7 @@ def get_transition_model(self):
     return transition_model
 ```
 
--   Mapping function $\mathcal{C}$:
+- Mapping function $\mathcal{C}$:
 
 ```python
 def execute_policy(self, policy, start_pos, time_limit=default_time_limit):

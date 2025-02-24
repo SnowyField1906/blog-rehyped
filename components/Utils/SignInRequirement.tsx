@@ -33,8 +33,11 @@ const SignInRequirement = ({
 					variant="primary"
 					size="lg"
 					arrow="right"
-					onClick={async () =>
-						await signIn('google').then(() => router.refresh())
+					onClick={() =>
+						signIn('google', {
+							callbackUrl: window.location.href,
+							redirect: true,
+						})
 					}
 				>
 					Sign in

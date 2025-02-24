@@ -14,7 +14,7 @@ _Q-Learning là một thuật toán Reinforcement Learning (Học Tăng cường
 
 _Loạt bài viết này sẽ giúp chúng ta hiểu sâu về Q-Learning cùng với cách xây dựng và triển khai hai thuật toán quan trọng là **Adaptive Dynamic Programming** (Quy hoạch Động Thích ứng) và **Monte Carlo** (Mô phỏng Monte Carlo)._
 
-> Khuyến nghị đọc trước [Phần 2](https://snowyfield.me/posts/hieu-sau-ve-q-learning-phan-2/) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Phần 2](https://snowyfield.site/posts/hieu-sau-ve-q-learning-phan-2/) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Nhắc lại
 
@@ -32,7 +32,7 @@ Là một sự kết hợp giữa giữa ADP và Monte Carlo, Q-Learning sẽ c�
 
 Như ta đã biết ở bài viết về Monte Carlo, chúng ta đã triển khai một khái niệm mới gọi là **Q-Value** được lưu trữ trong một **Q-Table**. Các Q-Value được cập nhật theo quy tắc Monte Carlo, tức là lấy trung bình của các C-Value (giá trị tính được sau mỗi Episode). Tuy nhiên chúng ta sẽ có một cách tiếp cận khác trong Q-Learning.
 
-> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.me/posts/hieu-sau-ve-markov-decision-process/).
+> Phần này giả sử người đọc đã nắm được các kí hiệu và ví dụ ở series [Hiểu sâu về Markov Decision Process](https://snowyfield.site/posts/hieu-sau-ve-markov-decision-process/).
 
 ### Xây dựng Q-Value
 
@@ -54,10 +54,10 @@ $$
 
 Trong đó:
 
--   $\text{New}$ là Q-Table mới
--   $\text{Old}$ là Q-Table cũ
--   $\text{Step}$ là bước nhảy
--   $\text{Target}$ là C-Table đã tìm được tại Episode hiện tại
+- $\text{New}$ là Q-Table mới
+- $\text{Old}$ là Q-Table cũ
+- $\text{Step}$ là bước nhảy
+- $\text{Target}$ là C-Table đã tìm được tại Episode hiện tại
 
 Nếu để ý kĩ, công thức này rất giống với Gradient Descent hay các thuật toán Optimizer khác:
 
@@ -258,7 +258,7 @@ def __init__(self, n_states, blackbox_move):
 
 #### Percept và Actuate
 
--   Percept:
+- Percept:
 
 ```python
 def percept(self, state, action, next_state, reward):
@@ -267,7 +267,7 @@ def percept(self, state, action, next_state, reward):
     self.policy[state] = np.argmax(self.q_table[state])
 ```
 
--   Actuate:
+- Actuate:
 
 ```python
 def actuate(self, next_state):
@@ -279,7 +279,7 @@ def actuate(self, next_state):
 
 #### Evaluation
 
--   Evaluation:
+- Evaluation:
 
 ```python
 def one_evaluation(self, state):

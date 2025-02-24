@@ -10,12 +10,31 @@ const metadata = siteMetadata.internalLinks.find(
 	(link) => link.title === 'Posts'
 )
 
-export const generateMetadata = (): Metadata => {
+export const generateMetadata = ({
+	searchParams,
+}: {
+	searchParams?: { [key: string]: string | undefined }
+}): Metadata => {
+	const tag = searchParams?.tag
+	const metadata = siteMetadata.internalLinks.find(
+		(link) => link.title === 'Posts'
+	)
+
+	const dynamicTitle = tag
+		? `Posts in ${tag} | ${siteMetadata.headerTitle}`
+		: metadata!.title + ' | ' + siteMetadata.headerTitle
+
+	const dynamicDescription = tag
+		? `Tất cả bài viết liên quan đến tag "${tag}"`
+		: metadata!.description
+
 	return {
 		metadataBase: new URL(siteMetadata.siteUrl),
-		title: metadata!.title + ' | ' + siteMetadata.headerTitle,
-		description: metadata!.description,
+		title: dynamicTitle,
+		description: dynamicDescription,
 		openGraph: {
+			title: dynamicTitle,
+			description: dynamicDescription,
 			images: [siteMetadata.siteUrl + siteMetadata.siteBanner],
 		},
 	}
@@ -43,7 +62,11 @@ const Post = async ({
 
 	return (
 		<>
-			<Title primary={metadata!.title} secondary={metadata!.description} />
+			<Title
+				primary={`${searchParams?.tag ? searchParams.tag : 'Posts'}`}
+				secondary={metadata!.description}
+				type={`${searchParams?.tag ? 'tag' : 'main'}`}
+			/>
 			<div className="flex flex-wrap justify-center gap-3 lg:gap-5">
 				<Tag />
 				{tags.map(([tag, count]) => (

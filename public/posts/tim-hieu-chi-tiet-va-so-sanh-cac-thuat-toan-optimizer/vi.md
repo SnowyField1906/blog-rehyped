@@ -14,7 +14,7 @@ _Các thuật toán Optimizer (Tối ưu) là một phần quan trọng lĩnh v�
 
 _Để hiểu rõ hơn về các thuật toán optimizer, chúng ta sẽ cùng tìm hiểu về các thuật toán optimizer thông dụng nhất và so sánh hiệu quả của chúng trong bài viết này. Bao gồm: Gradient Descent, SGD, Momentum, NAG, Adagrad, RMSProp/Adadelta và Adam._
 
-> Khuyến nghị đọc trước [Toàn tập về bài toán Least Squares và các phương pháp giải](https://snowyfield.me/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai) để sẵn sàng trước khi đi vào bài viết này.
+> Khuyến nghị đọc trước [Toàn tập về bài toán Least Squares và các phương pháp giải](https://snowyfield.site/posts/toan-tap-ve-bai-toan-least-squares-va-cac-phuong-phap-giai) để sẵn sàng trước khi đi vào bài viết này.
 
 ## Khái niệm
 
@@ -101,16 +101,16 @@ Ta có thể thấy đường đi của **Gradient Descent** trông như một q
 
 ### Ưu điểm của Gradient Descent
 
--   Đơn giản và dễ hiểu.
--   Dễ cài đặt.
+- Đơn giản và dễ hiểu.
+- Dễ cài đặt.
 
 ### Nhược điểm của Gradient Descent
 
--   Phụ thuộc vào learning rate $\eta$.
--   Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
--   Thường rơi vào các **local minima** (cực tiểu địa phương) thay vì **global minima** (cực tiểu toàn cục).
--   Không thể thoát ra khỏi **saddle point** (điểm yên ngựa).
--   Chậm khi số lượng data training vào lớn.
+- Phụ thuộc vào learning rate $\eta$.
+- Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
+- Thường rơi vào các **local minima** (cực tiểu địa phương) thay vì **global minima** (cực tiểu toàn cục).
+- Không thể thoát ra khỏi **saddle point** (điểm yên ngựa).
+- Chậm khi số lượng data training vào lớn.
 
 ## Các thuật toán optimizer
 
@@ -152,14 +152,14 @@ Ví dụ, ta có một lớp học với 100 học sinh, thay vì tính điểm 
 
 #### Ưu điểm của SGD
 
--   Nhanh hơn so với Gradient Descent.
+- Nhanh hơn so với Gradient Descent.
 
 #### Nhược điểm của SGD
 
--   Phụ thuộc vào learning rate $\eta$.
--   Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
--   Thường rơi vào các local minima thay vì global minima.
--   Không thể thoát ra khỏi saddle point.
+- Phụ thuộc vào learning rate $\eta$.
+- Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
+- Thường rơi vào các local minima thay vì global minima.
+- Không thể thoát ra khỏi saddle point.
 
 ### Mini-Batch GD
 
@@ -215,14 +215,14 @@ Ta có thể thấy rằng đường đi của **Momentum** đã hẹp hơn so v
 
 #### Ưu điểm của Momentum
 
--   Nhanh hơn so với SGD.
--   Giảm thiểu sự dao động của đường đi.
--   Có thể thoát ra khỏi local minima hay saddle point.
+- Nhanh hơn so với SGD.
+- Giảm thiểu sự dao động của đường đi.
+- Có thể thoát ra khỏi local minima hay saddle point.
 
 #### Nhược điểm của Momentum
 
--   Khi đến đích, vì quán tính nên vẫn còn mất nhiều thời gian dao động tại chỗ trước khi có thể dừng lại.
--   Phụ thuộc vào learning rate $\eta$.
+- Khi đến đích, vì quán tính nên vẫn còn mất nhiều thời gian dao động tại chỗ trước khi có thể dừng lại.
+- Phụ thuộc vào learning rate $\eta$.
 
 ### NAG
 
@@ -270,14 +270,14 @@ Ta có thể thấy rằng cả **Momentum** và **NAG** đều có khả năng 
 
 #### Ưu điểm của NAG
 
--   Nhanh hơn so với Momentum.
--   Giảm thiểu sự dao động của đường đi.
--   Có thể thoát ra khỏi local minima hay saddle point.
--   Không bị mất thời gian dao động khi đến đích.
+- Nhanh hơn so với Momentum.
+- Giảm thiểu sự dao động của đường đi.
+- Có thể thoát ra khỏi local minima hay saddle point.
+- Không bị mất thời gian dao động khi đến đích.
 
 #### Nhược điểm của NAG
 
--   Phụ thuộc vào learning rate $\eta$.
+- Phụ thuộc vào learning rate $\eta$.
 
 ### Adagrad
 
@@ -318,15 +318,15 @@ $$
 
 #### Ưu điểm của Adagrad
 
--   Nhanh hơn nhiều so với SGD.
--   Giảm thiểu sự dao động của đường đi.
--   Có thể tránh được saddle point.
+- Nhanh hơn nhiều so với SGD.
+- Giảm thiểu sự dao động của đường đi.
+- Có thể tránh được saddle point.
 
 #### Nhược điểm của Adagrad
 
--   Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
--   Thường rơi vào các local minima thay vì global minima.
--   Tổng bình phương của các gradient có thể trở nên quá lớn khiến cho learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
+- Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
+- Thường rơi vào các local minima thay vì global minima.
+- Tổng bình phương của các gradient có thể trở nên quá lớn khiến cho learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
 
 ### RMSProp/Adadelta
 
@@ -366,15 +366,15 @@ $$
 
 #### Ưu điểm của RMSProp/Adadelta
 
--   Nhanh hơn so với Adagrad.
--   Giảm thiểu sự dao động của đường đi.
--   Có thể tránh được saddle point.
--   Không xảy ra tình trạng learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
+- Nhanh hơn so với Adagrad.
+- Giảm thiểu sự dao động của đường đi.
+- Có thể tránh được saddle point.
+- Không xảy ra tình trạng learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
 
 #### Nhược điểm của RMSProp/Adadelta
 
--   Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
--   Thường rơi vào các local minima thay vì global minima.
+- Phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
+- Thường rơi vào các local minima thay vì global minima.
 
 ### Adam
 
@@ -425,13 +425,13 @@ $$
 
 #### Ưu điểm của Adam
 
--   Nhanh hơn so với RMSProp/Adadelta.
--   Giảm thiểu sự dao động của đường đi.
--   Có thể tránh được saddle point.
--   Không xảy ra tình trạng learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
--   Có thể thoát ra khỏi local minima.
--   Không phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
--   Không phụ thuộc vào learning rate $\eta$.
+- Nhanh hơn so với RMSProp/Adadelta.
+- Giảm thiểu sự dao động của đường đi.
+- Có thể tránh được saddle point.
+- Không xảy ra tình trạng learning rate giảm nhanh và dừng lại trước khi đạt được cực trị.
+- Có thể thoát ra khỏi local minima.
+- Không phụ thuộc vào parameter số $w$ khởi tạo ban đầu.
+- Không phụ thuộc vào learning rate $\eta$.
 
 #### Nhược điểm của Adam
 

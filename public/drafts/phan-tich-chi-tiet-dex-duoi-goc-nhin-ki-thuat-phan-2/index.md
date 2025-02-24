@@ -14,7 +14,7 @@ _Trong bài viết này, chúng ta sẽ cùng nhau khám phá một cách chi ti
 
 <img src='/static/images/thumbnails/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat.png' alt="Phân tích chi tiết DEX dưới góc nhìn kĩ thuật" />
 
-Ở [Phần 1 - AMM](https://snowyfield.me/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1), chúng ta đã tìm hiểu về cách hoạt động của một AMM.
+Ở [Phần 1 - AMM](https://snowyfield.site/posts/phan-tich-chi-tiet-dex-duoi-goc-nhin-ki-thuat-phan-1), chúng ta đã tìm hiểu về cách hoạt động của một AMM.
 Lần này, chúng ta sẽ đến với một mô hình DEX khác là Order Book.
 
 ## Giới thiệu về DEX
@@ -37,16 +37,16 @@ Lí do là vì Order Book cung cấp nhiều khả năng cũng như linh hoạt 
 
 ### Các thuật ngữ cơ bản
 
--   **Token Pair**: Là cặp tiền mã hoá được sử dụng để trao đổi với nhau, thường kí hiệu là Base/Quote.
--   **Base**/**Quote Token**: Lần lượt là tiền mã hoá được dùng để **Giao dịch** và **Định giá**. Ví dụ trong pair ETH/USDT, ETH là **Base Token** và USDT là **Quote Token**.
--   **Order**: Là lệnh mua hoặc bán một token trong một pair tại một thời điểm nhất định.
--   **Position**: Là vị thế của một người dùng, nó thể hiện số lượng token mà người dùng đang nắm giữ và đang mượn từ sàn.
--   **Bid**/**Ask**: Lần lượt là hành động **Mua** và **Bán** một token trong một pair.
--   **Long**/**Short**: Lần lượt là hành động dự đoán giá sẽ **Tăng** hay **Giảm** của một token trong một pair.
--   **Trade**: Là hành động trao đổi (có thể là mua hoặc bán) giữa hai token trong pair.
--   **Liquidity**: Là số lượng thanh khoản của pair. Con số này biểu thị khả năng mua bán của pair.
--   **Spread**: Là sự chênh lệch giữa giá mua và giá bán của một token.
--   **Depth**: Là tổng số lượng token có thể được mua hoặc bán ở một mức giá cụ thể.
+- **Token Pair**: Là cặp tiền mã hoá được sử dụng để trao đổi với nhau, thường kí hiệu là Base/Quote.
+- **Base**/**Quote Token**: Lần lượt là tiền mã hoá được dùng để **Giao dịch** và **Định giá**. Ví dụ trong pair ETH/USDT, ETH là **Base Token** và USDT là **Quote Token**.
+- **Order**: Là lệnh mua hoặc bán một token trong một pair tại một thời điểm nhất định.
+- **Position**: Là vị thế của một người dùng, nó thể hiện số lượng token mà người dùng đang nắm giữ và đang mượn từ sàn.
+- **Bid**/**Ask**: Lần lượt là hành động **Mua** và **Bán** một token trong một pair.
+- **Long**/**Short**: Lần lượt là hành động dự đoán giá sẽ **Tăng** hay **Giảm** của một token trong một pair.
+- **Trade**: Là hành động trao đổi (có thể là mua hoặc bán) giữa hai token trong pair.
+- **Liquidity**: Là số lượng thanh khoản của pair. Con số này biểu thị khả năng mua bán của pair.
+- **Spread**: Là sự chênh lệch giữa giá mua và giá bán của một token.
+- **Depth**: Là tổng số lượng token có thể được mua hoặc bán ở một mức giá cụ thể.
 
 ### Khái niệm và nguyên tắc hoạt động của Order Book
 
@@ -57,8 +57,8 @@ Cách hoạt động này mô phỏng hoàn chỉnh một thị trường trong 
 
 Order Book thường chia thành hai phần chính:
 
--   **Bid**: Bao gồm các bid order. Những order này được sắp xếp theo thứ tự giảm dần của giá. Bid order có giá cao nhất sẽ được đặt ở đầu danh sách.
--   **Ask**: Bao gồm các ask order. Những order này được sắp xếp theo thứ tự tăng dần của giá. Ask order có giá thấp nhất sẽ được đặt ở đầu danh sách.
+- **Bid**: Bao gồm các bid order. Những order này được sắp xếp theo thứ tự giảm dần của giá. Bid order có giá cao nhất sẽ được đặt ở đầu danh sách.
+- **Ask**: Bao gồm các ask order. Những order này được sắp xếp theo thứ tự tăng dần của giá. Ask order có giá thấp nhất sẽ được đặt ở đầu danh sách.
 
 Lý do các order được sắp xếp như vậy là vì đối với bên mua, giá có lợi nhất cho họ là giá thấp nhất, ngược lại giá có lợi nhất cho bên bán là giá cao nhất.
 Hai giá tốt nhất này sẽ được đặt cạnh nhau ở giữa như ranh giới tranh chấp giữa 2 bên, giá của một pair sẽ thay đổi khi một bên thắng được bên còn lại.
@@ -308,11 +308,11 @@ Lúc này, chúng ta sẽ lỗ gấp $300/150 = 2$ lần số token mà đáng r
 
 #### Ưu điểm
 
--   **Trượt giá thấp**: Trượt giá rất khó xảy ra trên Order Book, điều này giúp người dùng luôn tính toán được lượng token mong muốn.
--   **Nhiều khả năng**: Order Book mạnh mẽ trong nhiều khía cạnh, nó cung cấp nhiều khả năng và lựa chọn cho người dùng.
+- **Trượt giá thấp**: Trượt giá rất khó xảy ra trên Order Book, điều này giúp người dùng luôn tính toán được lượng token mong muốn.
+- **Nhiều khả năng**: Order Book mạnh mẽ trong nhiều khía cạnh, nó cung cấp nhiều khả năng và lựa chọn cho người dùng.
 
 #### Nhược điểm
 
--   **Yêu cầu liquidity cao**: Một DEX có liquidity thấp sẽ khiến Order Book trở nên không hiệu quả và tác động xấu dến trải nghiệm người dùng.
--   **Dễ bị thao túng**: Order Book thường được lạm dụng để cung cấp những manh mối sai lệch nhằm thao túng thị trường.
+- **Yêu cầu liquidity cao**: Một DEX có liquidity thấp sẽ khiến Order Book trở nên không hiệu quả và tác động xấu dến trải nghiệm người dùng.
+- **Dễ bị thao túng**: Order Book thường được lạm dụng để cung cấp những manh mối sai lệch nhằm thao túng thị trường.
     Những hành vi thao túng này có thể dễ dàng bị truy vết và trừng phạt trên các CEX, nhưng lại không thể trên các DEX.

@@ -5,7 +5,7 @@ import Newsletter from '@components/Utils/Newsletter'
 
 const Footer = () => {
 	return (
-		<div className="w-full font-display text-base font-light lg:text-lg xl:text-xl">
+		<div className="mt-auto w-full font-display text-base font-light lg:text-lg xl:text-xl">
 			{/* <hr className="h-min border-[0.5px] border-zinc-900" /> */}
 
 			<footer className="grid w-full gap-5 p-8 text-center lg:hidden lg:px-20">

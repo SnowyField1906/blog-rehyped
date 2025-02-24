@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{quantikz}
+\usepackage[margin=0.1in]{geometry}
+
+\nofiles
+
+\begin{document}
+\begin{center}
+\scalebox{0.95}{ % Giảm kích thước xuống còn 80%
+\begin{quantikz}
+\lstick{\ket{j_{n-1}}} & \gate{H} & \gate{R_2} & \gate{R_3} & \ \ldots\ & \gate{R_{n-1}} & \gate{R_{n}} &          &            & \ \ldots\ &                &                & \ \ldots \ &          &            &          & & \swap{5} & \\
+\lstick{\ket{j_{n-2}}} &          & \ctrl{-1}  &            & \ \ldots\ &                &              & \gate{H} & \gate{R_2} & \ \ldots\ & \gate{R_{n-2}} & \gate{R_{n-1}} & \ \ldots \ &          &            &          & \swap{3} & & \\
+\lstick{\ket{j_{n-3}}} &          &            & \ctrl{-2}  & \ \ldots\ &                &              &          & \ctrl{-1}  & \ \ldots\ &                &                & \ \ldots \ &          &            &          & & & \\
+[0.2cm]  \cdots \\ [0.2cm]
+\lstick{\ket{j_1}}    &           &            &            & \ \ldots\ & \ctrl{-4}      &              &          &            & \ \ldots\ & \ctrl{-3}      &                & \ \ldots \ & \gate{H} & \gate{R_2} &          & \swap{-3} & & \\
+\lstick{\ket{j_0}}    &           &            &            & \ \ldots\ &                & \ctrl{-5}    &          &            & \ \ldots\ &                & \ctrl{-4}      & \ \ldots \ &          & \ctrl{-1}  & \gate{H} & & \swap{-5} & \\
+\end{quantikz}
+}
+\end{center}
+\end{document}

@@ -7,7 +7,7 @@ const Title = ({
 }: {
 	primary: string
 	secondary: string
-	type?: 'main' | 'activity' | 'article'
+	type?: 'main' | 'activity' | 'article' | 'tag'
 }) => {
 	return (
 		<div className="text-center text-black">
@@ -19,11 +19,14 @@ const Title = ({
 						: 'text-3xl lg:text-4xl xl:text-5xl'
 				)}
 			>
-				{type === 'article'
-					? primary
-					: type === 'activity'
-						? `My ${primary} Activity`
-						: `My ${primary}`}
+				{
+					{
+						article: primary,
+						activity: `My ${primary} Activity`,
+						main: `My ${primary}`,
+						tag: primary,
+					}[type]
+				}
 			</p>
 			<hr className="mx-auto my-5 h-min w-1/3 border border-zinc-900 lg:my-8" />
 			<p className="font-display text-base font-light lg:text-lg xl:text-xl">

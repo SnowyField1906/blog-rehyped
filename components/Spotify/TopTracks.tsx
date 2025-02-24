@@ -9,28 +9,26 @@ import { getTopTracks } from '@libs/spotify'
 const TopTracks = ({ tracks }) => {
 	const [tracksState, setTrackState] = useState(tracks)
 
-	useEffect(() => {
-		;(async () => {
-			for (const [range, artist] of Object.entries(tracks)) {
-				if ((artist as any)?.error) {
-					const t = await getTopTracks(
-						`${range}_term` as 'short_term' | 'medium_term' | 'long_term',
-						50
-					)
-					setTrackState((tracksState) => ({
-						...tracksState,
-						[range]: t,
-					}))
-				}
-			}
-		})()
-	}, [])
-
 	const ranges = [
 		{ id: 'short', name: 'Last 4 weeks' },
 		{ id: 'medium', name: 'Last 6 months' },
 		{ id: 'long', name: 'Last 1 year' },
 	]
+
+	useEffect(() => {
+		;(async () => {
+			for (const range of ['short', 'medium', 'long']) {
+				const t = await getTopTracks(
+					`${range}_term` as 'short_term' | 'medium_term' | 'long_term',
+					50
+				)
+				setTrackState((tracksState) => ({
+					...tracksState,
+					[range]: t,
+				}))
+			}
+		})()
+	}, [])
 
 	const [range, setRange] = useState('short')
 	const [limit, setLimit] = useState(10)

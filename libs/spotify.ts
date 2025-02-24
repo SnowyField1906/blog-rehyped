@@ -12,6 +12,9 @@ export const getAccessToken = async () => {
         })}`,
         {
             method: 'POST',
+            next: {
+                revalidate: 3600,
+            },
             headers: {
                 Authorization: `Basic ${basic}`,
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -47,6 +50,9 @@ export const getTopTracks = async (
     const response = await fetch(
         `https://api.spotify.com/v1/me/top/tracks?${serializeParams({ time_range, limit })}`,
         {
+            next: {
+                revalidate: 3600,
+            },
             headers: {
                 Authorization: `Bearer ${access_token}`,
             },
@@ -66,6 +72,9 @@ export const getTopArtists = async (
     const response = await fetch(
         `https://api.spotify.com/v1/me/top/artists?${serializeParams({ time_range, limit })}`,
         {
+            next: {
+                revalidate: 3600,
+            },
             headers: {
                 Authorization: `Bearer ${access_token}`,
             },
@@ -79,6 +88,9 @@ export const getUser = async (token?: any) => {
     const { access_token } = token || (await getAccessToken())
 
     const user = fetch('https://api.spotify.com/v1/me', {
+        next: {
+            revalidate: 3600,
+        },
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
@@ -87,6 +99,9 @@ export const getUser = async (token?: any) => {
     const followings = fetch(
         'https://api.spotify.com/v1/me/following?type=artist',
         {
+            next: {
+                revalidate: 3600,
+            },
             headers: {
                 Authorization: `Bearer ${access_token}`,
             },
@@ -94,6 +109,9 @@ export const getUser = async (token?: any) => {
     )
 
     const playlists = fetch('https://api.spotify.com/v1/me/playlists', {
+        next: {
+            revalidate: 3600,
+        },
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
@@ -114,6 +132,9 @@ export const getPlaylist = async (id: string, token?: any) => {
     const { access_token } = token || (await getAccessToken())
 
     const response = await fetch(`https://api.spotify.com/v1/playlists/${id}`, {
+        next: {
+            revalidate: 3600,
+        },
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
